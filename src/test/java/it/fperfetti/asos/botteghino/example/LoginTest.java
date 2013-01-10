@@ -24,6 +24,8 @@ package it.fperfetti.asos.botteghino.example;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.config.entities.ActionConfig;
 
+import it.fperfetti.asos.botteghino.action.Login;
+
 import java.util.Map;
 
 public class LoginTest extends ConfigTest {

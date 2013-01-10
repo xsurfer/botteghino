@@ -19,7 +19,7 @@
  * under the License.
  */
 
-package it.fperfetti.asos.botteghino.example;
+package it.fperfetti.asos.botteghino.action;
 
 public class Login extends ExampleSupport {
 

@@ -21,7 +21,6 @@
 
 package it.fperfetti.asos.botteghino.action;
 
-import it.fperfetti.asos.botteghino.example.ExampleSupport;
 
 /**
  * <code>Set welcome message.</code>
