@@ -21,14 +21,21 @@
 
 package it.fperfetti.asos.botteghino.action;
 
+import it.fperfetti.asos.botteghino.stub.HelloWorldService;
+import it.fperfetti.asos.botteghino.stub.HelloWorldService_Service;
+
 
 /**
  * <code>Set welcome message.</code>
  */
 public class Home extends ExampleSupport {
 
+		
     public String execute() throws Exception {
-        setMessage(getText(MESSAGE));
+    	
+    	HelloWorldService eP = new HelloWorldService_Service().getHelloWorld();
+    	
+        setMessage(eP.sayHelloToName("Fabio"));
         return SUCCESS;
     }
 
