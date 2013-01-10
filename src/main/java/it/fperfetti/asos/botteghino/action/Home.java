@@ -19,12 +19,14 @@
  * under the License.
  */
 
-package it.fperfetti.asos.botteghino.example;
+package it.fperfetti.asos.botteghino.action;
+
+import it.fperfetti.asos.botteghino.example.ExampleSupport;
 
 /**
  * <code>Set welcome message.</code>
  */
-public class HelloWorld extends ExampleSupport {
+public class Home extends ExampleSupport {
 
     public String execute() throws Exception {
         setMessage(getText(MESSAGE));
