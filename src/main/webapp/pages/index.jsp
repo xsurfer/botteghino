@@ -8,6 +8,9 @@
 <body>
 
 <h1>Store online!</h1>
+<h2>
+<s:property value="message" />
+</h2>
 <hr>
 
 <div>
