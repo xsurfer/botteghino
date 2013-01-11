@@ -51,6 +51,17 @@ public interface HelloWorldService {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<it.fperfetti.asos.botteghino.stub.Event>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getEvents", targetNamespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", className = "it.fperfetti.asos.botteghino.stub.GetEvents")
+    @ResponseWrapper(localName = "getEventsResponse", targetNamespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", className = "it.fperfetti.asos.botteghino.stub.GetEventsResponse")
+    public List<Event> getEvents();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns java.lang.String

@@ -21,6 +21,9 @@
 
 package it.fperfetti.asos.botteghino.action;
 
+import java.util.ArrayList;
+
+import it.fperfetti.asos.botteghino.stub.Event;
 import it.fperfetti.asos.botteghino.stub.HelloWorldService;
 import it.fperfetti.asos.botteghino.stub.HelloWorldService_Service;
 
@@ -30,19 +33,18 @@ import it.fperfetti.asos.botteghino.stub.HelloWorldService_Service;
  */
 public class Home extends ExampleSupport {
 
-		
     public String execute() throws Exception {
     	
     	HelloWorldService eP = new HelloWorldService_Service().getHelloWorld();
     	
-        setMessage(eP.sayHelloToName("Fabio"));
+    	String mess = new String();
+    	ArrayList<Event> events = (ArrayList<Event>) eP.getEvents();
+    	for (Event e : events)
+    	        mess+=e.getTitle();	
+    		
+        setMessage(mess);
         return SUCCESS;
     }
-
-    /**
-     * Provide default valuie for Message property.
-     */
-    public static final String MESSAGE = "HelloWorld.message";
 
     /**
      * Field for Message property.

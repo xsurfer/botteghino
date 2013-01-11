@@ -25,7 +25,9 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _SayHelloToNameResponse_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "sayHelloToNameResponse");
+    private final static QName _GetEvents_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "getEvents");
     private final static QName _SayHelloToNamesResponse_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "sayHelloToNamesResponse");
+    private final static QName _GetEventsResponse_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "getEventsResponse");
     private final static QName _SayHelloToName_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "sayHelloToName");
     private final static QName _SayHelloToNames_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "sayHelloToNames");
     private final static QName _SayHello_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "sayHello");
@@ -36,6 +38,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link GetEvents }
+     * 
+     */
+    public GetEvents createGetEvents() {
+        return new GetEvents();
     }
 
     /**
@@ -52,6 +62,14 @@ public class ObjectFactory {
      */
     public SayHelloToNamesResponse createSayHelloToNamesResponse() {
         return new SayHelloToNamesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetEventsResponse }
+     * 
+     */
+    public GetEventsResponse createGetEventsResponse() {
+        return new GetEventsResponse();
     }
 
     /**
@@ -87,6 +105,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ArrayList }
+     * 
+     */
+    public ArrayList createArrayList() {
+        return new ArrayList();
+    }
+
+    /**
+     * Create an instance of {@link Event }
+     * 
+     */
+    public Event createEvent() {
+        return new Event();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloToNameResponse }{@code >}}
      * 
      */
@@ -96,12 +130,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetEvents }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", name = "getEvents")
+    public JAXBElement<GetEvents> createGetEvents(GetEvents value) {
+        return new JAXBElement<GetEvents>(_GetEvents_QNAME, GetEvents.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloToNamesResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", name = "sayHelloToNamesResponse")
     public JAXBElement<SayHelloToNamesResponse> createSayHelloToNamesResponse(SayHelloToNamesResponse value) {
         return new JAXBElement<SayHelloToNamesResponse>(_SayHelloToNamesResponse_QNAME, SayHelloToNamesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetEventsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", name = "getEventsResponse")
+    public JAXBElement<GetEventsResponse> createGetEventsResponse(GetEventsResponse value) {
+        return new JAXBElement<GetEventsResponse>(_GetEventsResponse_QNAME, GetEventsResponse.class, null, value);
     }
 
     /**
