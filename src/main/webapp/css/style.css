@@ -39,6 +39,7 @@ h2.ss-subtitle:after{
 	z-index: 100;
 	border-right: 5px solid rgba(164, 166, 181, 0.8);
 	padding: 10px 15px;
+	background: rgba(26, 27, 33, 0.6);
 }
 
 .ss-links{
