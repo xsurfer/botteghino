@@ -35,7 +35,7 @@
 		</div>
 		
 		<div id="ss-cart" class="ss-cart">
-			<a href="#gennaio">Il carrello è vuoto</a>
+			<a href="#cart">Il tuo carrello è vuoto</a>
 		</div>
 		
 		<div id="ss-container" class="ss-container">
