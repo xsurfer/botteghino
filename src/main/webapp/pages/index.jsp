@@ -24,7 +24,7 @@
 
 	<div class="container">
 
-		<h1>Botteghino Online!</h1>
+		<h1>Benvenuto nel Botteghino Online! Scegli un evento e acquistalo subito: basta qualche click!!</h1>
 		<h2 class="ss-subtitle">Botteghino timeline</h2>
 		<div id="ss-links" class="ss-links">
 			<a href="#november">Gen</a> <a href="#october">Feb</a> <a
@@ -48,8 +48,7 @@
 					<div class="ss-row ss-medium">
 					<div class="ss-left">
 						<a href="http://tympanus.net/Tutorials/TypographyEffects/"
-							class="ss-circle ss-circle-1">Typography Effects with CSS3
-							and jQuery</a>
+							class="ss-circle ss-circle-1">Image</a>
 					</div>
 					<div class="ss-right">
 						<h3>
@@ -65,15 +64,14 @@
     				<div class="ss-row ss-large">
 				<div class="ss-left">
 					<h3>
-						<span>November 22, 2011</span> <a
-							href="http://tympanus.net/Development/HoverClickTriggerCircle/">Hover
-							and Click Trigger for Circular Elements with jQuery</a>
+						<span><s:property value="authore" /></span> <a
+							href="http://tympanus.net/Development/HoverClickTriggerCircle/"><s:property
+									value="title" /></a>
 					</h3>
 				</div>
 				<div class="ss-right">
 					<a href="http://tympanus.net/Development/HoverClickTriggerCircle/"
-						class="ss-circle ss-circle-2">Hover and Click Trigger for
-						Circular Elements with jQuery</a>
+						class="ss-circle ss-circle-2">Image</a>
 				</div>
 			</div>
 				</s:elseif>
@@ -81,14 +79,13 @@
     				<div class="ss-row ss-small">
 				<div class="ss-left">
 					<a href="http://tympanus.net/Tutorials/ElasticSlideshow/"
-						class="ss-circle ss-circle-3">Elastic Image Slideshow with
-						Thumbnail Preview</a>
+						class="ss-circle ss-circle-3">Image</a>
 				</div>
 				<div class="ss-right">
 					<h3>
-						<span>November 21, 2011</span> <a
-							href="http://tympanus.net/Tutorials/ElasticSlideshow/">Elastic
-							Image Slideshow with Thumbnail Preview</a>
+						<span><s:property value="authore" /></span> <a
+							href="http://tympanus.net/Tutorials/ElasticSlideshow/"><s:property
+									value="title" /></a>
 					</h3>
 				</div>
 			</div>
@@ -115,6 +112,7 @@
 	<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript">
 		$(function() {
+			alert("cia");
 
 			var $sidescroll	= (function() {
 					
