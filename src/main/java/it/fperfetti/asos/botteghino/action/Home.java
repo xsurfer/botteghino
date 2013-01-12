@@ -42,6 +42,11 @@ public class Home extends ExampleSupport {
         return SUCCESS;
     }
 
+    public String detail() throws Exception {    	
+        return SUCCESS;
+    }
+
+    
     public ArrayList<Event> getEvents() {
         return events;
     }

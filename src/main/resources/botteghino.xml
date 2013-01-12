@@ -14,6 +14,10 @@
     <action name="home" class="it.fperfetti.asos.botteghino.action.Home">
       <result>/pages/index.jsp</result>
     </action>
+    
+    <action name="detail" class="it.fperfetti.asos.botteghino.action.Home" method="detail">
+      <result>/pages/detail.jsp</result>
+    </action>
 
 <!--     <action name="Login_*" method="{1}" class="it.fperfetti.asos.botteghino.example.Login"> -->
 <!--       <result name="input">/example/Login.jsp</result> -->

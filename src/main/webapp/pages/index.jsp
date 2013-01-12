@@ -46,9 +46,6 @@
 </head>
 
 <body>
-
-	</div>
-
 	<div class="container">
 
 		<h1>Benvenuto nel Botteghino Online! Scegli un evento e acquistalo subito: basta qualche click!!</h1>
@@ -84,9 +81,14 @@
 					</div>
 					<div class="ss-right">
 						<h3>
-							<span><s:property value="authore" /></span> <a class="fancybox fancybox.ajax" href="ajax.txt" 
-								href="http://tympanus.net/Tutorials/TypographyEffects/"><s:property
-									value="title" /></a>
+							<span><s:property value="authore" /></span> 
+							
+							<s:url action="detail.action" var="URLtag">
+								<s:param name="id">event1</s:param>
+							</s:url> 
+							<s:a cssClass="fancybox fancybox.ajax" href="%{URLtag}">
+								<s:property value="title" />
+							</s:a>
 							<s:property value="description" />
 						</h3>
 					</div>
