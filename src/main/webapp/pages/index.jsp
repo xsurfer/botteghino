@@ -45,17 +45,7 @@
 
 			<s:iterator status="status" value="events">
 				<s:if test="%{(#status.index)%3==0}">
-					<div>0</div>
-				</s:if>
-				<s:elseif test="%{#status.index==1}">
-    				<div>1</div>
-				</s:elseif>
-				<s:else>
-    				<div>2</div>
-				</s:else>
-
-
-				<div class="ss-row ss-medium">
+					<div class="ss-row ss-medium">
 					<div class="ss-left">
 						<a href="http://tympanus.net/Tutorials/TypographyEffects/"
 							class="ss-circle ss-circle-1">Typography Effects with CSS3
@@ -70,13 +60,9 @@
 						</h3>
 					</div>
 				</div>
-			</s:iterator>
-
-
-
-
-
-			<div class="ss-row ss-large">
+				</s:if>
+				<s:elseif test="%{(#status.index)%3==1}">
+    				<div class="ss-row ss-large">
 				<div class="ss-left">
 					<h3>
 						<span>November 22, 2011</span> <a
@@ -90,8 +76,9 @@
 						Circular Elements with jQuery</a>
 				</div>
 			</div>
-			
-			<div class="ss-row ss-small">
+				</s:elseif>
+				<s:else>
+    				<div class="ss-row ss-small">
 				<div class="ss-left">
 					<a href="http://tympanus.net/Tutorials/ElasticSlideshow/"
 						class="ss-circle ss-circle-3">Elastic Image Slideshow with
@@ -105,6 +92,9 @@
 					</h3>
 				</div>
 			</div>
+				</s:else>
+				
+			</s:iterator>
 			
 			
 			<div class="ss-row">
