@@ -5,7 +5,7 @@
 <head>
 <title><s:text name="HelloWorld.message" /></title>
 
-<sj:head loadFromGoogle="true" />
+<%-- <sj:head loadFromGoogle="true" /> --%>
 
 <link rel="stylesheet" type="text/css" href="/css/demo.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
@@ -27,16 +27,16 @@
 		<h1>Benvenuto nel Botteghino Online! Scegli un evento e acquistalo subito: basta qualche click!!</h1>
 		<h2 class="ss-subtitle">Botteghino timeline</h2>
 		<div id="ss-links" class="ss-links">
-			<a href="#november">Gen</a> <a href="#october">Feb</a> <a
-				href="#september">Mar</a> <a href="#august">Apr</a> <a href="#july">Mag</a>
-			<a href="#june">Giu</a> <br /> <a href="#november">Lug</a> <a
-				href="#october">Ago</a> <a href="#september">Set</a> <a href="#september">Ott</a> <a
+			<a href="#gennaio">Gen</a> <a href="#febbraio">Feb</a> <a
+				href="#marzo">Mar</a> <a href="#aprile">Apr</a> <a href="#maggio">Mag</a>
+			<a href="#giugno">Giu</a> <br /> <a href="#luglio">Lug</a> <a
+				href="#agosto">Ago</a> <a href="#september">Set</a> <a href="#september">Ott</a> <a
 				href="#august">Nov</a> <a href="#july">Dic</a>
 		</div>
 		<div id="ss-container" class="ss-container">
 			<div class="ss-row">
 				<div class="ss-left">
-					<h2 id="november">Novembre</h2>
+					<h2 id="gennaio">Gennaio</h2>
 				</div>
 				<div class="ss-right">
 					<h2>Eventi</h2>
@@ -93,6 +93,59 @@
 				
 			</s:iterator>
 			
+			<div class="ss-row">
+				<div class="ss-left">
+					<h2 id="febbraio">Febbraio</h2>
+				</div>
+				<div class="ss-right">
+					<h2>Eventi</h2>
+				</div>
+			</div>
+			
+			<div class="ss-row">
+				<div class="ss-left">
+					<h2 id="marzo">Marzo</h2>
+				</div>
+				<div class="ss-right">
+					<h2>Eventi</h2>
+				</div>
+			</div>
+			
+			<div class="ss-row">
+				<div class="ss-left">
+					<h2 id="aprile">Aprile</h2>
+				</div>
+				<div class="ss-right">
+					<h2>Eventi</h2>
+				</div>
+			</div>
+			
+			<div class="ss-row">
+				<div class="ss-left">
+					<h2 id="maggio">Maggio</h2>
+				</div>
+				<div class="ss-right">
+					<h2>Eventi</h2>
+				</div>
+			</div>
+			
+			<div class="ss-row">
+				<div class="ss-left">
+					<h2 id="giungo">Giugno</h2>
+				</div>
+				<div class="ss-right">
+					<h2>Eventi</h2>
+				</div>
+			</div>
+			
+			<div class="ss-row">
+				<div class="ss-left">
+					<h2 id="luglio">Luglio</h2>
+				</div>
+				<div class="ss-right">
+					<h2>Eventi</h2>
+				</div>
+			</div>
 			
 			<div class="ss-row">
 				<div class="ss-left">
@@ -109,10 +162,10 @@
 
 	<!-- JAVASCRIPTs -->
 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript">
 		$(function() {
-			alert("cia");
 
 			var $sidescroll	= (function() {
 					
