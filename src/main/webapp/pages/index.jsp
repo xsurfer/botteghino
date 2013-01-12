@@ -58,6 +58,14 @@
 				href="#august">Nov</a> <a href="#july">Dic</a>
 		</div>
 		
+		<div id="ss-categories" class="ss-links">
+		<a href="#gennaio">Gen</a> <a href="#febbraio">Feb</a> <a
+			href="#marzo">Mar</a> <a href="#aprile">Apr</a> <a href="#maggio">Mag</a>
+		<a href="#giugno">Giu</a> <br /> <a href="#luglio">Lug</a> <a
+			href="#agosto">Ago</a> <a href="#september">Set</a> <a href="#september">Ott</a> <a
+			href="#august">Nov</a> <a href="#july">Dic</a>
+	</div>
+		
 		<div id="ss-cart" class="ss-cart">
 			<a href="#cart">Il tuo carrello è vuoto</a>
 		</div>
@@ -121,7 +129,6 @@
 				</div>
 				<div class="ss-right">
 					<h3>
-						<span><s:property value="authore" /></span> 
 						<span><s:property value="authore" /></span> 
 						<s:url action="detail.action" var="URLevent3">
 							<s:param name="idEvent"><s:property value="id" /></s:param>

@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="authore" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="category" type="{http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService}category" minOccurs="0"/>
  *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -32,6 +33,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "event", propOrder = {
     "authore",
+    "category",
     "description",
     "id",
     "location",
@@ -40,6 +42,7 @@ import javax.xml.bind.annotation.XmlType;
 public class Event {
 
     protected String authore;
+    protected Category category;
     protected String description;
     protected Integer id;
     protected String location;
@@ -67,6 +70,30 @@ public class Event {
      */
     public void setAuthore(String value) {
         this.authore = value;
+    }
+
+    /**
+     * Gets the value of the category property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Category }
+     *     
+     */
+    public Category getCategory() {
+        return category;
+    }
+
+    /**
+     * Sets the value of the category property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Category }
+     *     
+     */
+    public void setCategory(Category value) {
+        this.category = value;
     }
 
     /**

@@ -41,6 +41,31 @@ public interface FornitoreService {
     /**
      * 
      * @return
+     *     returns java.util.List<it.fperfetti.asos.botteghino.stub.Category>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCategories", targetNamespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetCategories")
+    @ResponseWrapper(localName = "getCategoriesResponse", targetNamespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetCategoriesResponse")
+    public List<Category> getCategories();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<it.fperfetti.asos.botteghino.stub.Event>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getEventsByCategory", targetNamespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventsByCategory")
+    @ResponseWrapper(localName = "getEventsByCategoryResponse", targetNamespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventsByCategoryResponse")
+    public List<Event> getEventsByCategory(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @return
      *     returns java.util.List<it.fperfetti.asos.botteghino.stub.Event>
      */
     @WebMethod
