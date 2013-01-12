@@ -25,7 +25,7 @@
 	<div class="container">
 
 		<h1>Botteghino Online!</h1>
-		<h2 class="ss-subtitle">Timeline</h2>
+		<h2 class="ss-subtitle">Botteghino timeline</h2>
 		<div id="ss-links" class="ss-links">
 			<a href="#november">Gen</a> <a href="#october">Feb</a> <a
 				href="#september">Mar</a> <a href="#august">Apr</a> <a href="#july">Mag</a>
@@ -44,6 +44,16 @@
 			</div>
 
 			<s:iterator value="events">
+				<s:if test="%{#stat.index==0}">
+					<div>0</div>
+				</s:if>
+				<s:elseif test="%{#stat.index==1}">
+    				<div>1</div>
+				</s:elseif>
+				<s:else>
+    				<div>2</div>
+				</s:else>
+
 
 				<div class="ss-row ss-medium">
 					<div class="ss-left">
