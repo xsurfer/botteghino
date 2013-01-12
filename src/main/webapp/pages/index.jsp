@@ -16,11 +16,11 @@
 <div>
 <p>Seleziona un articolo:</p>
 
-<s:iterator value="events" var="event">
+<s:iterator value="events">
   <div class="articolo">
-	<p><s:property value="event.title" /></p>
-	<p><s:property value="event.authore" /></p>
-	<p><s:property value="event.description" /></p>
+	<p><s:property value="title" /></p>
+	<p><s:property value="authore" /></p>
+	<p><s:property value="description" /></p>
 </div>
 </s:iterator>
 
