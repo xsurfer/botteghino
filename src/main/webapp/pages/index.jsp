@@ -194,7 +194,7 @@
 
 	<!-- JAVASCRIPTs -->
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<%-- 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> --%>
 	<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript">
 		$(function() {
