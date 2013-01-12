@@ -16,6 +16,33 @@
 	<![endif]-->
 <script type="text/javascript" src="/js/modernizr.custom.11333.js"></script>
 
+<!-- FANCYBOX CODE -->
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="/fancybox/jquery.fancybox.js?v=2.1.3"></script>
+	<link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox.css?v=2.1.2" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+<!-- END FANCYBOX CODE -->
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.fancybox').fancybox();
+		});
+	</script>
+
+
 </head>
 
 <body>
@@ -57,7 +84,7 @@
 					</div>
 					<div class="ss-right">
 						<h3>
-							<span><s:property value="authore" /></span> <a
+							<span><s:property value="authore" /></span> <a class="fancybox fancybox.ajax" href="ajax.txt" 
 								href="http://tympanus.net/Tutorials/TypographyEffects/"><s:property
 									value="title" /></a>
 							<s:property value="description" />
@@ -69,7 +96,7 @@
     				<div class="ss-row ss-large">
 				<div class="ss-left">
 					<h3>
-						<span><s:property value="authore" /></span> <a
+						<span><s:property value="authore" /></span> <a class="fancybox fancybox.ajax" href="ajax.txt"
 							href="http://tympanus.net/Development/HoverClickTriggerCircle/"><s:property
 									value="title" /></a>
 					</h3>
@@ -88,7 +115,7 @@
 				</div>
 				<div class="ss-right">
 					<h3>
-						<span><s:property value="authore" /></span> <a
+						<span><s:property value="authore" /></span> <a class="fancybox fancybox.ajax" href="ajax.txt" 
 							href="http://tympanus.net/Tutorials/ElasticSlideshow/"><s:property
 									value="title" /></a>
 					</h3>
