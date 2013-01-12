@@ -83,13 +83,13 @@
 						<h3>
 							<span><s:property value="authore" /></span> 
 							
-							<s:url action="detail.action" var="URLtag">
-								<s:param name="idEvent">event1</s:param>
+							<s:url action="detail.action" var="URLevent1">
+								<s:param name="idEvent"><s:property value="id" /></s:param>
 							</s:url> 
-							<s:a cssClass="fancybox fancybox.ajax" href="%{URLtag}">
+							<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent1}">
 								<s:property value="title" />
 							</s:a>
-							<s:property value="description" />
+
 						</h3>
 					</div>
 				</div>
@@ -98,9 +98,13 @@
     				<div class="ss-row ss-large">
 				<div class="ss-left">
 					<h3>
-						<span><s:property value="authore" /></span> <a class="fancybox fancybox.ajax" href="ajax.txt"
-							href="http://tympanus.net/Development/HoverClickTriggerCircle/"><s:property
-									value="title" /></a>
+						<span><s:property value="authore" /></span> 
+						<s:url action="detail.action" var="URLevent2">
+							<s:param name="idEvent"><s:property value="id" /></s:param>
+						</s:url> 
+						<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent2}">
+							<s:property value="title" />
+						</s:a>						
 					</h3>
 				</div>
 				<div class="ss-right">
@@ -117,9 +121,14 @@
 				</div>
 				<div class="ss-right">
 					<h3>
-						<span><s:property value="authore" /></span> <a class="fancybox fancybox.ajax" href="ajax.txt" 
-							href="http://tympanus.net/Tutorials/ElasticSlideshow/"><s:property
-									value="title" /></a>
+						<span><s:property value="authore" /></span> 
+						<span><s:property value="authore" /></span> 
+						<s:url action="detail.action" var="URLevent3">
+							<s:param name="idEvent"><s:property value="id" /></s:param>
+						</s:url> 
+						<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent3}">
+							<s:property value="title" />
+						</s:a>
 					</h3>
 				</div>
 			</div>
