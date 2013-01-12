@@ -5,7 +5,7 @@
 <head>
 <title><s:text name="HelloWorld.message" /></title>
 
-<%-- <sj:head loadFromGoogle="true" /> --%>
+<sj:head loadFromGoogle="true" />
 
 <link rel="stylesheet" type="text/css" href="/css/demo.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
@@ -165,8 +165,7 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript">
-	
-	$(document).ready(function() {
+		$(function() {
 
 			var $sidescroll	= (function() {
 					
