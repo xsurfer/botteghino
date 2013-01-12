@@ -3,7 +3,7 @@
 <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
 <html>
 <head>
-<title><s:text name="HelloWorld.message" /></title>
+<title>Botteghino degli Eventi</title>
 
 <sj:head loadFromGoogle="true" />
 
@@ -33,6 +33,11 @@
 				href="#agosto">Ago</a> <a href="#september">Set</a> <a href="#september">Ott</a> <a
 				href="#august">Nov</a> <a href="#july">Dic</a>
 		</div>
+		
+		<div id="ss-cart" class="ss-cart">
+			<a href="#gennaio">Il carrello è vuoto</a>
+		</div>
+		
 		<div id="ss-container" class="ss-container">
 			<div class="ss-row">
 				<div class="ss-left">
