@@ -33,39 +33,20 @@ import it.fperfetti.asos.botteghino.stub.HelloWorldService_Service;
  */
 public class Home extends ExampleSupport {
 
+	private ArrayList<Event> events;
+	
     public String execute() throws Exception {
     	
-    	HelloWorldService eP = new HelloWorldService_Service().getHelloWorld();
-    	
-    	String mess = new String();
-    	ArrayList<Event> events = (ArrayList<Event>) eP.getEvents();
-    	for (Event e : events)
-    	        mess+=e.getTitle();	
-    		
-        setMessage(mess);
+    	HelloWorldService eP = new HelloWorldService_Service().getHelloWorld();    		
+        setEvents((ArrayList<Event>) eP.getEvents());
         return SUCCESS;
     }
 
-    /**
-     * Field for Message property.
-     */
-    private String message;
-
-    /**
-     * Return Message property.
-     *
-     * @return Message property
-     */
-    public String getMessage() {
-        return message;
+    public ArrayList<Event> getEvents() {
+        return events;
     }
 
-    /**
-     * Set Message property.
-     *
-     * @param message Text to display on HelloWorld page.
-     */
-    public void setMessage(String message) {
-        this.message = message;
+    public void setEvents(ArrayList<Event> events) {
+        this.events = events;
     }
 }

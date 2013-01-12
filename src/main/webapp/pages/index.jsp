@@ -9,28 +9,20 @@
 
 <h1>Store online!</h1>
 <h2>
-<s:property value="message" />
+
 </h2>
 <hr>
 
 <div>
 <p>Seleziona un articolo:</p>
 
-<div class="articolo">
-	<p>Tipo</p>
-	<p>Autore</p>
-	<p>Data</p>
-	<p>Descrizione</p>
-	<p>Prezzo</p>
+<s:iterator value="events" var="event">
+  <div class="articolo">
+	<p><s:property value="event.title" /></p>
+	<p><s:property value="event.authore" /></p>
+	<p><s:property value="event.description" /></p>
 </div>
-
-<div class="articolo">
-	<p>Tipo</p>
-	<p>Autore</p>
-	<p>Data</p>
-	<p>Descrizione</p>
-	<p>Prezzo</p>
-</div>
+</s:iterator>
 
 </div>
 
