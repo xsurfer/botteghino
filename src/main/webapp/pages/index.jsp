@@ -84,7 +84,7 @@
 							<span><s:property value="authore" /></span> 
 							
 							<s:url action="detail.action" var="URLtag">
-								<s:param name="id">event1</s:param>
+								<s:param name="idEvent">event1</s:param>
 							</s:url> 
 							<s:a cssClass="fancybox fancybox.ajax" href="%{URLtag}">
 								<s:property value="title" />

@@ -24,9 +24,8 @@ package it.fperfetti.asos.botteghino.action;
 import java.util.ArrayList;
 
 import it.fperfetti.asos.botteghino.stub.Event;
-import it.fperfetti.asos.botteghino.stub.HelloWorldService;
-import it.fperfetti.asos.botteghino.stub.HelloWorldService_Service;
-
+import it.fperfetti.asos.botteghino.stub.FornitoreService;
+import it.fperfetti.asos.botteghino.stub.FornitoreService_Service;
 
 /**
  * <code>Set welcome message.</code>
@@ -34,15 +33,18 @@ import it.fperfetti.asos.botteghino.stub.HelloWorldService_Service;
 public class Home extends ExampleSupport {
 
 	private ArrayList<Event> events;
+	private Event event;
+	private Integer idEvent; 
 	
-    public String execute() throws Exception {
-    	
-    	HelloWorldService eP = new HelloWorldService_Service().getHelloWorld();    		
+    public String execute() throws Exception {    	
+    	FornitoreService eP = new FornitoreService_Service().getFornitore();    		
         setEvents((ArrayList<Event>) eP.getEvents());
         return SUCCESS;
     }
 
-    public String detail() throws Exception {    	
+    public String detail() throws Exception { 
+    	FornitoreService eP = new FornitoreService_Service().getFornitore();    		
+    	setEvent(eP.getEvent(idEvent));    	
         return SUCCESS;
     }
 
@@ -54,4 +56,20 @@ public class Home extends ExampleSupport {
     public void setEvents(ArrayList<Event> events) {
         this.events = events;
     }
+
+	public Integer getIdEvent() {
+		return idEvent;
+	}
+
+	public void setIdEvent(Integer idEvent) {
+		this.idEvent = idEvent;
+	}
+
+	public Event getEvent() {
+		return event;
+	}
+
+	public void setEvent(Event event) {
+		this.event = event;
+	}
 }

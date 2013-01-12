@@ -24,14 +24,10 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _SayHelloToNameResponse_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "sayHelloToNameResponse");
-    private final static QName _GetEvents_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "getEvents");
-    private final static QName _SayHelloToNamesResponse_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "sayHelloToNamesResponse");
-    private final static QName _GetEventsResponse_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "getEventsResponse");
-    private final static QName _SayHelloToName_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "sayHelloToName");
-    private final static QName _SayHelloToNames_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "sayHelloToNames");
-    private final static QName _SayHello_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "sayHello");
-    private final static QName _SayHelloResponse_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", "sayHelloResponse");
+    private final static QName _GetEventsResponse_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "getEventsResponse");
+    private final static QName _GetEvent_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "getEvent");
+    private final static QName _GetEvents_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "getEvents");
+    private final static QName _GetEventResponse_QNAME = new QName("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "getEventResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: it.fperfetti.asos.botteghino.stub
@@ -49,19 +45,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SayHelloToNameResponse }
+     * Create an instance of {@link GetEventResponse }
      * 
      */
-    public SayHelloToNameResponse createSayHelloToNameResponse() {
-        return new SayHelloToNameResponse();
-    }
-
-    /**
-     * Create an instance of {@link SayHelloToNamesResponse }
-     * 
-     */
-    public SayHelloToNamesResponse createSayHelloToNamesResponse() {
-        return new SayHelloToNamesResponse();
+    public GetEventResponse createGetEventResponse() {
+        return new GetEventResponse();
     }
 
     /**
@@ -73,35 +61,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SayHelloToNames }
+     * Create an instance of {@link GetEvent }
      * 
      */
-    public SayHelloToNames createSayHelloToNames() {
-        return new SayHelloToNames();
-    }
-
-    /**
-     * Create an instance of {@link SayHelloResponse }
-     * 
-     */
-    public SayHelloResponse createSayHelloResponse() {
-        return new SayHelloResponse();
-    }
-
-    /**
-     * Create an instance of {@link SayHello }
-     * 
-     */
-    public SayHello createSayHello() {
-        return new SayHello();
-    }
-
-    /**
-     * Create an instance of {@link SayHelloToName }
-     * 
-     */
-    public SayHelloToName createSayHelloToName() {
-        return new SayHelloToName();
+    public GetEvent createGetEvent() {
+        return new GetEvent();
     }
 
     /**
@@ -121,75 +85,39 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloToNameResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetEventsResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", name = "sayHelloToNameResponse")
-    public JAXBElement<SayHelloToNameResponse> createSayHelloToNameResponse(SayHelloToNameResponse value) {
-        return new JAXBElement<SayHelloToNameResponse>(_SayHelloToNameResponse_QNAME, SayHelloToNameResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "getEventsResponse")
+    public JAXBElement<GetEventsResponse> createGetEventsResponse(GetEventsResponse value) {
+        return new JAXBElement<GetEventsResponse>(_GetEventsResponse_QNAME, GetEventsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetEvent }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "getEvent")
+    public JAXBElement<GetEvent> createGetEvent(GetEvent value) {
+        return new JAXBElement<GetEvent>(_GetEvent_QNAME, GetEvent.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetEvents }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", name = "getEvents")
+    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "getEvents")
     public JAXBElement<GetEvents> createGetEvents(GetEvents value) {
         return new JAXBElement<GetEvents>(_GetEvents_QNAME, GetEvents.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloToNamesResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetEventResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", name = "sayHelloToNamesResponse")
-    public JAXBElement<SayHelloToNamesResponse> createSayHelloToNamesResponse(SayHelloToNamesResponse value) {
-        return new JAXBElement<SayHelloToNamesResponse>(_SayHelloToNamesResponse_QNAME, SayHelloToNamesResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetEventsResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", name = "getEventsResponse")
-    public JAXBElement<GetEventsResponse> createGetEventsResponse(GetEventsResponse value) {
-        return new JAXBElement<GetEventsResponse>(_GetEventsResponse_QNAME, GetEventsResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloToName }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", name = "sayHelloToName")
-    public JAXBElement<SayHelloToName> createSayHelloToName(SayHelloToName value) {
-        return new JAXBElement<SayHelloToName>(_SayHelloToName_QNAME, SayHelloToName.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloToNames }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", name = "sayHelloToNames")
-    public JAXBElement<SayHelloToNames> createSayHelloToNames(SayHelloToNames value) {
-        return new JAXBElement<SayHelloToNames>(_SayHelloToNames_QNAME, SayHelloToNames.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SayHello }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", name = "sayHello")
-    public JAXBElement<SayHello> createSayHello(SayHello value) {
-        return new JAXBElement<SayHello>(_SayHello_QNAME, SayHello.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService", name = "sayHelloResponse")
-    public JAXBElement<SayHelloResponse> createSayHelloResponse(SayHelloResponse value) {
-        return new JAXBElement<SayHelloResponse>(_SayHelloResponse_QNAME, SayHelloResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "getEventResponse")
+    public JAXBElement<GetEventResponse> createGetEventResponse(GetEventResponse value) {
+        return new JAXBElement<GetEventResponse>(_GetEventResponse_QNAME, GetEventResponse.class, null, value);
     }
 
 }

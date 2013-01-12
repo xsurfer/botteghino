@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;complexType name="arrayList">
  *   &lt;complexContent>
- *     &lt;extension base="{http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/HelloWorldService}abstractList">
+ *     &lt;extension base="{http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService}abstractList">
  *       &lt;sequence>
  *       &lt;/sequence>
  *     &lt;/extension>
