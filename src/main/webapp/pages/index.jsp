@@ -44,10 +44,10 @@
 			</div>
 
 			<s:iterator value="events">
-				<s:if test="%{#stat.index==0}">
+				<s:if test="%{#events.index==0}">
 					<div>0</div>
 				</s:if>
-				<s:elseif test="%{#stat.index==1}">
+				<s:elseif test="%{#events.index==1}">
     				<div>1</div>
 				</s:elseif>
 				<s:else>
