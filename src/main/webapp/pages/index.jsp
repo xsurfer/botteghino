@@ -1,7 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
-<html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Botteghino degli Eventi</title>
 
@@ -33,7 +35,8 @@
 
 	<!-- Add Media helper (this is optional) -->
 	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5" />
-<!-- END FANCYBOX CODE -->
+	
+	<!-- END FANCYBOX CODE -->
 
 	<script type="text/javascript">
 		$(document).ready(function() {
