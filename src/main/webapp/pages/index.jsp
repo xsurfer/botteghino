@@ -9,31 +9,30 @@
 
 <link rel="stylesheet" type="text/css" href="/css/demo.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
-<link href='http://fonts.googleapis.com/css?family=Kelly+Slab'
-	rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Kelly+Slab' rel='stylesheet' type='text/css' />
 <!--[if lt IE 9]>
 		<link rel="stylesheet" type="text/css" href="css/styleIE.css" />
 	<![endif]-->
-<script type="text/javascript" src="/js/modernizr.custom.11333.js"></script>
+<script type="text/javascript" src="/js/modernizr.custom.11333.js" />
 
 <!-- FANCYBOX CODE -->
 	<!-- Add mousewheel plugin (this is optional) -->
-	<script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js"></script>
+	<script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js" />
 
 	<!-- Add fancyBox main JS and CSS files -->
-	<script type="text/javascript" src="/fancybox/jquery.fancybox.js?v=2.1.3"></script>
+	<script type="text/javascript" src="/fancybox/jquery.fancybox.js?v=2.1.3" />
 	<link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox.css?v=2.1.2" media="screen" />
 
 	<!-- Add Button helper (this is optional) -->
 	<link rel="stylesheet" type="text/css" href="/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
-	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5" />
 
 	<!-- Add Thumbnail helper (this is optional) -->
 	<link rel="stylesheet" type="text/css" href="/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
-	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7" />
 
 	<!-- Add Media helper (this is optional) -->
-	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5" />
 <!-- END FANCYBOX CODE -->
 
 	<script type="text/javascript">
