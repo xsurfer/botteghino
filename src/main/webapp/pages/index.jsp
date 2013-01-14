@@ -42,7 +42,17 @@
 	<script type="text/javascript">
 		/* <![CDATA[ */
 		$(document).ready(function() {
-			$('.fancybox').fancybox();
+			$('.fancybox').fancybox({
+				maxWidth	: 800,
+				maxHeight	: 600,
+				fitToView	: false,
+				width		: '300px',
+				height		: '200px',
+				autoSize	: false,
+				closeClick	: true,
+				openEffect	: 'none',
+				closeEffect	: 'none'
+			});
 		});
 		/* ]]> */
 	</script>
@@ -54,7 +64,6 @@
 				event.stopPropagation();
 				var href = $(this).attr('href');
 				href = href.substr(1,href.length);
-				alert(href);
 				
 				if(href == 'all'){
 					$("#ss-container .ss-medium").fadeIn();
@@ -83,6 +92,8 @@
 		<h1>Benvenuto nel Botteghino Online! Scegli un evento e acquistalo subito: basta qualche click!!</h1>
 		<h2 class="ss-subtitle">Botteghino timeline</h2>
 		<div id="ss-links" class="ss-links">
+
+		<!--
 			<a href="#gennaio">Gen</a>
 			<a href="#febbraio">Feb</a>
 			<a href="#marzo">Mar</a> 
@@ -95,6 +106,7 @@
 			<a href="#september">Ott</a>
 			<a href="#august">Nov</a>
 			<a href="#july">Dic</a>
+		-->
 					
 			<div id="ss-categories" class="ss-categories">
 				<a href="#all">Tutti</a>
@@ -103,9 +115,7 @@
 				</s:iterator>
 			</div>
 				
-		</div>
-		
-		
+		</div>		
 		
 		<div id="ss-cart" class="ss-cart">
 			<a href="#cart">Il tuo carrello è vuoto</a>
