@@ -23,6 +23,7 @@ package it.fperfetti.asos.botteghino.action;
 
 import java.util.ArrayList;
 
+import it.fperfetti.asos.botteghino.stub.Category;
 import it.fperfetti.asos.botteghino.stub.Event;
 import it.fperfetti.asos.botteghino.stub.FornitoreService;
 import it.fperfetti.asos.botteghino.stub.FornitoreService_Service;
@@ -34,11 +35,15 @@ public class Home extends ExampleSupport {
 
 	private ArrayList<Event> events;
 	private Event event;
+	private ArrayList<Category> categories;
+
 	private Integer idEvent; 
 	
     public String execute() throws Exception {    	
     	FornitoreService eP = new FornitoreService_Service().getFornitore();    		
         setEvents((ArrayList<Event>) eP.getEvents());
+        setCategories((ArrayList<Category>) eP.getCategories());
+        
         return SUCCESS;
     }
 
@@ -72,4 +77,13 @@ public class Home extends ExampleSupport {
 	public void setEvent(Event event) {
 		this.event = event;
 	}
+	
+	public ArrayList<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(ArrayList<Category> categories) {
+		this.categories = categories;
+	}
+
 }
