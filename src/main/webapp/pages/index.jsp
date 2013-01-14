@@ -67,7 +67,7 @@
 			<a href="#august">Nov</a>
 			<a href="#july">Dic</a>
 					
-			<div id="ss-categories" class="ss-links ss-categories">
+			<div id="ss-categories" class="ss-categories">
 				<s:iterator value="categories">				
 					<a href="#name"><s:property value="description" /></a>
 				</s:iterator>
