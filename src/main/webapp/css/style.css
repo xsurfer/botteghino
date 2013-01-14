@@ -70,7 +70,7 @@ h2.ss-subtitle:after{
 	background: rgba(0,0,0,0.4);
 }
 
-.ss-links#ss-categories a{
+#ss-categories a{
 	background: rgba(0,0,0,0.2);
 	font-size: 16px;
 	height: 40px;
@@ -86,7 +86,7 @@ h2.ss-subtitle:after{
 	transition: background 0.2s linear;
 	border-radius: 0;
 }
-.ss-links#ss-categories a:hover{
+#ss-categories a:hover{
 	background: rgba(0,0,0,0.4);
 }
 
