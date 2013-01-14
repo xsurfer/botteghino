@@ -54,14 +54,20 @@
 		<h1>Benvenuto nel Botteghino Online! Scegli un evento e acquistalo subito: basta qualche click!!</h1>
 		<h2 class="ss-subtitle">Botteghino timeline</h2>
 		<div id="ss-links" class="ss-links">
-			<a href="#gennaio">Gen</a> <a href="#febbraio">Feb</a> <a
-				href="#marzo">Mar</a> <a href="#aprile">Apr</a> <a href="#maggio">Mag</a>
-			<a href="#giugno">Giu</a> <br /> <a href="#luglio">Lug</a> <a
-				href="#agosto">Ago</a> <a href="#september">Set</a> <a href="#september">Ott</a> <a
-				href="#august">Nov</a> <a href="#july">Dic</a>
-				
-				
-				<div id="ss-categories" class="ss-categories">
+			<a href="#gennaio">Gen</a>
+			<a href="#febbraio">Feb</a>
+			<a href="#marzo">Mar</a> 
+			<a href="#aprile">Apr</a> 
+			<a href="#maggio">Mag</a>
+			<a href="#giugno">Giu</a> <br /> 
+			<a href="#luglio">Lug</a> 
+			<a href="#agosto">Ago</a>
+			<a href="#september">Set</a>
+			<a href="#september">Ott</a>
+			<a href="#august">Nov</a>
+			<a href="#july">Dic</a>
+					
+			<div id="ss-categories" class="ss-links ss-categories">
 				<s:iterator value="categories">				
 					<a href="#name"><s:property value="description" /></a>
 				</s:iterator>
