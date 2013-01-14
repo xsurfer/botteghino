@@ -40,9 +40,31 @@
 	<!-- END FANCYBOX CODE -->
 
 	<script type="text/javascript">
+		/* <![CDATA[ */
 		$(document).ready(function() {
 			$('.fancybox').fancybox();
 		});
+		/* ]]> */
+	</script>
+	
+	<script type="text/javascript">
+	/* <![CDATA[ */
+		$(document).ready(function() {
+			$('#ss-categories a').click(function(){
+				var cat = $(this).attr("href");
+				alert(cat);
+				
+				$("ss-medium").not('.'+cat).fadeOut();
+				$("ss-small").not('.'+cat).fadeOut();
+				$("ss-large").not('.'+cat).fadeOut();
+				
+				$("ss-medium").('.'+cat).fadeIn();
+				$("ss-small").('.'+cat).fadeIn();
+				$("ss-large").('.'+cat).fadeIn();
+				
+			});
+		});
+		/* ]]> */
 	</script>
 
 
@@ -69,7 +91,7 @@
 					
 			<div id="ss-categories" class="ss-categories">
 				<s:iterator value="categories">				
-					<a href="#<s:property value="description" />"><s:property value="description" /></a>
+					<a href="#<s:property value="name" />"><s:property value="description" /></a>
 				</s:iterator>
 			</div>
 				
@@ -93,7 +115,7 @@
 
 			<s:iterator status="status" value="events">
 				<s:if test="%{(#status.index)%3==0}">
-					<div class="ss-row ss-medium">
+					<div class="ss-row ss-medium <s:property value="category.name" />">
 					<div class="ss-left">
 						<a href="http://tympanus.net/Tutorials/TypographyEffects/"
 							class="ss-circle ss-circle-1">Image</a>
@@ -114,7 +136,7 @@
 				</div>
 				</s:if>
 				<s:elseif test="%{(#status.index)%3==1}">
-    				<div class="ss-row ss-large">
+    				<div class="ss-row ss-large <s:property value="category.name" />">
 				<div class="ss-left">
 					<h3>
 						<span><s:property value="authore" /></span> 
@@ -133,7 +155,7 @@
 			</div>
 				</s:elseif>
 				<s:else>
-    				<div class="ss-row ss-small">
+    				<div class="ss-row ss-small <s:property value="category.name" />">
 				<div class="ss-left">
 					<a href="http://tympanus.net/Tutorials/ElasticSlideshow/"
 						class="ss-circle ss-circle-3">Image</a>
