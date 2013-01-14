@@ -53,7 +53,8 @@
 			$('#ss-categories a').click(function(event){
 				event.stopPropagation();
 				var href = $(this).attr('href');
-				alert(href.substr(1,href.length));
+				href = href.substr(1,href.length);
+				alert(href);
 				
 				$(".ss-medium").not("." + href).fadeOut();
 				$(".ss-small").not("." + href).fadeOut();
