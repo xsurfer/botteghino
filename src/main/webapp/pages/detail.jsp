@@ -6,3 +6,8 @@
 <h3><s:property value="event.title" /></h3>
 <p><s:property value="event.description" /></p>
 <h3><s:property value="event.location" /></h3>
+
+<s:form action="setEvent">
+  <s:textfield name="quantity" label="Quantità" />
+  <s:submit value="Aggiungi" />
+</s:form>
