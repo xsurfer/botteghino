@@ -56,13 +56,13 @@
 				href = href.substr(1,href.length);
 				alert(href);
 				
-				$(".ss-medium").not("." + href).fadeOut();
-				$(".ss-small").not("." + href).fadeOut();
-				$(".ss-large").not("." + href).fadeOut();
+				$("#ss-container .ss-medium").not("." + href).fadeOut();
+				$("#ss-container .ss-small").not("." + href).fadeOut();
+				$("#ss-container .ss-large").not("." + href).fadeOut();
 				
-				$(".ss-medium").("." + href).fadeIn();
-				$(".ss-small").("." + href).fadeIn();
-				$(".ss-large").("." + href).fadeIn();
+				$("#ss-container ." + href).fadeIn();
+				$("#ss-container ." + href).fadeIn();
+				$("#ss-container ." + href).fadeIn();
 				
 			});
 		});
