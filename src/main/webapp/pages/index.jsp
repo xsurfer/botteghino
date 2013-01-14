@@ -59,13 +59,17 @@
 			<a href="#giugno">Giu</a> <br /> <a href="#luglio">Lug</a> <a
 				href="#agosto">Ago</a> <a href="#september">Set</a> <a href="#september">Ott</a> <a
 				href="#august">Nov</a> <a href="#july">Dic</a>
+				
+				
+				<div id="ss-categories" class="ss-categories">
+				<s:iterator value="categories">				
+					<a href="#name"><s:property value="description" /></a>
+				</s:iterator>
+			</div>
+				
 		</div>
 		
-		<div id="ss-categories" class="ss-links">
-			<s:iterator value="categories">				
-				<a href="#name"><s:property value="description" /></a>
-			</s:iterator>
-		</div>
+		
 		
 		<div id="ss-cart" class="ss-cart">
 			<a href="#cart">Il tuo carrello è vuoto</a>
