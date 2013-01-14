@@ -8,6 +8,6 @@
 <h3><s:property value="event.location" /></h3>
 
 <s:form action="setEvent">
-  <s:textfield name="quantity" label="Quantità" />
+  <s:textfield name="quantity" size="2" label="Quantità" />
   <s:submit value="Aggiungi" />
 </s:form>
