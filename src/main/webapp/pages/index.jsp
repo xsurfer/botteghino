@@ -50,17 +50,18 @@
 	<script type="text/javascript">
 	/* <![CDATA[ */
 		$(document).ready(function() {
-			$('#ss-categories a').click(function(){
+			$('#ss-categories a').click(function(event){
+				event.stopPropagation();
 				var cat = $(this).attr("href");
 				alert(cat);
 				
-				$("ss-medium").not('.'+cat).fadeOut();
-				$("ss-small").not('.'+cat).fadeOut();
-				$("ss-large").not('.'+cat).fadeOut();
+				$(".ss-medium").not('.'+cat).fadeOut();
+				$(".ss-small").not('.'+cat).fadeOut();
+				$(".ss-large").not('.'+cat).fadeOut();
 				
-				$("ss-medium").('.'+cat).fadeIn();
-				$("ss-small").('.'+cat).fadeIn();
-				$("ss-large").('.'+cat).fadeIn();
+				$(".ss-medium").('.'+cat).fadeIn();
+				$(".ss-small").('.'+cat).fadeIn();
+				$(".ss-large").('.'+cat).fadeIn();
 				
 			});
 		});
