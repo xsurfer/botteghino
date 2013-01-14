@@ -53,16 +53,16 @@
 			$('#ss-categories a').click(function(event){
 				event.stopPropagation();
 				var href = $(this).attr('href');
-				alert(href.substr(2,href.length));
+				alert(href.substr(1,href.length));
 				
-	/*			$(".ss-medium").not("." + href).fadeOut();
+				$(".ss-medium").not("." + href).fadeOut();
 				$(".ss-small").not("." + href).fadeOut();
 				$(".ss-large").not("." + href).fadeOut();
 				
 				$(".ss-medium").("." + href).fadeIn();
 				$(".ss-small").("." + href).fadeIn();
 				$(".ss-large").("." + href).fadeIn();
-				*/
+				
 			});
 		});
 		/* ]]> */
