@@ -69,7 +69,7 @@
 					
 			<div id="ss-categories" class="ss-categories">
 				<s:iterator value="categories">				
-					<a href="#name"><s:property value="description" /></a>
+					<a href="#<s:property value="description" />"><s:property value="description" /></a>
 				</s:iterator>
 			</div>
 				
