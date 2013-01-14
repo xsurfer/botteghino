@@ -56,14 +56,19 @@
 				href = href.substr(1,href.length);
 				alert(href);
 				
-				$("#ss-container .ss-medium").not("." + href).fadeOut();
-				$("#ss-container .ss-small").not("." + href).fadeOut();
-				$("#ss-container .ss-large").not("." + href).fadeOut();
-				
-				$("#ss-container ." + href).fadeIn();
-				$("#ss-container ." + href).fadeIn();
-				$("#ss-container ." + href).fadeIn();
-				
+				if(href == 'all'){
+					$("#ss-container .ss-medium").fadeIn();
+					$("#ss-container .ss-small").fadeIn();
+					$("#ss-container .ss-large").fadeIn();
+				} else {
+					$("#ss-container .ss-medium").not("." + href).fadeOut();
+					$("#ss-container .ss-small").not("." + href).fadeOut();
+					$("#ss-container .ss-large").not("." + href).fadeOut();
+					
+					$("#ss-container ." + href).fadeIn();
+					$("#ss-container ." + href).fadeIn();
+					$("#ss-container ." + href).fadeIn();
+				}
 			});
 		});
 		/* ]]> */
@@ -92,6 +97,7 @@
 			<a href="#july">Dic</a>
 					
 			<div id="ss-categories" class="ss-categories">
+				<a href="#all">Tutti</a>
 				<s:iterator value="categories">				
 					<a href="#<s:property value="name" />"><s:property value="description" /></a>
 				</s:iterator>
