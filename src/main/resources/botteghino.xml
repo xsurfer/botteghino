@@ -20,7 +20,7 @@
     </action>
     
     <action name="addEvent" class="it.fperfetti.asos.botteghino.action.EventAction" method="add">
-      <result type="redirect-action">
+      <result name="success" type="redirect-action">
          <param name="actionName">home</param>
          <param name="namespace">/</param>
       </result>
