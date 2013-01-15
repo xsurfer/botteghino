@@ -44,9 +44,6 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	private Integer idEvent;
 	private String quantity;
 	
-	
-	private Integer itemId;
-	
 	public String update() throws Exception {
     	if (!session.containsKey("carrello")){
     		cart = new Cart();

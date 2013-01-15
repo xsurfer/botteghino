@@ -24,7 +24,16 @@
          <param name="actionName">home</param>
          <param name="namespace">/</param>
       </result>
-    </action>   
+    </action>  
+    
+    <action name="updateEvent" class="it.fperfetti.asos.botteghino.action.CartAction" method="update">
+      <result name="success" type="redirectAction">
+         <param name="actionName">checkout</param>
+         <param name="namespace">/</param>
+      </result>
+    </action>  
+    
+     
     
     <action name="checkout" class="it.fperfetti.asos.botteghino.action.CartAction" method="checkout">
     	<result>/pages/checkout.jsp</result>
