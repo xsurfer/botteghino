@@ -8,7 +8,8 @@
 <h3><s:property value="event.location" /></h3>
 
 <s:form action="addEvent">
-  <s:hidden name="idEvent" value="#session.event.id" />
+  <s:set name="idEvento" value="event.id"/>
+  <s:hidden name="idEvent" value="#idEvento" />
   <s:textfield name="quantity" size="2" value="1" label="Quantità" /><br />
   <s:submit value="Aggiungi" />
 </s:form>
