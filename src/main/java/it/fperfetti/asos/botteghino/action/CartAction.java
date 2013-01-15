@@ -36,13 +36,14 @@ import it.fperfetti.asos.botteghino.stub.FornitoreService_Service;
 /**
  * <code>Set welcome message.</code>
  */
-public class EventAction extends ExampleSupport implements SessionAware {
+public class CartAction extends ExampleSupport implements SessionAware {
 
 	Map<String, Object> session;
 	private Cart cart;
 	private Event event;
 	private Integer idEvent; 
 	private String quantity;
+	
 	
     public String add() throws Exception {
     	if (!session.containsKey("carrello")){
@@ -59,6 +60,26 @@ public class EventAction extends ExampleSupport implements SessionAware {
     	
         return SUCCESS;
     }
+    
+    
+    private ArrayList<OrderItem> items;
+    
+	public String checkout() throws Exception {
+    	if (!session.containsKey("carrello")){
+    		cart = new Cart();
+    	    session.put("carrello", cart);
+    	} else {
+    		cart = (Cart) session.get("carrello");
+    	}
+    	
+    	items = cart.getItems();
+    	
+        return SUCCESS;
+    }
+
+	public Cart getCart() {
+		return cart;
+	}
 
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
@@ -86,5 +107,13 @@ public class EventAction extends ExampleSupport implements SessionAware {
 
 	public void setEvent(Event event) {
 		this.event = event;
+	}
+	
+    public ArrayList<OrderItem> getItems() {
+		return items;
+	}
+
+	public void setItems(ArrayList<OrderItem> items) {
+		this.items = items;
 	}
 }

@@ -19,12 +19,16 @@
       <result>/pages/detail.jsp</result>
     </action>
     
-    <action name="addEvent" class="it.fperfetti.asos.botteghino.action.EventAction" method="add">
+    <action name="addEvent" class="it.fperfetti.asos.botteghino.action.CartAction" method="add">
       <result name="success" type="redirectAction">
          <param name="actionName">home</param>
          <param name="namespace">/</param>
       </result>
     </action>   
+    
+    <action name="checkout" class="it.fperfetti.asos.botteghino.action.CartAction" method="checkout">
+    	<result>/pages/checkout.jsp</result>
+    </action> 
     
 
 <!--     <action name="Login_*" method="{1}" class="it.fperfetti.asos.botteghino.example.Login"> -->
