@@ -51,13 +51,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
     	} else {
     		cart = (Cart) session.get("carrello");
     	}
-    	
-    	
-    	FornitoreService eP = new FornitoreService_Service().getFornitore();
-    	event = eP.getEvent(idEvent);
-    	OrderItem ord = new OrderItem(event,Integer.parseInt(quantity));
-    	cart.addItem(ord);
-    	
+    	    	
         return SUCCESS;
     }
 	
