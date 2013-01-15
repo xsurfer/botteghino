@@ -119,8 +119,11 @@
 		
 		<div id="ss-cart" class="ss-cart">
 			<s:property value="cart.numberItems" /> eventi selezionati<br />
-			Totale: <s:property value="cart.total" /> &euro;
-			<a href="#cart"><img src="/images/checkout.png" /></a> 
+			Totale: <s:property value="cart.total" /> &euro;<br />
+			<s:url action="checkout" var="checkoutUrl" />			
+			<s:a href="%{checkoutUrl}">
+				<img src="/images/checkout.png" />
+			</s:a>
 		</div>
 		
 		<div id="ss-container" class="ss-container">
