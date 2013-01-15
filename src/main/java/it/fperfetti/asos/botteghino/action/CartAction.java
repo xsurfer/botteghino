@@ -41,9 +41,28 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	Map<String, Object> session;
 	private Cart cart;
 	private Event event;
-	private Integer idEvent; 
+	private Integer idEvent;
 	private String quantity;
 	
+	
+	private Integer itemId;
+	
+	public String update() throws Exception {
+    	if (!session.containsKey("carrello")){
+    		cart = new Cart();
+    	    session.put("carrello", cart);
+    	} else {
+    		cart = (Cart) session.get("carrello");
+    	}
+    	
+    	
+    	FornitoreService eP = new FornitoreService_Service().getFornitore();
+    	event = eP.getEvent(idEvent);
+    	OrderItem ord = new OrderItem(event,Integer.parseInt(quantity));
+    	cart.addItem(ord);
+    	
+        return SUCCESS;
+    }
 	
     public String add() throws Exception {
     	if (!session.containsKey("carrello")){
