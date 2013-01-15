@@ -17,10 +17,12 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="authore" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="availability" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="category" type="{http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService}category" minOccurs="0"/>
  *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="location" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
  *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -33,19 +35,23 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "event", propOrder = {
     "authore",
+    "availability",
     "category",
     "description",
     "id",
     "location",
+    "price",
     "title"
 })
 public class Event {
 
     protected String authore;
+    protected Integer availability;
     protected Category category;
     protected String description;
     protected Integer id;
     protected String location;
+    protected Double price;
     protected String title;
 
     /**
@@ -70,6 +76,30 @@ public class Event {
      */
     public void setAuthore(String value) {
         this.authore = value;
+    }
+
+    /**
+     * Gets the value of the availability property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getAvailability() {
+        return availability;
+    }
+
+    /**
+     * Sets the value of the availability property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setAvailability(Integer value) {
+        this.availability = value;
     }
 
     /**
@@ -169,6 +199,30 @@ public class Event {
     }
 
     /**
+     * Gets the value of the price property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
+     */
+    public Double getPrice() {
+        return price;
+    }
+
+    /**
+     * Sets the value of the price property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
+     */
+    public void setPrice(Double value) {
+        this.price = value;
+    }
+
+    /**
      * Gets the value of the title property.
      * 
      * @return
@@ -191,10 +245,5 @@ public class Event {
     public void setTitle(String value) {
         this.title = value;
     }
-
-	public Integer getPrice() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
