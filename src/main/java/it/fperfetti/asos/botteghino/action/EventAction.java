@@ -79,6 +79,12 @@ public class EventAction extends ExampleSupport implements SessionAware {
 	public void setQuantity(String quantity) {
 		this.quantity = quantity;
 	}
+	
+	public Event getEvent() {
+		return event;
+	}
 
-
+	public void setEvent(Event event) {
+		this.event = event;
+	}
 }
