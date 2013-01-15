@@ -34,7 +34,7 @@ h2.ss-subtitle:after{
 	position: fixed;
 	right: 10px;
 	top: 166px;
-	width: 25%;
+	width: 15%;
 	height: 40px;
 	z-index: 100;
 	border-right: 5px solid rgba(164, 166, 181, 0.8);

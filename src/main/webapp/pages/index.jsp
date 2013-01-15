@@ -118,9 +118,9 @@
 		</div>		
 		
 		<div id="ss-cart" class="ss-cart">
-			<s:property value="cart.numberItems" /><br />
-			Totale: <s:property value="cart.total" />
-<!--			<a href="#cart">Il tuo carrello è vuoto</a> -->
+			<s:property value="cart.numberItems" /> eventi selezionati<br />
+			Totale: <s:property value="cart.total" /> &euro;
+			<a href="#cart"><img src="/images/checkout.png" /></a> 
 		</div>
 		
 		<div id="ss-container" class="ss-container">
