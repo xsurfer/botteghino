@@ -49,7 +49,7 @@
 				width		: '300px',
 				height		: '200px',
 				autoSize	: false,
-				closeClick	: true,
+				closeClick	: false,
 				openEffect	: 'none',
 				closeEffect	: 'none'
 			});
@@ -118,7 +118,9 @@
 		</div>		
 		
 		<div id="ss-cart" class="ss-cart">
-			<a href="#cart">Il tuo carrello è vuoto</a>
+			<s:property value="cart.numberItems" /><br />
+			Totale: <s:property value="cart.total" />
+<!--			<a href="#cart">Il tuo carrello è vuoto</a> -->
 		</div>
 		
 		<div id="ss-container" class="ss-container">

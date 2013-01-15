@@ -27,6 +27,7 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import it.fperfetti.asos.botteghino.model.Cart;
+import it.fperfetti.asos.botteghino.model.OrderItem;
 import it.fperfetti.asos.botteghino.stub.Category;
 import it.fperfetti.asos.botteghino.stub.Event;
 import it.fperfetti.asos.botteghino.stub.FornitoreService;
@@ -35,19 +36,15 @@ import it.fperfetti.asos.botteghino.stub.FornitoreService_Service;
 /**
  * <code>Set welcome message.</code>
  */
-public class Home extends ExampleSupport implements SessionAware {
+public class EventAction extends ExampleSupport implements SessionAware {
 
 	Map<String, Object> session;
 	private Cart cart;
-	private ArrayList<Event> events;
 	private Event event;
-	private ArrayList<Category> categories;
-
 	private Integer idEvent; 
+	private String quantity;
 	
-	
-    public String execute() throws Exception {
-    	
+    public String add() throws Exception {
     	if (!session.containsKey("carrello")){
     		cart = new Cart();
     	    session.put("carrello", cart);
@@ -55,27 +52,18 @@ public class Home extends ExampleSupport implements SessionAware {
     		cart = (Cart) session.get("carrello");
     	}
     	
-    	FornitoreService eP = new FornitoreService_Service().getFornitore();    		
-        setEvents((ArrayList<Event>) eP.getEvents());
-        setCategories((ArrayList<Category>) eP.getCategories());
-        
+    	FornitoreService eP = new FornitoreService_Service().getFornitore();
+    	event = eP.getEvent(idEvent);
+    	OrderItem ord = new OrderItem(event,Integer.parseInt(quantity));
+    	cart.addItem(ord);
+    	
         return SUCCESS;
     }
 
-    public String detail() throws Exception { 
-    	FornitoreService eP = new FornitoreService_Service().getFornitore();    		
-    	setEvent(eP.getEvent(idEvent));    	
-        return SUCCESS;
-    }
-    
-    public ArrayList<Event> getEvents() {
-        return events;
-    }
-
-    public void setEvents(ArrayList<Event> events) {
-        this.events = events;
-    }
-
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+	
 	public Integer getIdEvent() {
 		return idEvent;
 	}
@@ -84,32 +72,12 @@ public class Home extends ExampleSupport implements SessionAware {
 		this.idEvent = idEvent;
 	}
 
-	public Event getEvent() {
-		return event;
+	public String getQuantity() {
+		return quantity;
 	}
 
-	public void setEvent(Event event) {
-		this.event = event;
-	}
-	
-	public ArrayList<Category> getCategories() {
-		return categories;
-	}
-
-	public void setCategories(ArrayList<Category> categories) {
-		this.categories = categories;
-	}
-	
-	public void setSession(Map<String, Object> session) {
-		this.session = session;
-	}
-	
-	public Cart getCart() {
-		return cart;
-	}
-
-	public void setCart(Cart cart) {
-		this.cart = cart;
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
 	}
 
 

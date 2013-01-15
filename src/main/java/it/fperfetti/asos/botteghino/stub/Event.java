@@ -192,4 +192,9 @@ public class Event {
         this.title = value;
     }
 
+	public Integer getPrice() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

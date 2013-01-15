@@ -18,6 +18,14 @@
     <action name="detail" class="it.fperfetti.asos.botteghino.action.Home" method="detail">
       <result>/pages/detail.jsp</result>
     </action>
+    
+    <action name="addEvent" class="it.fperfetti.asos.botteghino.action.EventAction" method="add">
+      <result type="redirect-action">
+         <param name="actionName">home</param>
+         <param name="namespace">/</param>
+      </result>
+    </action>   
+    
 
 <!--     <action name="Login_*" method="{1}" class="it.fperfetti.asos.botteghino.example.Login"> -->
 <!--       <result name="input">/example/Login.jsp</result> -->
