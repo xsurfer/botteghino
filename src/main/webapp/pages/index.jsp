@@ -199,68 +199,6 @@
 				
 			</s:iterator>
 			
-			<div class="ss-row">
-				<div class="ss-left">
-					<h2 id="febbraio">Febbraio</h2>
-				</div>
-				<div class="ss-right">
-					<h2>Eventi</h2>
-				</div>
-			</div>
-			
-			<div class="ss-row">
-				<div class="ss-left">
-					<h2 id="marzo">Marzo</h2>
-				</div>
-				<div class="ss-right">
-					<h2>Eventi</h2>
-				</div>
-			</div>
-			
-			<div class="ss-row">
-				<div class="ss-left">
-					<h2 id="aprile">Aprile</h2>
-				</div>
-				<div class="ss-right">
-					<h2>Eventi</h2>
-				</div>
-			</div>
-			
-			<div class="ss-row">
-				<div class="ss-left">
-					<h2 id="maggio">Maggio</h2>
-				</div>
-				<div class="ss-right">
-					<h2>Eventi</h2>
-				</div>
-			</div>
-			
-			<div class="ss-row">
-				<div class="ss-left">
-					<h2 id="giungo">Giugno</h2>
-				</div>
-				<div class="ss-right">
-					<h2>Eventi</h2>
-				</div>
-			</div>
-			
-			<div class="ss-row">
-				<div class="ss-left">
-					<h2 id="luglio">Luglio</h2>
-				</div>
-				<div class="ss-right">
-					<h2>Eventi</h2>
-				</div>
-			</div>
-			
-			<div class="ss-row">
-				<div class="ss-left">
-					<h2 id="august">August</h2>
-				</div>
-				<div class="ss-right">
-					<h2>2011</h2>
-				</div>
-			</div>
 		</div>
 	</div>
 

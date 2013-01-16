@@ -43,6 +43,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	private Event event;
 	private Integer idEvent;
 	private String quantity;
+	private ArrayList<OrderItem> items;
 	
 	public String update() throws Exception {
     	if (!session.containsKey("carrello")){
@@ -70,9 +71,6 @@ public class CartAction extends ExampleSupport implements SessionAware {
     	
         return SUCCESS;
     }
-    
-    
-    private ArrayList<OrderItem> items;
     
 	public String checkout() throws Exception {
     	if (!session.containsKey("carrello")){
