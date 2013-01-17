@@ -45,6 +45,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	private Event event;
 		
 	private Integer idItem;
+
 	private OrderItem item;
 	
 	private ArrayList<OrderItem> items;
@@ -141,4 +142,13 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	public void setItem(OrderItem item) {
 		this.item = item;
 	}
+	
+	public Integer getIdItem() {
+		return idItem;
+	}
+
+	public void setIdItem(Integer idItem) {
+		this.idItem = idItem;
+	}
+
 }
