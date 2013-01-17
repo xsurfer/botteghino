@@ -48,17 +48,28 @@
 		<h2 class="ss-subtitle">Check out</h2>
 		
 		<div id="ss-container" class="ss-container">	
-		<s:form action="updateEvent">
+		
 			<s:iterator status="status" value="items">
 				<div class="ss-row">
 					<s:property value="event.authore" /> - <s:property value="event.description" /><br />
 					<s:property value="event.location" /><br />
 					
-  						<s:textfield name="items[%{(#status.index)}].quantity" size="2" value="%{quantity}" label="Quantità" /><br />
+					<s:form action="update">
+						<s:hidden name="idItem" value="%{(#status.index)}" />
+  						<s:textfield name="item.quantity" size="2" value="%{quantity}" label="Quantità" /><br />
   						<s:submit value="Aggiorna" />
+					</s:form>	
+					<s:url action="remove" var="removeUrl">
+  							<s:param name="idItem">
+  								<s:property value="%{(#status.index)}" />
+  							</s:param>
+  					</s:url>			
+					<s:a href="%{removeUrl}">
+						Rimuovi
+					</s:a>
 				</div>
 			</s:iterator>
-		</s:form>	
+		
 			
 			<hr />
 			<b>Totale:</b><s:property value="cart.total" />		

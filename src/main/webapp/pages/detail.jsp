@@ -7,8 +7,8 @@
 <p><s:property value="event.description" /></p>
 <h3><s:property value="event.location" /></h3>
 
-<s:form action="addEvent">
+<s:form action="add">
   <s:hidden name="idEvent" value="%{event.id}" />
-  <s:textfield name="quantity" size="2" value="1" label="Quantità" /><br />
+  <s:textfield name="item.quantity" size="2" value="1" label="Quantità" /><br />
   <s:submit value="Aggiungi" />
 </s:form>

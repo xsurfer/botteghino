@@ -19,20 +19,26 @@
       <result>/pages/detail.jsp</result>
     </action>
     
-    <action name="addEvent" class="it.fperfetti.asos.botteghino.action.CartAction" method="add">
+    <action name="add" class="it.fperfetti.asos.botteghino.action.CartAction" method="add">
       <result name="success" type="redirectAction">
          <param name="actionName">home</param>
          <param name="namespace">/</param>
       </result>
     </action>  
     
-    <action name="updateEvent" class="it.fperfetti.asos.botteghino.action.CartAction" method="update">
+    <action name="update" class="it.fperfetti.asos.botteghino.action.CartAction" method="update">
       <result name="success" type="redirectAction">
          <param name="actionName">checkout</param>
          <param name="namespace">/</param>
       </result>
     </action>  
     
+    <action name="remove" class="it.fperfetti.asos.botteghino.action.CartAction" method="remove">
+      <result name="success" type="redirectAction">
+         <param name="actionName">checkout</param>
+         <param name="namespace">/</param>
+      </result>
+    </action>   
      
     
     <action name="checkout" class="it.fperfetti.asos.botteghino.action.CartAction" method="checkout">

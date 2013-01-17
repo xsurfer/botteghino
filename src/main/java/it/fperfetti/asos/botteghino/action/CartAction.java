@@ -40,10 +40,26 @@ public class CartAction extends ExampleSupport implements SessionAware {
 
 	Map<String, Object> session;
 	private Cart cart;
-	private Event event;
+	
 	private Integer idEvent;
-	private String quantity;
+	private Event event;
+		
+	private Integer idItem;
+	private OrderItem item;
+	
 	private ArrayList<OrderItem> items;
+	
+	public String remove() throws Exception {
+    	if (!session.containsKey("carrello")){
+    		cart = new Cart();
+    	    session.put("carrello", cart);
+    	} else {
+    		cart = (Cart) session.get("carrello");
+    	}
+    	cart.removeItem(idItem);
+    	
+    	return SUCCESS;
+    }
 	
 	public String update() throws Exception {
     	if (!session.containsKey("carrello")){
@@ -52,10 +68,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
     	} else {
     		cart = (Cart) session.get("carrello");
     	}
-    	
-    	cart.setItems(items);
-    	    	
-        return SUCCESS;
+    	return SUCCESS;
     }
 	
     public String add() throws Exception {
@@ -68,8 +81,8 @@ public class CartAction extends ExampleSupport implements SessionAware {
     	
     	FornitoreService eP = new FornitoreService_Service().getFornitore();
     	event = eP.getEvent(idEvent);
-    	OrderItem ord = new OrderItem(event,Integer.parseInt(quantity));
-    	cart.addItem(ord);
+    	this.item.setEvent(event);
+    	cart.addItem(this.item);
     	
         return SUCCESS;
     }
@@ -102,14 +115,6 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	public void setIdEvent(Integer idEvent) {
 		this.idEvent = idEvent;
 	}
-
-	public String getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(String quantity) {
-		this.quantity = quantity;
-	}
 	
 	public Event getEvent() {
 		return event;
@@ -125,5 +130,15 @@ public class CartAction extends ExampleSupport implements SessionAware {
 
 	public void setItems(ArrayList<OrderItem> items) {
 		this.items = items;
+	}
+
+
+	public OrderItem getItem() {
+		return item;
+	}
+
+
+	public void setItem(OrderItem item) {
+		this.item = item;
 	}
 }
