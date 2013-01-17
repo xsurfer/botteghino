@@ -61,9 +61,6 @@ public class CartAction extends ExampleSupport implements SessionAware {
     	item = cart.getItems().get(idItem);
     	cart.removeItem(item);
     	
-    	if(cart.getNumberItems()<=0)
-    		return "empty";
-    	
     	return SUCCESS;
     }
 	
@@ -83,10 +80,6 @@ public class CartAction extends ExampleSupport implements SessionAware {
     	} else {
     		cart.updateItem(idItem, item);
     	}  	
-    	
-    	if(cart.getNumberItems()<=0)
-    		return "empty";
-    	
     	return SUCCESS;
     }
 	
@@ -116,6 +109,8 @@ public class CartAction extends ExampleSupport implements SessionAware {
     	
     	items = cart.getItems();
     	
+    	if(cart.getNumberItems()<=0)
+    		return "empty";
         return SUCCESS;
     }
 
