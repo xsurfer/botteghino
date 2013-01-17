@@ -76,9 +76,9 @@ public class CartAction extends ExampleSupport implements SessionAware {
     	tmpItem.setQuantity(item.getQuantity());
 
     	if(item.getQuantity()<=0){
-    		cart.removeItem(item);
+    		cart.removeItem(tmpItem);
     	} else {
-    		cart.updateItem(idItem, item);
+    		cart.updateItem(idItem, tmpItem);
     	}  	
     	return SUCCESS;
     }
