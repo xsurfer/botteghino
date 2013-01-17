@@ -32,6 +32,10 @@ public class Cart {
 		this.items.remove(index);
 	}
 	
+	public void updateItem(Integer index, OrderItem item){
+		this.items.set(index, item);
+	}
+	
 	public Double getTotal(){
 		Double tot = new Double(0);
 		for (OrderItem oi : this.items){
