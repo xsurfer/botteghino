@@ -28,8 +28,8 @@ public class Cart {
 		this.items.add(item);
 	}
 	
-	public void removeItem(Integer index){
-		this.items.remove(index);
+	public void removeItem(OrderItem item){
+		this.items.remove(item);
 	}
 	
 	public void updateItem(Integer index, OrderItem item){
