@@ -31,11 +31,19 @@
          <param name="actionName">checkout</param>
          <param name="namespace">/</param>
       </result>
+      <result name="empty" type="redirectAction">
+         <param name="actionName">home</param>
+         <param name="namespace">/</param>
+      </result>
     </action>  
     
     <action name="remove" class="it.fperfetti.asos.botteghino.action.CartAction" method="remove">
       <result name="success" type="redirectAction">
          <param name="actionName">checkout</param>
+         <param name="namespace">/</param>
+      </result>
+      <result name="empty" type="redirectAction">
+         <param name="actionName">home</param>
          <param name="namespace">/</param>
       </result>
     </action>   
