@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "FornitoreService", targetNamespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", wsdlLocation = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService?wsdl")
+@WebServiceClient(name = "FornitoreService", targetNamespace = "http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", wsdlLocation = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService?wsdl")
 public class FornitoreService_Service
     extends Service
 {
@@ -30,7 +30,7 @@ public class FornitoreService_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService?wsdl");
+            url = new URL("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
