@@ -51,7 +51,7 @@
 		
 			<s:iterator status="status" value="items">
 				<div class="ss-row">
-					<s:property value="event.authore" /> - <s:property value="event.description" /><br />
+					<s:property value="event.author" /> - <s:property value="event.description" /><br />
 					<s:property value="event.location" /><br />
 					
 					<s:form action="update">

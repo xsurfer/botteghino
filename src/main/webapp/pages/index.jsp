@@ -145,7 +145,7 @@
 					</div>
 					<div class="ss-right">
 						<h3>
-							<span><s:property value="authore" /></span> 
+							<span><s:property value="author" /></span> 
 							
 							<s:url action="detail.action" var="URLevent1">
 								<s:param name="idEvent"><s:property value="id" /></s:param>
@@ -162,7 +162,7 @@
     				<div class="ss-row ss-large <s:property value="category.name" />">
 				<div class="ss-left">
 					<h3>
-						<span><s:property value="authore" /></span> 
+						<span><s:property value="author" /></span> 
 						<s:url action="detail.action" var="URLevent2">
 							<s:param name="idEvent"><s:property value="id" /></s:param>
 						</s:url> 
@@ -185,7 +185,7 @@
 				</div>
 				<div class="ss-right">
 					<h3>
-						<span><s:property value="authore" /></span> 
+						<span><s:property value="author" /></span> 
 						<s:url action="detail.action" var="URLevent3">
 							<s:param name="idEvent"><s:property value="id" /></s:param>
 						</s:url> 
