@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;complexType name="abstractList">
  *   &lt;complexContent>
- *     &lt;extension base="{http://fornitore-paasfab.rhcloud.com/jboss-as-helloworld-ws/FornitoreService}abstractCollection">
+ *     &lt;extension base="{http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService}abstractCollection">
  *       &lt;sequence>
  *       &lt;/sequence>
  *     &lt;/extension>
