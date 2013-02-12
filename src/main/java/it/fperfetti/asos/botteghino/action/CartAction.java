@@ -41,7 +41,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	Map<String, Object> session;
 	private Cart cart;
 	
-	private Integer idEvent;
+	private Long idEvent;
 	private Event event;
 		
 	private Integer idItem;
@@ -122,11 +122,11 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		this.session = session;
 	}
 	
-	public Integer getIdEvent() {
+	public Long getIdEvent() {
 		return idEvent;
 	}
 
-	public void setIdEvent(Integer idEvent) {
+	public void setIdEvent(Long idEvent) {
 		this.idEvent = idEvent;
 	}
 	
