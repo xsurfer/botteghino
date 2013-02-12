@@ -21,7 +21,7 @@
 
 package it.fperfetti.asos.botteghino.action;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -39,9 +39,9 @@ public class Home extends ExampleSupport implements SessionAware {
 
 	Map<String, Object> session;
 	private Cart cart;
-	private ArrayList<Event> events;
+	private List<Event> events;
 	private Event event;
-	private ArrayList<Category> categories;
+	private List<Category> categories;
 
 	private Integer idEvent; 
 	
@@ -56,8 +56,8 @@ public class Home extends ExampleSupport implements SessionAware {
     	}
     	
     	FornitoreService eP = new FornitoreService_Service().getFornitore();    		
-        setEvents((ArrayList<Event>) eP.getEvents());
-        setCategories((ArrayList<Category>) eP.getCategories());
+        setEvents((List<Event>) eP.getEvents());
+        setCategories((List<Category>) eP.getCategories());
         
         return SUCCESS;
     }
@@ -68,11 +68,11 @@ public class Home extends ExampleSupport implements SessionAware {
         return SUCCESS;
     }
     
-    public ArrayList<Event> getEvents() {
+    public List<Event> getEvents() {
         return events;
     }
 
-    public void setEvents(ArrayList<Event> events) {
+    public void setEvents(List<Event> events) {
         this.events = events;
     }
 
@@ -92,11 +92,11 @@ public class Home extends ExampleSupport implements SessionAware {
 		this.event = event;
 	}
 	
-	public ArrayList<Category> getCategories() {
+	public List<Category> getCategories() {
 		return categories;
 	}
 
-	public void setCategories(ArrayList<Category> categories) {
+	public void setCategories(List<Category> categories) {
 		this.categories = categories;
 	}
 	

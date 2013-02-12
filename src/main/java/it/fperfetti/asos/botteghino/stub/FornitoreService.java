@@ -61,7 +61,7 @@ public interface FornitoreService {
     @ResponseWrapper(localName = "getEventsByCategoryResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventsByCategoryResponse")
     public List<Event> getEventsByCategory(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        Integer arg0);
 
     /**
      * 
