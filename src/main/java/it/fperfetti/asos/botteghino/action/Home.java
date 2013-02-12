@@ -43,7 +43,7 @@ public class Home extends ExampleSupport implements SessionAware {
 	private Event event;
 	private List<Category> categories;
 
-	private Integer idEvent; 
+	private Long idEvent; 
 	
 	
     public String execute() throws Exception {
@@ -76,11 +76,11 @@ public class Home extends ExampleSupport implements SessionAware {
         this.events = events;
     }
 
-	public Integer getIdEvent() {
+	public Long getIdEvent() {
 		return idEvent;
 	}
 
-	public void setIdEvent(Integer idEvent) {
+	public void setIdEvent(Long idEvent) {
 		this.idEvent = idEvent;
 	}
 

@@ -47,7 +47,7 @@ public interface FornitoreService {
     @ResponseWrapper(localName = "getEventResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventResponse")
     public Event getEvent(
         @WebParam(name = "arg0", targetNamespace = "")
-        Integer arg0);
+        Long arg0);
 
     /**
      * 
@@ -75,7 +75,7 @@ public interface FornitoreService {
     @ResponseWrapper(localName = "getEventsByCategoryResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventsByCategoryResponse")
     public List<Event> getEventsByCategory(
         @WebParam(name = "arg0", targetNamespace = "")
-        Integer arg0);
+        Long arg0);
 
     /**
      * 
