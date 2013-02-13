@@ -8,20 +8,18 @@
 	<script type="text/javascript">
 	$(document).ready(function(){
 		
-	    $('#addForm').validate({
-	        rules:
-	        {
-	        	quantity_txt: {
-	        		required: true,
-	        	    range: [1, 4]
-	        	}       
-	        }
-// 	    ,
-// 	        beforeSubmit: function(arr, $form, options) {
-// 	            $('#txt1').val('123456');
-// 	            return true;
-// 	        }
+	    $("#form1").submit(function() {
+	    	$('#addForm').validate({
+		        rules:
+		        {
+		        	quantity_txt: {
+		        		required: true,
+		        	    range: [1, 4]
+		        	}       
+		        }
+		    });	
 	    });
+	    
 	});
 	</script>
 
