@@ -11,6 +11,7 @@ public class Order {
 	public void setId(Long id) { this.id = id; }
 
 	public List<Ticket> getTickets() { return tickets; }
+	public void setTickets(List<Ticket> tickets) { this.tickets = tickets; }
 	public void addTicket(Ticket detail) { tickets.add(detail); }
 	private List<Ticket> tickets = new ArrayList<Ticket>();
 
@@ -21,6 +22,4 @@ public class Order {
 	private Double total;
 	public Double getTotal() { return total; }
 	public void setTotal(Double total) { this.total = total; }	
-	
-	
 }

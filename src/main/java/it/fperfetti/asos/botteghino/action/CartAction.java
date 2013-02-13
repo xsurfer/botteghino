@@ -157,15 +157,20 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		}
 
 		/* Creating order */
-		Order order = new Order();
-		order.setDate(new Date());
-		order.setTotal(cart.getTotal());
-		session.put("order", order);
-		session.put("token", token);
+		Order order = (Order) session.get("order");
+		if( order == null ){ 
+			order = new Order();
+			order.setDate(new Date());
+			order.setTotal(cart.getTotal());
+			session.put("order", order);
+		}
+			
 		
 		/* initially all tickets empty */
 		tickets = order.getTickets();
 		items = cart.getItems();
+		
+		/* generating token */
 		this.token = UUID.randomUUID().toString();
 		session.put("token", token);
 		return SUCCESS;
@@ -186,13 +191,15 @@ public class CartAction extends ExampleSupport implements SessionAware {
 			return ERROR;
 		}
 
-		Order order = (Order) session.get("order");
-		session.put("token", token);
+		/* Populatin order's tickets */
+		Order order = (Order) session.get("order");		
 		for(Ticket ticket : this.tickets){
 			order.addTicket(ticket);
 		}
+		
 		this.tickets = order.getTickets();
 		
+		/* generating token */
 		this.token = UUID.randomUUID().toString();
 		session.put("token", token);
 		return SUCCESS;

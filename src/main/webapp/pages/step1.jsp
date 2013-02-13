@@ -71,7 +71,7 @@
 						<s:iterator status="stat" value="(#it).{ #this }">
 							<!-- PER OGNI EVENTO -->
 							<s:hidden name="tickets[%{#ticketNumber}].event" value="%{#event.id}" />
-							<s:textfield name="tickets[%{#ticketNumber}].guest.name" size="20" value="%{#tickets[#ticketNumber].guest.name}" label="Nome" />
+							<s:textfield name="tickets[%{#ticketNumber}].guest.name" size="20" value="%{tickets[#ticketNumber].guest.name}" label="Nome" />
 							<br />
 							<s:textfield name="tickets[%{#ticketNumber}].guest.surname" size="20" value="%{#tickets[#ticketNumber].guest.surname}" label="Cognome" />
 							<br />
