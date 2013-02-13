@@ -21,6 +21,7 @@
 
 package it.fperfetti.asos.botteghino.action;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -56,8 +57,8 @@ public class Home extends ExampleSupport implements SessionAware {
     	}
     	
     	FornitoreService eP = new FornitoreService_Service().getFornitore();    		
-        setEvents((List<Event>) eP.getEvents());
-        setCategories((List<Category>) eP.getCategories());
+        setEvents(new ArrayList<Event>(eP.getEvents()));
+        setCategories(new ArrayList<Category>(eP.getCategories()));
         
         return SUCCESS;
     }
