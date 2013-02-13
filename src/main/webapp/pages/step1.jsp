@@ -75,7 +75,7 @@
 							<s:set name="surname" value="%{tickets[#ticketNumber].guest.surname}" />
 							<s:set name="identity" value="%{tickets[#ticketNumber].guest.identity}" />
 							
-							<s:hidden name="tickets[%{#ticketNumber}].event" value="%{#event.id}" />
+							<s:hidden name="tickets[%{#ticketNumber}].event" value="%{#eventoId}" />
 							<s:textfield name="tickets[%{#ticketNumber}].guest.name"     size="20" value="%{#name}" label="Nome" />
 							<br />
 							<s:textfield name="tickets[%{#ticketNumber}].guest.surname"  size="20" value="%{#surname}" label="Cognome" />
