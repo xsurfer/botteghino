@@ -8,7 +8,7 @@
 	<script type="text/javascript">
 	$(document).ready(function(){
 		
-	    $("#form1").submit(function() {
+	    $("#addForm").submit(function() {
 	    	$('#addForm').validate({
 		        rules:
 		        {
