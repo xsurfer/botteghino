@@ -164,10 +164,10 @@ public class CartAction extends ExampleSupport implements SessionAware {
 			order.setTotal(cart.getTotal());
 			session.put("order", order);
 		}
-			
 		
 		/* initially all tickets empty */
 		tickets = order.getTickets();
+
 		items = cart.getItems();
 		
 		/* generating token */

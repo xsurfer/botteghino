@@ -61,16 +61,17 @@
 			<s:form action="step2">
 				<s:set name="ticketNumber" value="%{0}"/>
 				<s:iterator status="status" value="items" var="item">
+					<s:set name="evento" value="item.event"/>
 					<!-- PER OGNI EVENTO -->
 					<div class="ss-row">
-						<s:property value="event.author" /> - <s:property value="event.description" />
+						<s:property value="evento.author" /> - <s:property value="evento.description" />
 						<br />
-						<s:property value="event.location" />
+						<s:property value="evento.location" />
 						<br />					
 						<s:set name="it" value="quantity"/>
 						<s:iterator status="stat" value="(#it).{ #this }">
 							<!-- PER OGNI EVENTO -->
-							<s:hidden name="tickets[%{#ticketNumber}].event" value="%{#event.id}" />
+							<s:hidden name="tickets[%{#ticketNumber}].event" value="%{evento.id}" />
 							<s:textfield name="tickets[%{#ticketNumber}].guest.name" size="20" value="%{tickets[#ticketNumber].guest.name}" label="Nome" />
 							<br />
 							<s:textfield name="tickets[%{#ticketNumber}].guest.surname" size="20" value="%{#tickets[#ticketNumber].guest.surname}" label="Cognome" />
