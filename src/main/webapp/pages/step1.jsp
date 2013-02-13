@@ -50,23 +50,26 @@
 		<div id="ss-container" class="ss-container">	
 		
 	
-				<s:iterator status="status" value="items"><!-- PER OGNI EVENTO -->
-				<div class="ss-row">
-				
-					<s:iterator status="status" value="quantity"><!-- PER OGNI EVENTO -->
-						<s:form action="update">
-	  						<s:textfield name="guest.name" size="20" value="" label="Nome" /><br />
-							<s:textfield name="guest.surname" size="20" value="" label="Cognome" /><br />
-							<s:textfield name="guest.identity" size="20" value="" label="Indirizzo" /><br />
-	  						<s:submit value="Aggiorna" />
-						</s:form>
-					</s:iterator>
-				
-				</div>
+				<s:iterator status="status" value="items" var="item"><!-- PER OGNI EVENTO -->
+					<div class="ss-row">
+						<s:property value="item.event.author" /> - <s:property value="event.description" /><br />
+						<s:property value="item.event.location" /><br />
+						<s:property value="item.quantity" /><br />
+						
+						<s:iterator status="stat" value="item.quantity"><!-- PER OGNI EVENTO -->
+							<s:form action="update">
+		  						<s:textfield name="guest.name" size="20" value="" label="Nome" /><br />
+								<s:textfield name="guest.surname" size="20" value="" label="Cognome" /><br />
+								<s:textfield name="guest.identity" size="20" value="" label="Indirizzo" /><br />
+		  						<s:submit value="Aggiorna" />
+							</s:form>
+						</s:iterator>
+					
+					</div>
 			</s:iterator>
 		
 		
-		
+		<!-- 
 		<s:form action="update">
 			<s:hidden name="idItem" value="%{(#status.index)}" />
 			<s:textfield name="guest.name" size="20" value="" label="Nome" /><br />
@@ -75,6 +78,7 @@
 			<hr />
 			<s:submit value="Avanti" />
 		</s:form>	
+		 -->
 		</div>
 	</div>
 </body>
