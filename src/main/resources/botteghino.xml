@@ -57,5 +57,13 @@
         </result>
     </action> 
     
+    <action name="step2" class="it.fperfetti.asos.botteghino.action.CartAction" method="step2">
+    	<result>/pages/step2.jsp</result>
+    	<result name="error" type="redirectAction">
+          <param name="actionName">home</param>
+          <param name="namespace">/</param>
+        </result>
+    </action> 
+    
   </package>
 </struts>

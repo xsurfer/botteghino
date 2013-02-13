@@ -48,16 +48,11 @@
 		<h2 class="ss-subtitle">Dati Acquirente</h2>
 		
 		<div id="ss-container" class="ss-container">	
-		
-		<s:form action="update">
-			<s:hidden name="idItem" value="%{(#status.index)}" />
-			<s:textfield name="customer.name" size="20" value="" label="Nome" /><br />
-			<s:textfield name="customer.surname" size="20" value="" label="Cognome" /><br />
-			<s:textfield name="customer.address" size="20" value="" label="Indirizzo" /><br />
-			<s:textfield name="customer.city" size="20" value="" label="Città" /><br />
-			<hr />
-			<s:submit value="Avanti" />
-		</s:form>	
+			<s:iterator status="status" value="tickets">
+				<s:property value="guest.name" />
+				<s:property value="guest.surname" />
+				<s:property value="guest.identity" />
+			</s:iterator>
 		</div>
 	</div>
 </body>

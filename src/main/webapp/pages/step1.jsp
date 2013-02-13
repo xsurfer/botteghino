@@ -58,7 +58,7 @@
 
 		<div id="ss-container" class="ss-container">
 
-			<s:form action="update">
+			<s:form action="step2">
 				<s:set name="ticketNumber" value="%{0}"/>
 				<s:iterator status="status" value="items" var="item">
 					<!-- PER OGNI EVENTO -->
@@ -70,6 +70,7 @@
 						<s:set name="it" value="quantity"/>
 						<s:iterator status="stat" value="(#it).{ #this }">
 							<!-- PER OGNI EVENTO -->
+							<s:hidden name="ticket[%{#ticketNumber}].event" value="%{#event.id}" />
 							<s:textfield name="ticket[%{#ticketNumber}].guest.name" size="20" value="" label="Nome" />
 							<br />
 							<s:textfield name="ticket[%{#ticketNumber}].guest.surname" size="20" value="" label="Cognome" />
@@ -77,11 +78,11 @@
 							<s:textfield name="ticket[%{#ticketNumber}].guest.identity" size="8" value="" label="C. Identità" />
 							<br />
 							<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
-							<s:property value="%{#ticketNumber}"/>
 						</s:iterator>
 
 					</div>
 				</s:iterator>
+				<s:hidden name="token" value="%{token}" />
 				<s:submit value="Aggiorna" />
 			</s:form>
 

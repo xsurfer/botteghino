@@ -9,8 +9,8 @@ public class Order {
 	public Long getId() { return id; }
 	public void setId(Long id) { this.id = id; }
 
-	public List<Ticket> getDetails() { return tickets; }
-	public void addDetail(Ticket detail) { tickets.add(detail); }
+	public List<Ticket> getTickets() { return tickets; }
+	public void addTicket(Ticket detail) { tickets.add(detail); }
 	private List<Ticket> tickets;
 
 	public Date getDate() { return date; }
