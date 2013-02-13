@@ -54,7 +54,7 @@
 				<s:property value="guest.identity" />
 			</s:iterator>
 			
-			<s:form action="step1">
+			<s:form action="step2">
 				<s:hidden name="token" value="%{token}" />
 				<s:submit value="Indietro" />
 			</s:form>

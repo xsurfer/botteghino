@@ -73,9 +73,9 @@
 							<s:hidden name="tickets[%{#ticketNumber}].event" value="%{#event.id}" />
 							<s:textfield name="tickets[%{#ticketNumber}].guest.name" size="20" value="%{#tickets[#ticketNumber].guest.name}" label="Nome" />
 							<br />
-							<s:textfield name="tickets[%{#ticketNumber}].guest.surname" size="20" value="#tickets[%{#ticketNumber}].guest.surname" label="Cognome" />
+							<s:textfield name="tickets[%{#ticketNumber}].guest.surname" size="20" value="%{#tickets[#ticketNumber].guest.surname}" label="Cognome" />
 							<br />
-							<s:textfield name="tickets[%{#ticketNumber}].guest.identity" size="8" value="#tickets[%{#ticketNumber}].guest.identity" label="C. Identità" />
+							<s:textfield name="tickets[%{#ticketNumber}].guest.identity" size="8" value="%{#tickets[#ticketNumber].guest.identity}" label="C. Identità" />
 							<br />
 							<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
 						</s:iterator>

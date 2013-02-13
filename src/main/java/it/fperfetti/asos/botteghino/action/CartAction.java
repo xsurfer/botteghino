@@ -163,6 +163,8 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		session.put("order", order);
 		session.put("token", token);
 		
+		/* initially all tickets empty */
+		tickets = order.getTickets();
 		items = cart.getItems();
 		this.token = UUID.randomUUID().toString();
 		session.put("token", token);
