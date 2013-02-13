@@ -1,5 +1,6 @@
 package it.fperfetti.asos.botteghino.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class Order {
 
 	public List<Ticket> getTickets() { return tickets; }
 	public void addTicket(Ticket detail) { tickets.add(detail); }
-	private List<Ticket> tickets;
+	private List<Ticket> tickets = new ArrayList<Ticket>();
 
 	public Date getDate() { return date; }
 	public void setDate(Date date) { this.date = date; }
