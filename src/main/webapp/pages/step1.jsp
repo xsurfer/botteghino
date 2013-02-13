@@ -61,7 +61,7 @@
 			<s:form action="step2">
 				<s:set name="ticketNumber" value="%{0}"/>
 				<s:iterator status="status" value="items">
-					<s:set name="evento" value="event"/>
+					<s:set name="evento" value="#event"/>
 					<!-- PER OGNI EVENTO -->
 					<div class="ss-row">
 						<s:property value="evento.author" /> - <s:property value="evento.description" />
