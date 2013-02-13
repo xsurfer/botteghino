@@ -232,5 +232,23 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		session.put("token", token);
 		return SUCCESS;
 	}
+	
+	public String payment() throws Exception {
+		if (!session.containsKey("carrello")){
+			cart = new Cart();
+			session.put("carrello", cart);
+		} else {
+			cart = (Cart) session.get("carrello");
+		}
+		String tok_session = (String) session.get("token");		
+		if(tok_session == null || token.compareTo( tok_session )!=0){
+			return ERROR;
+		}
+		Order order = (Order) session.get("order");
+		
+		this.token = UUID.randomUUID().toString();
+		session.put("token", token);
+		return SUCCESS;
+	}
 
 }

@@ -10,6 +10,7 @@
 
 <sj:head loadFromGoogle="true" />
 
+
 <link rel="stylesheet" type="text/css" href="/css/demo.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 <link href='http://fonts.googleapis.com/css?family=Kelly+Slab' rel='stylesheet' type='text/css' />
@@ -19,6 +20,9 @@
 <script type="text/javascript" src="/js/modernizr.custom.11333.js"></script>
 
 <!-- FANCYBOX CODE -->
+	<!-- Add validation plugin -->
+	<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+
 	<!-- Add mousewheel plugin (this is optional) -->
 	<script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js"></script>
 

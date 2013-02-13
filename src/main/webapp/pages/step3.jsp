@@ -64,7 +64,7 @@
 					value="selectedCircuit"
 					required="true"/>
 	
-				<s:textfield name="customer.creditcard" size="16" value="" label="Numero Carta di Credito" />
+				<s:textfield name="customer.creditcard" size="16" value="" label="Carta di Credito" />
 				<s:textfield name="customer.cvv" size="3" value="" label="CVV" />
 				<br />
 				<s:submit value="Effettua Pagamento" />

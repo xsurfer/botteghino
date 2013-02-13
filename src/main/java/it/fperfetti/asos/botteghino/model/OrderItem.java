@@ -28,7 +28,8 @@ public class OrderItem {
 		return quantity;
 	}
 	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
+		if(quantity > 0)
+			this.quantity = quantity;
 	}
 	
 	public Double getTotal(){

@@ -2,13 +2,34 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
 
+	<script type="text/javascript">
+	$(document).ready(function()
+			{
+			    $("#addForm").validate(
+			    {
+			        rules:
+			        {
+			        	quantity_txt: {
+			        		required: true,
+			        	    range: [1, 4]
+			        	}       
+			        },
+			        messages:
+			        {
+			            nome: " Valore compreso tra 1-4"
+			        }
+			    });
+			});
+	</script>
+
+
 <h2><s:property value="event.author" /></h2>
 <h3><s:property value="event.title" /></h3>
 <p><s:property value="event.description" /></p>
 <h3><s:property value="event.location" /></h3>
 
-<s:form action="add">
+<s:form id="addForm" action="add">
   <s:hidden name="idEvent" value="%{event.id}" />
-  <s:textfield name="item.quantity" size="2" value="1" label="Quantità" /><br />
+  <s:textfield id="quantity_txt" name="item.quantity" size="2" value="1" label="Quantità" /><br />
   <s:submit value="Aggiungi" />
 </s:form>
