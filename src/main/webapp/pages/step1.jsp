@@ -77,7 +77,7 @@
 							<s:textfield name="ticket[%{#ticketNumber}].guest.identity" size="8" value="" label="C. Identità" />
 							<br />
 							<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
-							<s:property value="ticketNumber"/>
+							<s:property value="%{#ticketNumber}"/>
 						</s:iterator>
 
 					</div>
