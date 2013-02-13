@@ -21,6 +21,7 @@
 
 package it.fperfetti.asos.botteghino.action;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -69,7 +70,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	public String getToken(){ return token; }
 	public void setToken(String tok) { token = tok; }
 	
-	private List<Ticket> tickets;
+	private List<Ticket> tickets = new ArrayList<Ticket>();
 	public List<Ticket> getTickets() { return tickets; }
 	public void setTickets(List<Ticket> tickets) { this.tickets = tickets; }
 
@@ -117,10 +118,15 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		}
 
 		FornitoreService eP = new FornitoreService_Service().getFornitore();
+		/* Loading the event from the provider */
 		event = eP.getEvent(idEvent);
+		
+		/* Adding the event to the OrderItem */
 		this.item.setEvent(event);
+		
 		cart.addItem(this.item);
-
+		
+		System.out.println("Aggiunto evento: " + item.getEvent().getId() + item.getEvent().getTitle());
 		return SUCCESS;
 	}
 
@@ -136,6 +142,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
 
 		this.token = UUID.randomUUID().toString();
 		session.put("token", token);
+		
 		if(cart.getNumberItems()<=0)
 			return "empty";
 		return SUCCESS;
@@ -148,10 +155,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		} else {
 			cart = (Cart) session.get("carrello");
 		}
-		System.out.println("Current token:" + token);
-		System.out.println("Session token:" + session.get("token"));
-		String tok_session = (String) session.get("token");
-		
+		String tok_session = (String) session.get("token");	
 		if(tok_session == null || token.compareTo( tok_session )!=0){
 			return ERROR;
 		}
@@ -192,7 +196,9 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		}
 
 		/* Populatin order's tickets */
-		Order order = (Order) session.get("order");		
+		Order order = (Order) session.get("order");	
+		System.out.println("Ho " + tickets.size() + "tickets" );
+		order.getTickets().clear();
 		for(Ticket ticket : this.tickets){
 			order.addTicket(ticket);
 		}
