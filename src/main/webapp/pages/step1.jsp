@@ -52,11 +52,12 @@
 	
 				<s:iterator status="status" value="items" var="item"><!-- PER OGNI EVENTO -->
 					<div class="ss-row">
-						<s:property value="item.event.author" /> - <s:property value="event.description" /><br />
-						<s:property value="item.event.location" /><br />
-						<s:property value="item.quantity" /><br />
+						<s:property value="event.author" /> - <s:property value="event.description" /><br />
+						<s:property value="event.location" /><br />
+						<s:property value="quantity" /><br />
+						<s:property value="%{quantity}" /><br />
 						
-						<s:iterator status="stat" value="item.quantity"><!-- PER OGNI EVENTO -->
+						<s:iterator status="stat" value="%{quantity}"><!-- PER OGNI EVENTO -->
 							<s:form action="update">
 		  						<s:textfield name="guest.name" size="20" value="" label="Nome" /><br />
 								<s:textfield name="guest.surname" size="20" value="" label="Cognome" /><br />
