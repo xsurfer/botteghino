@@ -69,7 +69,7 @@
 						<br />
 
 						<!-- <s:set name="it" value="quantity"/> -->
-						<s:iterator status="stat" value="(#it).{ #this }">
+						<s:iterator status="stat" value="(#quantity).{ #this }">
 							<!-- PER OGNI EVENTO -->
 							
 							<s:textfield name="ticket.guest.name" size="20" value="" label="Nome" />
