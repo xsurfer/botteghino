@@ -2,6 +2,9 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
 
+<sj:head loadFromGoogle="true" />
+<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+
 	<script type="text/javascript">
 	$(document).ready(function()
 			{
