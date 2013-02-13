@@ -70,12 +70,12 @@
 						<s:set name="it" value="quantity"/>
 						<s:iterator status="stat" value="(#it).{ #this }">
 							<!-- PER OGNI EVENTO -->
-							<s:hidden name="ticket[%{#ticketNumber}].event" value="%{#event.id}" />
-							<s:textfield name="ticket[%{#ticketNumber}].guest.name" size="20" value="" label="Nome" />
+							<s:hidden name="tickets[%{#ticketNumber}].event" value="%{#event.id}" />
+							<s:textfield name="tickets[%{#ticketNumber}].guest.name" size="20" value="" label="Nome" />
 							<br />
-							<s:textfield name="ticket[%{#ticketNumber}].guest.surname" size="20" value="" label="Cognome" />
+							<s:textfield name="tickets[%{#ticketNumber}].guest.surname" size="20" value="" label="Cognome" />
 							<br />
-							<s:textfield name="ticket[%{#ticketNumber}].guest.identity" size="8" value="" label="C. Identità" />
+							<s:textfield name="tickets[%{#ticketNumber}].guest.identity" size="8" value="" label="C. Identità" />
 							<br />
 							<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
 						</s:iterator>
