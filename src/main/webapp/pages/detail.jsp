@@ -16,6 +16,9 @@
 		        		required: true,
 		        	    range: [1, 4]
 		        	}       
+		        },
+		        submitHandler: function(form) {
+		            form.submit();
 		        }
 		    });	
 	    });
