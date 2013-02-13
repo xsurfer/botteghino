@@ -54,7 +54,7 @@
 
 		<h1>Benvenuto nel Botteghino Online! Scegli un evento e
 			acquistalo subito: basta qualche click!!</h1>
-		<h2 class="ss-subtitle">Dati Acquirente</h2>
+		<h2 class="ss-subtitle">Step 1 - Assegna i tuoi biglietti</h2>
 
 		<div id="ss-container" class="ss-container">
 
@@ -71,11 +71,11 @@
 						<s:iterator status="stat" value="(#it).{ #this }">
 							<!-- PER OGNI EVENTO -->
 							<s:hidden name="tickets[%{#ticketNumber}].event" value="%{#event.id}" />
-							<s:textfield name="tickets[%{#ticketNumber}].guest.name" size="20" value="" label="Nome" />
+							<s:textfield name="tickets[%{#ticketNumber}].guest.name" size="20" value="tickets[%{#ticketNumber}].guest.name" label="Nome" />
 							<br />
-							<s:textfield name="tickets[%{#ticketNumber}].guest.surname" size="20" value="" label="Cognome" />
+							<s:textfield name="tickets[%{#ticketNumber}].guest.surname" size="20" value="tickets[%{#ticketNumber}].guest.surname" label="Cognome" />
 							<br />
-							<s:textfield name="tickets[%{#ticketNumber}].guest.identity" size="8" value="" label="C. Identità" />
+							<s:textfield name="tickets[%{#ticketNumber}].guest.identity" size="8" value="tickets[%{#ticketNumber}].guest.identity" label="C. Identità" />
 							<br />
 							<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
 						</s:iterator>

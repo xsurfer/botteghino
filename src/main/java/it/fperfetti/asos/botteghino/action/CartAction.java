@@ -184,13 +184,39 @@ public class CartAction extends ExampleSupport implements SessionAware {
 			return ERROR;
 		}
 
-		/* Creating order */
 		Order order = (Order) session.get("order");
 		session.put("token", token);
 		for(Ticket ticket : this.tickets){
 			order.addTicket(ticket);
 		}
 		this.tickets = order.getTickets();
+		
+		this.token = UUID.randomUUID().toString();
+		session.put("token", token);
+		return SUCCESS;
+	}
+	
+	public String step3() throws Exception {
+		if (!session.containsKey("carrello")){
+			cart = new Cart();
+			session.put("carrello", cart);
+		} else {
+			cart = (Cart) session.get("carrello");
+		}
+		System.out.println("Current token:" + token);
+		System.out.println("Session token:" + session.get("token"));
+		String tok_session = (String) session.get("token");
+		
+		if(tok_session == null || token.compareTo( tok_session )!=0){
+			return ERROR;
+		}
+
+		Order order = (Order) session.get("order");
+		session.put("token", token);
+//		for(Ticket ticket : this.tickets){
+//			order.addTicket(ticket);
+//		}
+//		this.tickets = order.getTickets();
 		
 		this.token = UUID.randomUUID().toString();
 		session.put("token", token);
