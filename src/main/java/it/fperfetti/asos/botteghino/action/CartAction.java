@@ -65,7 +65,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	public List<OrderItem> getItems() { return items; }
 	public void setItems(List<OrderItem> items) { this.items = items; }
 
-	private String token;
+	private String token = new String();
 	public String getToken(){ return token; }
 	public void setToken(String tok) { token = tok; }
 	
@@ -148,6 +148,8 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		} else {
 			cart = (Cart) session.get("carrello");
 		}
+		System.out.println("Current token:" + token);
+		System.out.println("Session token:" + session.get("token"));
 		if(token.compareTo((String) session.get("token"))==0){
 			return ERROR;
 		}
