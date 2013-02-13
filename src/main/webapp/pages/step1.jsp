@@ -57,7 +57,7 @@
 						<s:property value="quantity" /><br />
 						<s:property value="%{quantity}" /><br />
 						
-						<s:iterator status="stat" value="%{quantity}"><!-- PER OGNI EVENTO -->
+						<s:iterator status="stat" value="%{#quantity}"><!-- PER OGNI EVENTO -->
 							<s:form action="update">
 		  						<s:textfield name="guest.name" size="20" value="" label="Nome" /><br />
 								<s:textfield name="guest.surname" size="20" value="" label="Cognome" /><br />
