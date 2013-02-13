@@ -53,7 +53,7 @@
 				<s:iterator status="status" value="items"><!-- PER OGNI EVENTO -->
 				<div class="ss-row">
 				
-					<s:iterator status="status" value="%{quantity}"><!-- PER OGNI EVENTO -->
+					<s:iterator status="status" value="quantity"><!-- PER OGNI EVENTO -->
 						<s:form action="update">
 	  						<s:textfield name="guest.name" size="20" value="" label="Nome" /><br />
 							<s:textfield name="guest.surname" size="20" value="" label="Cognome" /><br />
