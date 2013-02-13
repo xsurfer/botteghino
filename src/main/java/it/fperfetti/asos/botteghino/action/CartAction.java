@@ -21,17 +21,18 @@
 
 package it.fperfetti.asos.botteghino.action;
 
-import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.Map;
-
+import java.util.UUID;
 import org.apache.struts2.interceptor.SessionAware;
-
 import it.fperfetti.asos.botteghino.model.Cart;
 import it.fperfetti.asos.botteghino.model.OrderItem;
-import it.fperfetti.asos.botteghino.stub.Category;
+import it.fperfetti.asos.botteghino.model.Ticket;
 import it.fperfetti.asos.botteghino.stub.Event;
 import it.fperfetti.asos.botteghino.stub.FornitoreService;
 import it.fperfetti.asos.botteghino.stub.FornitoreService_Service;
+import it.fperfetti.asos.botteghino.model.Order;
 
 /**
  * <code>Set welcome message.</code>
@@ -39,129 +40,128 @@ import it.fperfetti.asos.botteghino.stub.FornitoreService_Service;
 public class CartAction extends ExampleSupport implements SessionAware {
 
 	Map<String, Object> session;
+	public void setSession(Map<String, Object> session) { this.session = session; }
+
 	private Cart cart;
-	
+	public Cart getCart() { return cart; }
+
 	private Long idEvent;
+	public Long getIdEvent() { return idEvent; }
+	public void setIdEvent(Long idEvent) { this.idEvent = idEvent; }
+
 	private Event event;
-		
+	public Event getEvent() { return event; }
+	public void setEvent(Event event) { this.event = event; }
+
 	private Integer idItem;
+	public Integer getIdItem() { return idItem; }
+	public void setIdItem(Integer idItem) { this.idItem = idItem; }
 
 	private OrderItem item;
+	public OrderItem getItem() { return item; }
+	public void setItem(OrderItem item) { this.item = item; }
+
+	private List<OrderItem> items;
+	public List<OrderItem> getItems() { return items; }
+	public void setItems(List<OrderItem> items) { this.items = items; }
+
+	private String token;
+	public String getToken(){ return token; }
+	public void setToken(String tok) { token = tok; }
 	
-	private ArrayList<OrderItem> items;
-	
+	private List<Ticket> tickets;
+	public List<Ticket> getTickets() { return tickets; }
+	public void setTickets(List<Ticket> tickets) { this.tickets = tickets; }
+
+	/*************/
+	/*  Actions  */
+	/*************/
+
 	public String remove() throws Exception {
-    	if (!session.containsKey("carrello")){
-    		cart = new Cart();
-    	    session.put("carrello", cart);
-    	} else {
-    		cart = (Cart) session.get("carrello");
-    	}
-    	
-    	item = cart.getItems().get(idItem);
-    	cart.removeItem(item);
-    	
-    	return SUCCESS;
-    }
-	
+		if (!session.containsKey("carrello")){
+			cart = new Cart();
+			session.put("carrello", cart);
+		} else {
+			cart = (Cart) session.get("carrello");
+		}
+		item = cart.getItems().get(idItem);
+		cart.removeItem(item);
+		return SUCCESS;
+	}
+
 	public String update() throws Exception {
-    	if (!session.containsKey("carrello")){
-    		cart = new Cart();
-    	    session.put("carrello", cart);
-    	} else {
-    		cart = (Cart) session.get("carrello");
-    	}
-    	
-    	OrderItem tmpItem = cart.getItems().get(idItem);
-    	tmpItem.setQuantity(item.getQuantity());
+		if (!session.containsKey("carrello")){
+			cart = new Cart();
+			session.put("carrello", cart);
+		} else {
+			cart = (Cart) session.get("carrello");
+		}
 
-    	if(item.getQuantity()<=0){
-    		cart.removeItem(tmpItem);
-    	} else {
-    		cart.updateItem(idItem, tmpItem);
-    	}  	
-    	return SUCCESS;
-    }
-	
-    public String add() throws Exception {
-    	if (!session.containsKey("carrello")){
-    		cart = new Cart();
-    	    session.put("carrello", cart);
-    	} else {
-    		cart = (Cart) session.get("carrello");
-    	}
-    	
-    	FornitoreService eP = new FornitoreService_Service().getFornitore();
-    	event = eP.getEvent(idEvent);
-    	this.item.setEvent(event);
-    	cart.addItem(this.item);
-    	
-        return SUCCESS;
-    }
-    
+		OrderItem tmpItem = cart.getItems().get(idItem);
+		tmpItem.setQuantity(item.getQuantity());
+
+		if(item.getQuantity()<=0){
+			cart.removeItem(tmpItem);
+		} else {
+			cart.updateItem(idItem, tmpItem);
+		}  	
+		return SUCCESS;
+	}
+
+	public String add() throws Exception {
+		if (!session.containsKey("carrello")){
+			cart = new Cart();
+			session.put("carrello", cart);
+		} else {
+			cart = (Cart) session.get("carrello");
+		}
+
+		FornitoreService eP = new FornitoreService_Service().getFornitore();
+		event = eP.getEvent(idEvent);
+		this.item.setEvent(event);
+		cart.addItem(this.item);
+
+		return SUCCESS;
+	}
+
 	public String checkout() throws Exception {
-    	if (!session.containsKey("carrello")){
-    		cart = new Cart();
-    	    session.put("carrello", cart);
-    	} else {
-    		cart = (Cart) session.get("carrello");
-    	}
-    	
-    	items = cart.getItems();
-    	
-    	if(cart.getNumberItems()<=0)
-    		return "empty";
-        return SUCCESS;
-    }
+		if (!session.containsKey("carrello")){
+			cart = new Cart();
+			session.put("carrello", cart);
+		} else {
+			cart = (Cart) session.get("carrello");
+		}
 
-	public Cart getCart() {
-		return cart;
+		items = cart.getItems();
+
+		this.token = UUID.randomUUID().toString();
+		session.put("token", token);
+		if(cart.getNumberItems()<=0)
+			return "empty";
+		return SUCCESS;
 	}
 
-	public void setSession(Map<String, Object> session) {
-		this.session = session;
-	}
-	
-	public Long getIdEvent() {
-		return idEvent;
-	}
+	public String step1() throws Exception {
+		if (!session.containsKey("carrello")){
+			cart = new Cart();
+			session.put("carrello", cart);
+		} else {
+			cart = (Cart) session.get("carrello");
+		}
+		if(token.compareTo((String) session.get("token"))==0){
+			return ERROR;
+		}
 
-	public void setIdEvent(Long idEvent) {
-		this.idEvent = idEvent;
-	}
-	
-	public Event getEvent() {
-		return event;
-	}
+		/* Creating order */
+		Order order = new Order();
+		order.setDate(new Date());
+		order.setTotal(cart.getTotal());
+		session.put("order", order);
+		session.put("token", token);
+		
+		items = cart.getItems();
+		this.token = UUID.randomUUID().toString();
 
-	public void setEvent(Event event) {
-		this.event = event;
+		return SUCCESS;
 	}
-	
-    public ArrayList<OrderItem> getItems() {
-		return items;
-	}
-
-	public void setItems(ArrayList<OrderItem> items) {
-		this.items = items;
-	}
-
-
-	public OrderItem getItem() {
-		return item;
-	}
-
-
-	public void setItem(OrderItem item) {
-		this.item = item;
-	}
-	
-	public Integer getIdItem() {
-		return idItem;
-	}
-
-	public void setIdItem(Integer idItem) {
-		this.idItem = idItem;
-	}
-
 }

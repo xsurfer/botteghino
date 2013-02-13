@@ -35,6 +35,4 @@ public class OrderItem {
 		Double tot = (double) (event.getPrice()*quantity);
 		return tot;
 	}
-	
-
 }

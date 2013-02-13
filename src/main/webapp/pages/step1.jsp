@@ -45,38 +45,36 @@
 	<div class="container">
 
 		<h1>Benvenuto nel Botteghino Online! Scegli un evento e acquistalo subito: basta qualche click!!</h1>
-		<h2 class="ss-subtitle">Check out</h2>
+		<h2 class="ss-subtitle">Dati Acquirente</h2>
 		
 		<div id="ss-container" class="ss-container">	
 		
-			<s:iterator status="status" value="items">
+	
+				<s:iterator status="status" value="items"><!-- PER OGNI EVENTO -->
 				<div class="ss-row">
-					<s:property value="event.author" /> - <s:property value="event.description" /><br />
-					<s:property value="event.location" /><br />
-					
-					<s:form action="update">
-						<s:hidden name="idItem" value="%{(#status.index)}" />
-  						<s:textfield name="item.quantity" size="2" value="%{quantity}" label="Quantità" /><br />
-  						<s:submit value="Aggiorna" />
-					</s:form>	
-					<s:url action="remove" var="removeUrl">
-  							<s:param name="idItem">
-  								<s:property value="%{(#status.index)}" />
-  							</s:param>
-  					</s:url>			
-					<s:a href="%{removeUrl}">
-						Rimuovi
-					</s:a>
+				
+					<s:iterator status="status" value="%{quantity}"><!-- PER OGNI EVENTO -->
+						<s:form action="update">
+	  						<s:textfield name="guest.name" size="20" value="" label="Nome" /><br />
+							<s:textfield name="guest.surname" size="20" value="" label="Cognome" /><br />
+							<s:textfield name="guest.identity" size="20" value="" label="Indirizzo" /><br />
+	  						<s:submit value="Aggiorna" />
+						</s:form>
+					</s:iterator>
+				
 				</div>
 			</s:iterator>
 		
+		
+		
+		<s:form action="update">
+			<s:hidden name="idItem" value="%{(#status.index)}" />
+			<s:textfield name="guest.name" size="20" value="" label="Nome" /><br />
+			<s:textfield name="guest.surname" size="20" value="" label="Cognome" /><br />
+			<s:textfield name="guest.identity" size="20" value="" label="Indirizzo" /><br />
 			<hr />
-			<b>Totale:</b><s:property value="cart.total" />		
-			<s:form action="step1">
-				<s:hidden name="token" value="%{token}" />
-  				<s:submit value="Avanti" />
-			</s:form>			
-			
+			<s:submit value="Avanti" />
+		</s:form>	
 		</div>
 	</div>
 </body>

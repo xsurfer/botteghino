@@ -51,6 +51,8 @@ public interface FornitoreService {
 
     /**
      * 
+     * @param arg2
+     * @param arg1
      * @param arg0
      * @return
      *     returns java.lang.Boolean
@@ -61,7 +63,11 @@ public interface FornitoreService {
     @ResponseWrapper(localName = "buyResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.BuyResponse")
     public Boolean buy(
         @WebParam(name = "arg0", targetNamespace = "")
-        Order arg0);
+        List<Event> arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        List<Integer> arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2);
 
     /**
      * 

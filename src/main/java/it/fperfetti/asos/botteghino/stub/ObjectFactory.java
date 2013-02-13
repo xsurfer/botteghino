@@ -131,14 +131,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Order }
-     * 
-     */
-    public Order createOrder() {
-        return new Order();
-    }
-
-    /**
      * Create an instance of {@link Event }
      * 
      */

@@ -41,25 +41,21 @@
       </result>
     </action>   
      
-    
     <action name="checkout" class="it.fperfetti.asos.botteghino.action.CartAction" method="checkout">
     	<result>/pages/checkout.jsp</result>
     	<result name="empty" type="redirectAction">
-         <param name="actionName">home</param>
-         <param name="namespace">/</param>
-      </result>
+          <param name="actionName">home</param>
+          <param name="namespace">/</param>
+        </result>
     </action> 
     
-
-<!--     <action name="Login_*" method="{1}" class="it.fperfetti.asos.botteghino.example.Login"> -->
-<!--       <result name="input">/example/Login.jsp</result> -->
-<!--       <result type="redirectAction">Menu</result> -->
-<!--     </action> -->
-
-<!--     <action name="*" class="it.fperfetti.asos.botteghino.example.ExampleSupport"> -->
-<!--       <result>/example/{1}.jsp</result> -->
-<!--     </action> -->
-    
+   <action name="step1" class="it.fperfetti.asos.botteghino.action.CartAction" method="step1">
+    	<result>/pages/step1.jsp</result>
+    	<result name="error" type="redirectAction">
+          <param name="actionName">home</param>
+          <param name="namespace">/</param>
+        </result>
+    </action> 
     
   </package>
 </struts>
