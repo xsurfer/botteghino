@@ -12,65 +12,81 @@
 
 <link rel="stylesheet" type="text/css" href="/css/demo.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
-<link href='http://fonts.googleapis.com/css?family=Kelly+Slab' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Kelly+Slab'
+	rel='stylesheet' type='text/css' />
 <!--[if lt IE 9]>
 		<link rel="stylesheet" type="text/css" href="css/styleIE.css" />
 	<![endif]-->
 <script type="text/javascript" src="/js/modernizr.custom.11333.js"></script>
 
 <!-- FANCYBOX CODE -->
-	<!-- Add mousewheel plugin (this is optional) -->
-	<script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js"></script>
 
-	<!-- Add fancyBox main JS and CSS files -->
-	<script type="text/javascript" src="/fancybox/jquery.fancybox.js?v=2.1.3"></script>
-	<link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox.css?v=2.1.2" media="screen" />
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript"
+	src="/fancybox/jquery.fancybox.js?v=2.1.3"></script>
+<link rel="stylesheet" type="text/css"
+	href="/fancybox/jquery.fancybox.css?v=2.1.2" media="screen" />
 
-	<!-- Add Button helper (this is optional) -->
-	<link rel="stylesheet" type="text/css" href="/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
-	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css"
+	href="/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript"
+	src="/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
 
-	<!-- Add Thumbnail helper (this is optional) -->
-	<link rel="stylesheet" type="text/css" href="/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
-	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css"
+	href="/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript"
+	src="/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 
-	<!-- Add Media helper (this is optional) -->
-	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
-	
-	<!-- END FANCYBOX CODE -->
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript"
+	src="/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+
+<!-- END FANCYBOX CODE -->
 
 </head>
 
 <body>
 	<div class="container">
 
-		<h1>Benvenuto nel Botteghino Online! Scegli un evento e acquistalo subito: basta qualche click!!</h1>
+		<h1>Benvenuto nel Botteghino Online! Scegli un evento e
+			acquistalo subito: basta qualche click!!</h1>
 		<h2 class="ss-subtitle">Dati Acquirente</h2>
-		
-		<div id="ss-container" class="ss-container">	
-		
-	
-				<s:iterator status="status" value="items" var="item"><!-- PER OGNI EVENTO -->
+
+		<div id="ss-container" class="ss-container">
+
+			<s:form action="update">
+				<s:iterator status="status" value="items" var="item">
+					<!-- PER OGNI EVENTO -->
+
 					<div class="ss-row">
-						<s:property value="event.author" /> - <s:property value="event.description" /><br />
-						<s:property value="event.location" /><br />
-						<s:property value="quantity" /><br />
-						<s:property value="%{quantity}" /><br />
-						<s:set name="it" value="quantity"/>
-						<s:iterator status="stat" value="(#it).{ #this }"><!-- PER OGNI EVENTO -->
-							<s:form action="update">
-		  						<s:textfield name="guest.name" size="20" value="" label="Nome" /><br />
-								<s:textfield name="guest.surname" size="20" value="" label="Cognome" /><br />
-								<s:textfield name="guest.identity" size="20" value="" label="Indirizzo" /><br />
-		  						<s:submit value="Aggiorna" />
-							</s:form>
+						<s:property value="event.author" /> - <s:property value="event.description" />
+						<br />
+						<s:property value="event.location" />
+						<br />
+
+						<!-- <s:set name="it" value="quantity"/> -->
+						<s:iterator status="stat" value="(#it).{ #this }">
+							<!-- PER OGNI EVENTO -->
+							
+							<s:textfield name="ticket.guest.name" size="20" value="" label="Nome" />
+							<br />
+							<s:textfield name="ticket.guest.surname" size="20" value="" label="Cognome" />
+							<br />
+							<s:textfield name="ticket.guest.identity" size="8" value="" label="C. Identità" />
+							<br />
 						</s:iterator>
-					
+
 					</div>
-			</s:iterator>
-		
-		
-		<!-- 
+				</s:iterator>
+				<s:submit value="Aggiorna" />
+			</s:form>
+
+
+			<!-- 
 		<s:form action="update">
 			<s:hidden name="idItem" value="%{(#status.index)}" />
 			<s:textfield name="guest.name" size="20" value="" label="Nome" /><br />
