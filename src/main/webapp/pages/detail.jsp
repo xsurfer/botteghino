@@ -6,24 +6,23 @@
 <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
 
 	<script type="text/javascript">
-	$(document).ready(function()
-			{
-		alert("work");
-			    $("#addForm").validate(
-			    {
-			        rules:
-			        {
-			        	quantity_txt: {
-			        		required: true,
-			        	    range: [1, 4]
-			        	}       
-			        },
-			        messages:
-			        {
-			            nome: " Valore compreso tra 1-4"
-			        }
-			    });
-			});
+	$(document).ready(function(){
+		
+	    $('#addForm').validate({
+	        rules:
+	        {
+	        	quantity_txt: {
+	        		required: true,
+	        	    range: [1, 4]
+	        	}       
+	        }
+// 	    ,
+// 	        beforeSubmit: function(arr, $form, options) {
+// 	            $('#txt1').val('123456');
+// 	            return true;
+// 	        }
+	    });
+	});
 	</script>
 
 
@@ -34,6 +33,6 @@
 
 <s:form id="addForm" action="add">
   <s:hidden name="idEvent" value="%{event.id}" />
-  <s:textfield id="quantity_txt" name="item.quantity" size="2" value="1" label="Quantità" /><br />
+  <s:textfield id="quantity_txt" name="item.quantity" size="2" value="0" label="Quantità" /><br />
   <s:submit value="Aggiungi" />
 </s:form>
