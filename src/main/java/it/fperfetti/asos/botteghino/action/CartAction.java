@@ -150,7 +150,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		}
 		System.out.println("Current token:" + token);
 		System.out.println("Session token:" + session.get("token"));
-		if(token.compareTo((String) session.get("token"))==0){
+		if(token.compareTo((String) session.get("token"))!=0){
 			return ERROR;
 		}
 
