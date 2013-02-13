@@ -8,6 +8,7 @@
 	<script type="text/javascript">
 	$(document).ready(function()
 			{
+		alert("work");
 			    $("#addForm").validate(
 			    {
 			        rules:
