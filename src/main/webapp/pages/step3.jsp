@@ -45,22 +45,29 @@
 	<div class="container">
 
 		<h1>Benvenuto nel Botteghino Online! Scegli un evento e acquistalo subito: basta qualche click!!</h1>
-		<h2 class="ss-subtitle">Step 2 - Conferma i dati inseriti</h2>
+		<h2 class="ss-subtitle">Step 3 - Dati di pagamento</h2>
 		
 		<div id="ss-container" class="ss-container">	
-			<s:iterator status="status" value="tickets">
-				<s:property value="guest.name" />
-				<s:property value="guest.surname" />
-				<s:property value="guest.identity" />
-			</s:iterator>
 			
-			<s:form action="step2">
+			<s:form action="payment">
 				<s:hidden name="token" value="%{token}" />
-				<s:submit value="Indietro" />
-			</s:form>
-			<s:form action="step3">
-				<s:hidden name="token" value="%{token}" />
-				<s:submit value="Avanti" />
+				<s:textfield name="customer.name"  size="20" value="" label="Nome" />
+				<br />
+				<s:textfield name="customer.surname"  size="20" value="" label="Cognome" />
+				<br />
+				<s:textfield name="customer.email"  size="20" value="" label="E-Mail" />
+				<br />
+				<s:select label="Circuito"
+    				name="customer.circuit"
+					headerKey="-1" headerValue="Seleziona una voce"
+					list="#{'01':'MasterCard', '02':'VisaElectron', '02':'Visa', '03':'American Express'}"
+					value="selectedCircuit"
+					required="true"/>
+	
+				<s:textfield name="customer.creditcard" size="16" value="" label="Numero Carta di Credito" />
+				<s:textfield name="customer.cvv" size="3" value="" label="CVV" />
+				<br />
+				<s:submit value="Effettua Pagamento" />
 			</s:form>
 			
 		</div>

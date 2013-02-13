@@ -49,6 +49,7 @@
 		
 		<div id="ss-container" class="ss-container">	
 			<s:iterator status="status" value="tickets">
+				<s:property value="event" />
 				<s:property value="guest.name" />
 				<s:property value="guest.surname" />
 				<s:property value="guest.identity" />

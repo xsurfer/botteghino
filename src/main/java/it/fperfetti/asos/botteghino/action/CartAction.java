@@ -200,6 +200,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		System.out.println("Ho " + tickets.size() + "tickets" );
 		order.getTickets().clear();
 		for(Ticket ticket : this.tickets){
+			ticket.setOrder(order);
 			order.addTicket(ticket);
 		}
 		
@@ -225,13 +226,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		if(tok_session == null || token.compareTo( tok_session )!=0){
 			return ERROR;
 		}
-
 		Order order = (Order) session.get("order");
-		session.put("token", token);
-//		for(Ticket ticket : this.tickets){
-//			order.addTicket(ticket);
-//		}
-//		this.tickets = order.getTickets();
 		
 		this.token = UUID.randomUUID().toString();
 		session.put("token", token);
