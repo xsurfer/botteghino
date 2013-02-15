@@ -7,7 +7,7 @@
 
 	<script type="text/javascript">
 	$(function() {
-		alert("aa")
+		alert("aa");
 		$('#addForm').validate({
 	        rules:
 	        {
@@ -20,7 +20,7 @@
                 aname: {
                         required: "Obbligatorio",
                         range: "Valore compreso tra 1 e 4"
-                }
+                },
 	        submitHandler: function(form) {
 	            alert('bb');
 	            form.submit();
