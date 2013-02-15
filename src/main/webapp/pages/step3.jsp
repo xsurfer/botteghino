@@ -54,36 +54,42 @@
 			  return arg != value;
 			 }, "Scegliere un circuito valido");
 		
-		$("#name_field").rules({
-				cRequired: true,
-				cMinlength: 2
-		});
-		
-		$("#surname_field").rules({
+		$("#name_field").rules("add",{
 			cRequired: true,
 			cMinlength: 2
-		});
+			}
+		);
+		
+		$("#surname_field").rules("add",{
+			cRequired: true,
+			cMinlength: 2
+			}
+		);
 			
-		$("#email_field").rules({
+		$("#email_field").rules("add",{
 			cRequired: true,
 			cEmail: true
-		});
+			}
+		);
 		
-		$("#circuit_field").rules({
+		$("#circuit_field").rules("add",{
 			cValueNotEquals: "-1"
-		});
+			}
+		);
 		
-		$("#creditcard_field").rules({
+		$("#creditcard_field").rules("add",{
 			cRequired: true,
 			cCreditcard: true
-		});
+			}
+		);
 			
-		$("#cvv_field").rules({
+		$("#cvv_field").rules("add",{
 			cRequired: true,
 			cDigits: true,
 			cMinlength: 3,
     		cMaxlength: 3
-		});
+    		}
+		);
 				
 		$("#paymentForm").validate();
 	});
