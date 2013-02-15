@@ -6,9 +6,9 @@
 <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
 
 	<script type="text/javascript">
-	$(function() {
+	$().ready(function() {
 		alert("aa");
-		$('#addForm').validate({
+		$("#addForm").validate({
 	        rules:
 	        {
 	        	quantity_txt: {
@@ -17,14 +17,14 @@
 	        	}       
 	        },
 	        messages: {
-                aname: {
+	        	quantity_txt: {
                         required: "Obbligatorio",
                         range: "Valore compreso tra 1 e 4"
                 }
 	        },
 	        submitHandler: function(form) {
 	            alert('bb');
-	            form.submit();
+	            //form.submit();
 	        }
 	    });	
 	});
