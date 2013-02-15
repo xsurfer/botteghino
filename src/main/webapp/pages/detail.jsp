@@ -7,7 +7,6 @@
 
 	<script type="text/javascript">
 	$().ready(function() {
-		alert("aa");
 		$("#addForm").validate({
 	        rules:
 	        {
@@ -21,12 +20,8 @@
                         required: "Obbligatorio",
                         range: "Valore compreso tra 1 e 4"
                 }
-	        },
-	        submitHandler: function(form) {
-	            alert($("#addForm").valid())
-	            form.submit();
 	        }
-	    });	
+		});	
 	});
 	</script>
 
