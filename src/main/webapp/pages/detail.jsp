@@ -6,23 +6,19 @@
 <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
 
 	<script type="text/javascript">
-	$(document).ready(function(){
-		
-	    $("#addForm").submit(function() {
-	    	$('#addForm').validate({
-		        rules:
-		        {
-		        	quantity_txt: {
-		        		required: true,
-		        	    range: [1, 4]
-		        	}       
-		        },
-		        submitHandler: function(form) {
-		            form.submit();
-		        }
-		    });	
-	    });
-	    
+	$(function() {
+		$('#addForm').validate({
+	        rules:
+	        {
+	        	quantity_txt: {
+	        		required: true,
+	        	    range: [1, 4]
+	        	}       
+	        },
+	        submitHandler: function(form) {
+	            form.submit();
+	        }
+	    });	
 	});
 	</script>
 
