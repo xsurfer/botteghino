@@ -7,6 +7,7 @@
 
 	<script type="text/javascript">
 	$(function() {
+		alert("aa")
 		$('#addForm').validate({
 	        rules:
 	        {
@@ -16,7 +17,7 @@
 	        	}       
 	        },
 	        submitHandler: function(form) {
-	            form.submit();
+	            alert('bb');
 	        }
 	    });	
 	});
@@ -30,6 +31,6 @@
 
 <s:form id="addForm" action="add">
   <s:hidden name="idEvent" value="%{event.id}" />
-  <s:textfield id="quantity_txt" name="item.quantity" size="2" value="0" label="Quantità" /><br />
+  <s:textfield id="quantity_txt" class="required" name="item.quantity" size="2" value="0" label="Quantità" /><br />
   <s:submit value="Aggiungi" />
 </s:form>
