@@ -44,55 +44,51 @@
 	<script type="text/javascript">
 	$().ready(function() {
 		
-		$("#name_field").rules("add",{
-			required: true,
-    		minlength: 2,
-            messages: {
-    			   required: "Obbligatorio",
-    			   minlength: "Non valido"
-    			   }
+		$.validator.addMethod("cRequired", $.validator.methods.required, "Obbligatorio");
+		$.validator.addMethod("cMinlength", $.validator.methods.minlength, "Non valido");
+		$.validator.addMethod("cMaxlength", $.validator.methods.maxlength, "Non valido");
+		$.validator.addMethod("cEmail", $.validator.methods.email, "E-mail non valida");
+		$.validator.addMethod("cCreditcard", $.validator.methods.creditcard, "Numero CC non valido");
+		$.validator.addMethod("cDigits", $.validator.methods.digits, "CVV non valido");
+		
+		
+		$.validator.addClassRules({
+			name_field:{
+				cRequired: true,
+				cMinlength: 2
+			}
 		});
 		
-		$("#surname_field").rules("add",{
-    		required: true,
-    		minlength: 2,
-            messages: {
-    			   required: "Obbligatorio",
-    			   minlength: "Non valido"
-    			   }
+		$.validator.addClassRules({
+			surname_field:{
+				cRequired: true,
+				cMinlength: 2
+			}
+		});
+			
+		$.validator.addClassRules({
+			email_field:{
+				cRequired: true,
+				cEmail: true
+			}
 		});
 		
-		$("#email_field").rules("add",{
-    		required: true,
-    		email: true
-            messages: {
-    			   required: "Obbligatorio",
-    			   minlength: "Non valido"
-    			   }
+		$.validator.addClassRules({
+			creditcard_field:{
+				cRequired: true,
+				cCreditcard: true
+			}
 		});
 		
-		$("#creditcard_field").rules("add",{
-    		required: true,
-    		creditcard: true,
-            messages: {
- 			   required: "Obbligatorio",
-  			   creditcard: "Non valido"
- 			}
+		$.validator.addClassRules({
+			creditcard_field:{
+				cRequired: true,
+				cDigits: true,
+				cMinlength: 3,
+	    		cMaxlength: 3
+			}
 		});
-		
-		$("#cvv_field").rules("add",{
-    		required: true,
-    		minlength: 3,
-    		maxlength: 3,
-    		digits: true,
-            messages: {
- 			   required: "Obbligatorio",
- 			   minlength: "Non valido",
- 			   maxlength: "Non valido",
- 			   digits: "Non valido"
- 			   }
-		});
-		
+				
 		$("#paymentForm").validate();
 	});
 	</script>

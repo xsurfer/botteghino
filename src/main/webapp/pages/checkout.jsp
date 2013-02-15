@@ -52,7 +52,7 @@
 		$.validator.addClassRules({
 			quantity_field:{
 				cRequired: true,
-	        	range: [1, 4]
+				cRange: [1, 4]
 			}
 		});
 		
