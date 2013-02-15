@@ -20,7 +20,8 @@
                 aname: {
                         required: "Obbligatorio",
                         range: "Valore compreso tra 1 e 4"
-                },
+                }
+	        },
 	        submitHandler: function(form) {
 	            alert('bb');
 	            form.submit();
