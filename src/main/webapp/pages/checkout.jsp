@@ -41,24 +41,18 @@
 
 	<script type="text/javascript">
 	$().ready(function() {
-		$(".toValidate").validate({
-	        rules:
-	        {
-	        	'item.quantity': {
-	        		required: true,
-	        	    range: [1, 4]
-	        	}       
-	        },
-	        messages: {
-	        	'item.quantity': {
-                        required: "Obbligatorio",
-                        range: "Valore compreso tra 1 e 4"
-                }
-	        },
-	        submitHandler: function(form) {
-	            form.submit();
-	        }
-	    });	
+		$(".toValidate").validate();	
+		
+		$(".quantity_field").rules("add",{
+			required: true,
+    	    range: [1, 4],
+            messages: {
+            	required: "Obbligatorio",
+                range: "Valore compreso tra 1 e 4"
+    		}
+		});
+		
+		
 	});
 	</script>
 </head>
@@ -78,7 +72,7 @@
 					
 					<s:form class="toValidate" action="update">
 						<s:hidden name="idItem" value="%{(#status.index)}" />
-  						<s:textfield name="item.quantity" size="2" value="%{quantity}" label="Quantità" /><br />
+  						<s:textfield class="quantity_field" name="item.quantity" size="2" value="%{quantity}" label="Quantità" /><br />
   						<s:submit value="Aggiorna" />
 					</s:form>	
 					<s:url action="remove" var="removeUrl">

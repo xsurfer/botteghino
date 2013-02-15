@@ -51,7 +51,7 @@
 	$().ready(function() {
 		$("#step2form").validate();	
 		
-		$("#name_field").rules("add",{
+		$(".name_field").rules("add",{
 			required: true,
     		minlength: 2,
             messages: {
@@ -60,7 +60,7 @@
     			   }
 		});
 		
-		$("#surname_field").rules("add",{
+		$(".surname_field").rules("add",{
     		required: true,
     		minlength: 2,
             messages: {
@@ -69,7 +69,7 @@
     			   }
 		});
 		
-		$("#identity_field").rules("add",{
+		$(".identity_field").rules("add",{
     		required: true,
     		minlength: 6,
     		maxlength: 6,
@@ -110,11 +110,11 @@
 							<s:set name="identity" value="%{tickets[#ticketNumber].guest.identity}" />
 							
 							<s:hidden name="tickets[%{#ticketNumber}].event" value="%{#eventoId}" />
-							<s:textfield id="name_field" name="tickets[%{#ticketNumber}].guest.name"     size="20" value="%{#name}" label="Nome" />
+							<s:textfield class="name_field" name="tickets[%{#ticketNumber}].guest.name"     size="20" value="%{#name}" label="Nome" />
 							<br />
-							<s:textfield id="surname_field" name="tickets[%{#ticketNumber}].guest.surname"  size="20" value="%{#surname}" label="Cognome" />
+							<s:textfield class="surname_field" name="tickets[%{#ticketNumber}].guest.surname"  size="20" value="%{#surname}" label="Cognome" />
 							<br />
-							<s:textfield id="identity_field" name="tickets[%{#ticketNumber}].guest.identity" size="6" value="%{#identity}" label="C. Identità" />
+							<s:textfield class="identity_field" name="tickets[%{#ticketNumber}].guest.identity" size="6" value="%{#identity}" label="C. Identità" />
 							<br />
 							<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
 						</s:iterator>
