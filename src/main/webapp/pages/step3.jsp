@@ -55,10 +55,8 @@
 			 }, "Scegliere un circuito valido");
 		
 		$("#name_field").rules({
-			name_field:{
 				cRequired: true,
 				cMinlength: 2
-			}
 		});
 		
 		$("#surname_field").rules({
