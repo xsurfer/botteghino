@@ -39,6 +39,60 @@
 	
 	<!-- END FANCYBOX CODE -->
 
+	<script type="text/javascript">
+	$().ready(function() {
+		$("#paymentForm").validate();	
+		
+		$("#name_field").rules("add",{
+			required: true,
+    		minlength: 2,
+            messages: {
+    			   required: "Obbligatorio",
+    			   minlength: "Non valido"
+    			   }
+		});
+		
+		$("#surname_field").rules("add",{
+    		required: true,
+    		minlength: 2,
+            messages: {
+    			   required: "Obbligatorio",
+    			   minlength: "Non valido"
+    			   }
+		});
+		
+		$("#email_field").rules("add",{
+    		required: true,
+    		email: true
+            messages: {
+    			   required: "Obbligatorio",
+    			   minlength: "Non valido"
+    			   }
+		});
+		
+		$("#creditcard_field").rules("add",{
+    		required: true,
+    		creditcard: true,
+            messages: {
+ 			   required: "Obbligatorio",
+  			   creditcard: "Non valido"
+ 			}
+		});
+		
+		$("#cvv_field").rules("add",{
+    		required: true,
+    		minlength: 3,
+    		maxlength: 3,
+    		digits: true,
+            messages: {
+ 			   required: "Obbligatorio",
+ 			   minlength: "Non valido",
+ 			   maxlength: "Non valido",
+ 			   digits: "Non valido"
+ 			   }
+		});
+	});
+	</script>
 </head>
 
 <body>
@@ -49,13 +103,13 @@
 		
 		<div id="ss-container" class="ss-container">	
 			
-			<s:form action="payment">
+			<s:form id="paymentForm" action="payment">
 				<s:hidden name="token" value="%{token}" />
-				<s:textfield name="customer.name"  size="20" value="" label="Nome" />
+				<s:textfield id="name_field" name="customer.name"  size="20" value="" label="Nome" />
 				<br />
-				<s:textfield name="customer.surname"  size="20" value="" label="Cognome" />
+				<s:textfield id="surname_field" name="customer.surname"  size="20" value="" label="Cognome" />
 				<br />
-				<s:textfield name="customer.email"  size="20" value="" label="E-Mail" />
+				<s:textfield id="email_field" name="customer.email"  size="20" value="" label="E-Mail" />
 				<br />
 				<s:select label="Circuito"
     				name="customer.circuit"
@@ -64,8 +118,8 @@
 					value="selectedCircuit"
 					required="true"/>
 	
-				<s:textfield name="customer.creditcard" size="16" value="" label="Carta di Credito" />
-				<s:textfield name="customer.cvv" size="3" value="" label="CVV" />
+				<s:textfield id="creditcard_field" name="customer.creditcard" size="16" value="" label="Carta di Credito" />
+				<s:textfield id="cvv_field" name="customer.cvv" size="3" value="" label="CVV" />
 				<br />
 				<s:submit value="Effettua Pagamento" />
 			</s:form>

@@ -47,6 +47,40 @@
 
 <!-- END FANCYBOX CODE -->
 
+	<script type="text/javascript">
+	$().ready(function() {
+		$("#step2form").validate();	
+		
+		$("#name_field").rules("add",{
+			required: true,
+    		minlength: 2,
+            messages: {
+    			   required: "Obbligatorio",
+    			   minlength: "Non valido"
+    			   }
+		});
+		
+		$("#surname_field").rules("add",{
+    		required: true,
+    		minlength: 2,
+            messages: {
+    			   required: "Obbligatorio",
+    			   minlength: "Non valido"
+    			   }
+		});
+		
+		$("#identity_field").rules("add",{
+    		required: true,
+    		minlength: 6,
+    		maxlength: 6,
+            messages: {
+ 			   required: "Obbligatorio",
+ 			   minlength: "Non valido",
+ 			   maxlength: "Non valido"
+ 			   }
+		});
+	});
+	</script>
 </head>
 
 <body>
@@ -58,7 +92,7 @@
 
 		<div id="ss-container" class="ss-container">
 
-			<s:form action="step2">
+			<s:form id="step2form" action="step2">
 				<s:set name="ticketNumber" value="%{0}"/>
 				<s:iterator status="status" value="items">
 					<!-- PER OGNI EVENTO -->
@@ -76,11 +110,11 @@
 							<s:set name="identity" value="%{tickets[#ticketNumber].guest.identity}" />
 							
 							<s:hidden name="tickets[%{#ticketNumber}].event" value="%{#eventoId}" />
-							<s:textfield name="tickets[%{#ticketNumber}].guest.name"     size="20" value="%{#name}" label="Nome" />
+							<s:textfield id="name_field" name="tickets[%{#ticketNumber}].guest.name"     size="20" value="%{#name}" label="Nome" />
 							<br />
-							<s:textfield name="tickets[%{#ticketNumber}].guest.surname"  size="20" value="%{#surname}" label="Cognome" />
+							<s:textfield id="surname_field" name="tickets[%{#ticketNumber}].guest.surname"  size="20" value="%{#surname}" label="Cognome" />
 							<br />
-							<s:textfield name="tickets[%{#ticketNumber}].guest.identity" size="8" value="%{#identity}" label="C. Identità" />
+							<s:textfield id="identity_field" name="tickets[%{#ticketNumber}].guest.identity" size="6" value="%{#identity}" label="C. Identità" />
 							<br />
 							<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
 						</s:iterator>
