@@ -11,13 +11,13 @@
 		$("#addForm").validate({
 	        rules:
 	        {
-	        	'quantity_txt': {
+	        	'item.quantity': {
 	        		required: true,
 	        	    range: [1, 4]
 	        	}       
 	        },
 	        messages: {
-	        	'quantity_txt': {
+	        	'item.quantity': {
                         required: "Obbligatorio",
                         range: "Valore compreso tra 1 e 4"
                 }
