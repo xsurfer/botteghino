@@ -3,7 +3,7 @@
 <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
 
 <sj:head loadFromGoogle="true" />
-<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
 
 	<script type="text/javascript">
 	$().ready(function() {
@@ -11,20 +11,20 @@
 		$("#addForm").validate({
 	        rules:
 	        {
-	        	quantity_txt: {
+	        	'quantity_txt': {
 	        		required: true,
 	        	    range: [1, 4]
 	        	}       
 	        },
 	        messages: {
-	        	quantity_txt: {
+	        	'quantity_txt': {
                         required: "Obbligatorio",
                         range: "Valore compreso tra 1 e 4"
                 }
 	        },
 	        submitHandler: function(form) {
-	            alert('bb');
-	            //form.submit();
+	            alert($("#addForm").valid())
+	            form.submit();
 	        }
 	    });	
 	});
