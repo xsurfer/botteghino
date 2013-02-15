@@ -50,43 +50,41 @@
 		$.validator.addMethod("cEmail", $.validator.methods.email, "E-mail non valida");
 		$.validator.addMethod("cCreditcard", $.validator.methods.creditcard, "Numero CC non valido");
 		$.validator.addMethod("cDigits", $.validator.methods.digits, "CVV non valido");
+		$.validator.addMethod("cValueNotEquals", function(value, element, arg){
+			  return arg != value;
+			 }, "Scegliere un circuito valido");
 		
-		
-		$.validator.addClassRules({
+		$("#name_field").rules({
 			name_field:{
 				cRequired: true,
 				cMinlength: 2
 			}
 		});
 		
-		$.validator.addClassRules({
-			surname_field:{
-				cRequired: true,
-				cMinlength: 2
-			}
+		$("#surname_field").rules({
+			cRequired: true,
+			cMinlength: 2
 		});
 			
-		$.validator.addClassRules({
-			email_field:{
-				cRequired: true,
-				cEmail: true
-			}
+		$("#email_field").rules({
+			cRequired: true,
+			cEmail: true
 		});
 		
-		$.validator.addClassRules({
-			creditcard_field:{
-				cRequired: true,
-				cCreditcard: true
-			}
+		$("#circuit_field").rules({
+			cValueNotEquals: "-1"
 		});
 		
-		$.validator.addClassRules({
-			creditcard_field:{
-				cRequired: true,
-				cDigits: true,
-				cMinlength: 3,
-	    		cMaxlength: 3
-			}
+		$("#creditcard_field").rules({
+			cRequired: true,
+			cCreditcard: true
+		});
+			
+		$("#cvv_field").rules({
+			cRequired: true,
+			cDigits: true,
+			cMinlength: 3,
+    		cMaxlength: 3
 		});
 				
 		$("#paymentForm").validate();
@@ -110,10 +108,10 @@
 				<br />
 				<s:textfield id="email_field" name="customer.email"  size="20" value="" label="E-Mail" />
 				<br />
-				<s:select label="Circuito"
+				<s:select id="circuit_field" label="Circuito"
     				name="customer.circuit"
 					headerKey="-1" headerValue="Seleziona una voce"
-					list="#{'01':'MasterCard', '02':'VisaElectron', '02':'Visa', '03':'American Express'}"
+					list="#{'mastercard':'MasterCard', 'visaelectron':'VisaElectron', 'visa':'Visa', 'americanexpress':'American Express'}"
 					value="selectedCircuit"
 					required="true"/>
 	
