@@ -54,6 +54,8 @@
 			  return arg != value;
 			 }, "Scegliere un circuito valido");
 		
+		$("#paymentForm").validate();
+		
 		$("#name_field").rules("add",{
 			cRequired: true,
 			cMinlength: 2
@@ -91,7 +93,7 @@
     		}
 		);
 				
-		$("#paymentForm").validate();
+		
 	});
 	</script>
 </head>
