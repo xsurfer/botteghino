@@ -41,7 +41,6 @@
 
 	<script type="text/javascript">
 	$().ready(function() {
-		$("#paymentForm").validate();	
 		
 		$("#name_field").rules("add",{
 			required: true,
@@ -91,6 +90,8 @@
  			   digits: "Non valido"
  			   }
 		});
+		
+		$("#paymentForm").validate();
 	});
 	</script>
 </head>

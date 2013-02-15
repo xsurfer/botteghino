@@ -41,17 +41,20 @@
 
 	<script type="text/javascript">
 	$().ready(function() {
-		$(".toValidate").validate();	
 		
-		$(".quantity_field").rules("add",{
-			required: true,
-    	    range: [1, 4],
-            messages: {
-            	required: "Obbligatorio",
-                range: "Valore compreso tra 1 e 4"
-    		}
+		$.validator.addMethod("cRequired", $.validator.methods.required, "Obbligatorio");
+		$.validator.addMethod("cRange", $.validator.methods.range, "Non valido");
+		$.validator.addMethod("cMinlength", $.validator.methods.minlength, "Non valido");
+		$.validator.addMethod("cMaxlength", $.validator.methods.maxlength, "Non valido");
+		
+		$.validator.addClassRules({
+			quantity_field:{
+				cRequired: true,
+	        	range: [1, 4]
+			}
 		});
 		
+		$(".toValidate").validate();
 		
 	});
 	</script>

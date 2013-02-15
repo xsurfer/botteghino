@@ -48,37 +48,36 @@
 <!-- END FANCYBOX CODE -->
 
 	<script type="text/javascript">
-	$().ready(function() {
-		$("#step1form").validate();	
+	$().ready(function() {	
 		
-		$(".name_field").rules("add",{
-			required: true,
-    		minlength: 2,
-            messages: {
-    			   required: "Obbligatorio",
-    			   minlength: "Non valido"
-    			   }
+		$.validator.addMethod("cRequired", $.validator.methods.required, "Obbligatorio");
+		$.validator.addMethod("cMinlength", $.validator.methods.minlength, "Non valido");
+		$.validator.addMethod("cMaxlength", $.validator.methods.maxlength, "Non valido");
+		
+		$.validator.addClassRules({
+			name_field:{
+				cRequired: true,
+				cMinlength: 2
+			}
+		});
+				
+		$.validator.addClassRules({
+			surname_field:{
+				cRequired: true,
+				cMinlength: 2
+			}
 		});
 		
-		$(".surname_field").rules("add",{
-    		required: true,
-    		minlength: 2,
-            messages: {
-    			   required: "Obbligatorio",
-    			   minlength: "Non valido"
-    			   }
+		$.validator.addClassRules({
+			identity_field:{
+				cRequired: true,
+				cMinlength: 6,
+				cMaxlength: 6
+			}
 		});
 		
-		$(".identity_field").rules("add",{
-    		required: true,
-    		minlength: 6,
-    		maxlength: 6,
-            messages: {
- 			   required: "Obbligatorio",
- 			   minlength: "Non valido",
- 			   maxlength: "Non valido"
- 			   }
-		});
+		$("#step1form").validate();
+		
 	});
 	</script>
 </head>
