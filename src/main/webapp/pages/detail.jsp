@@ -16,8 +16,14 @@
 	        	    range: [1, 4]
 	        	}       
 	        },
+	        messages: {
+                aname: {
+                        required: "Obbligatorio",
+                        range: "Valore compreso tra 1 e 4"
+                }
 	        submitHandler: function(form) {
 	            alert('bb');
+	            form.submit();
 	        }
 	    });	
 	});
@@ -31,6 +37,6 @@
 
 <s:form id="addForm" action="add">
   <s:hidden name="idEvent" value="%{event.id}" />
-  <s:textfield id="quantity_txt" class="required" name="item.quantity" size="2" value="0" label="Quantità" /><br />
+  <s:textfield id="quantity_txt" name="item.quantity" size="2" value="0" label="Quantità" /><br />
   <s:submit value="Aggiungi" />
 </s:form>
