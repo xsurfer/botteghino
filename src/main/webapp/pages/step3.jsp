@@ -18,6 +18,8 @@
 	<![endif]-->
 <script type="text/javascript" src="/js/modernizr.custom.11333.js"></script>
 
+<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+
 <!-- FANCYBOX CODE -->
 	<!-- Add mousewheel plugin (this is optional) -->
 	<script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js"></script>
