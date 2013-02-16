@@ -50,7 +50,7 @@
 				maxWidth	: 800,
 				maxHeight	: 600,
 				fitToView	: false,
-				width		: '300px',
+				width		: '400px',
 				height		: '200px',
 				autoSize	: false,
 				closeClick	: false,
@@ -132,9 +132,6 @@
 		
 		<div id="ss-container" class="ss-container">
 			<div class="ss-row">
-				<div class="ss-left">
-					<h2 id="gennaio">Gennaio</h2>
-				</div>
 				<div class="ss-right">
 					<h2>Eventi</h2>
 				</div>
@@ -142,67 +139,70 @@
 
 			<s:iterator status="status" value="events">
 				<s:if test="%{(#status.index)%3==0}">
+					<s:url action="detail.action" var="URLevent1">
+						<s:param name="idEvent"><s:property value="author" /> - <s:property value="id" /></s:param>
+					</s:url> 
 					<div class="ss-row ss-medium <s:property value="category.name" />">
 					<div class="ss-left">
-						<a href="http://tympanus.net/Tutorials/TypographyEffects/"
-							class="ss-circle ss-circle-1">Image</a>
+						<s:a cssClass="fancybox fancybox.ajax ss-circle ss-circle-1 <s:property value="category.name" />" href="%{URLevent1}">
+							<s:property value="title" />
+						</s:a>
 					</div>
 					<div class="ss-right">
 						<h3>
-							<span><s:property value="author" /></span> 
-							
-							<s:url action="detail.action" var="URLevent1">
-								<s:param name="idEvent"><s:property value="id" /></s:param>
-							</s:url> 
+							<span><s:property value="location" /></span> 
 							<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent1}">
 								<s:property value="title" />
 							</s:a>
-
+							<span>Ancora <s:property value="availability"/> ticket disponibili al prezzo di <s:property value="price" />&euro;</span>
 						</h3>
 					</div>
 				</div>
 				</s:if>
 				<s:elseif test="%{(#status.index)%3==1}">
+					<s:url action="detail.action" var="URLevent2">
+						<s:param name="idEvent"><s:property value="id" /></s:param>
+					</s:url> 
     				<div class="ss-row ss-large <s:property value="category.name" />">
 				<div class="ss-left">
 					<h3>
-						<span><s:property value="author" /></span> 
-						<s:url action="detail.action" var="URLevent2">
-							<s:param name="idEvent"><s:property value="id" /></s:param>
-						</s:url> 
+						<span><s:property value="location" /></span> 
+
 						<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent2}">
-							<s:property value="title" />
-						</s:a>						
+							<s:property value="author" /> - <s:property value="title" />
+						</s:a>			
+						<span>Ancora <s:property value="availability"/> ticket disponibili al prezzo di <s:property value="price" />&euro;</span>			
 					</h3>
 				</div>
 				<div class="ss-right">
-					<a href="http://tympanus.net/Development/HoverClickTriggerCircle/"
-						class="ss-circle ss-circle-2">Image</a>
+					<s:a cssClass="fancybox fancybox.ajax ss-circle ss-circle-2 <s:property value="category.name" />" href="%{URLevent1}">
+						<s:property value="title" />
+					</s:a>						
 				</div>
 			</div>
 				</s:elseif>
 				<s:else>
+					<s:url action="detail.action" var="URLevent3">				
+						<s:param name="idEvent"><s:property value="id" /></s:param>
+					</s:url> 
     				<div class="ss-row ss-small <s:property value="category.name" />">
-				<div class="ss-left">
-					<a href="http://tympanus.net/Tutorials/ElasticSlideshow/"
-						class="ss-circle ss-circle-3">Image</a>
-				</div>
-				<div class="ss-right">
-					<h3>
-						<span><s:property value="author" /></span> 
-						<s:url action="detail.action" var="URLevent3">
-							<s:param name="idEvent"><s:property value="id" /></s:param>
-						</s:url> 
-						<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent3}">
-							<s:property value="title" />
-						</s:a>
-					</h3>
-				</div>
-			</div>
+						<div class="ss-left">
+							<s:a cssClass="fancybox fancybox.ajax ss-circle ss-circle-3 <s:property value="category.name" />" href="%{URLevent1}">
+								<s:property value="title" />
+							</s:a>
+						</div>
+						<div class="ss-right">
+							<h3>
+								<span><s:property value="location" /></span>
+								<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent3}">
+									<s:property value="author" /> - <s:property value="title" />
+								</s:a>
+								<span>Ancora <s:property value="availability"/> ticket disponibili al prezzo di <s:property value="price" />&euro;</span>
+							</h3>
+						</div>
+					</div>
 				</s:else>
-				
 			</s:iterator>
-			
 		</div>
 	</div>
 

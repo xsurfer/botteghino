@@ -246,14 +246,17 @@ h2.ss-subtitle:after{
 .ss-container h3 a:hover{
 	color: rgba(255,255,255,1);
 }
-.ss-circle-1{
-    background-image:url(../images/1.jpg);
+.concert{
+	/* Concert image */
+    background-image:url(../images/concert.jpg);
 }
-.ss-circle-2{
-    background-image: url(../images/2.jpg);
+.sport{
+	/* Sport image */
+    background-image: url(../images/sport.png);
 }
-.ss-circle-3{
-    background-image: url(../images/3.jpg);
+.events{
+	/* Other image */ 
+    background-image: url(../images/events.gif);
 }
 .ss-circle-4{
     background-image: url(../images/4.jpg);

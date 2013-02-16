@@ -21,6 +21,10 @@
                         range: "Valore compreso tra 1 e 4"
                 }
 	        }
+	        ,
+	        errorPlacement: function(error, element) {
+	            error.appendTo( element.parent("td").next("td") );
+	        },
 		});	
 	});
 	</script>
