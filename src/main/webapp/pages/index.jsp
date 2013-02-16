@@ -13,79 +13,87 @@
 
 <link rel="stylesheet" type="text/css" href="/css/demo.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
-<link href='http://fonts.googleapis.com/css?family=Kelly+Slab' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Kelly+Slab'
+	rel='stylesheet' type='text/css' />
 <!--[if lt IE 9]>
 		<link rel="stylesheet" type="text/css" href="css/styleIE.css" />
 	<![endif]-->
 <script type="text/javascript" src="/js/modernizr.custom.11333.js"></script>
 
 <!-- FANCYBOX CODE -->
-	<!-- Add validation plugin -->
-	<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+<!-- Add validation plugin -->
+<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
 
-	<!-- Add mousewheel plugin (this is optional) -->
-	<script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js"></script>
 
-	<!-- Add fancyBox main JS and CSS files -->
-	<script type="text/javascript" src="/fancybox/jquery.fancybox.js?v=2.1.3"></script>
-	<link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox.css?v=2.1.2" media="screen" />
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript"
+	src="/fancybox/jquery.fancybox.js?v=2.1.3"></script>
+<link rel="stylesheet" type="text/css"
+	href="/fancybox/jquery.fancybox.css?v=2.1.2" media="screen" />
 
-	<!-- Add Button helper (this is optional) -->
-	<link rel="stylesheet" type="text/css" href="/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
-	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css"
+	href="/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript"
+	src="/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
 
-	<!-- Add Thumbnail helper (this is optional) -->
-	<link rel="stylesheet" type="text/css" href="/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
-	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css"
+	href="/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript"
+	src="/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 
-	<!-- Add Media helper (this is optional) -->
-	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
-	
-	<!-- END FANCYBOX CODE -->
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript"
+	src="/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
 
-	<script type="text/javascript">
-		/* <![CDATA[ */
-		$(document).ready(function() {
-			$('.fancybox').fancybox({
-				maxWidth	: 800,
-				maxHeight	: 600,
-				fitToView	: false,
-				width		: '400px',
-				height		: '200px',
-				autoSize	: false,
-				closeClick	: false,
-				openEffect	: 'none',
-				closeEffect	: 'none'
-			});
-		});
-		/* ]]> */
-	</script>
-	
-	<script type="text/javascript">
+<!-- END FANCYBOX CODE -->
+
+<script type="text/javascript">
 	/* <![CDATA[ */
-		$(document).ready(function() {
-			$('#ss-categories a').click(function(event){
-				event.stopPropagation();
-				var href = $(this).attr('href');
-				href = href.substr(1,href.length);
-				
-				if(href == 'all'){
-					$("#ss-container .ss-medium").fadeIn();
-					$("#ss-container .ss-small").fadeIn();
-					$("#ss-container .ss-large").fadeIn();
-				} else {
-					$("#ss-container .ss-medium").not("." + href).fadeOut();
-					$("#ss-container .ss-small").not("." + href).fadeOut();
-					$("#ss-container .ss-large").not("." + href).fadeOut();
-					
-					$("#ss-container ." + href).fadeIn();
-					$("#ss-container ." + href).fadeIn();
-					$("#ss-container ." + href).fadeIn();
-				}
-			});
+	$(document).ready(function() {
+		$('.fancybox').fancybox({
+			maxWidth : 800,
+			maxHeight : 600,
+			fitToView : false,
+			width : '400px',
+			height : '200px',
+			autoSize : false,
+			closeClick : false,
+			openEffect : 'none',
+			closeEffect : 'none'
 		});
-		/* ]]> */
-	</script>
+	});
+	/* ]]> */
+</script>
+
+<script type="text/javascript">
+	/* <![CDATA[ */
+	$(document).ready(function() {
+		$('#ss-categories a').click(function(event) {
+			event.stopPropagation();
+			var href = $(this).attr('href');
+			href = href.substr(1, href.length);
+
+			if (href == 'all') {
+				$("#ss-container .ss-medium").fadeIn();
+				$("#ss-container .ss-small").fadeIn();
+				$("#ss-container .ss-large").fadeIn();
+			} else {
+				$("#ss-container .ss-medium").not("." + href).fadeOut();
+				$("#ss-container .ss-small").not("." + href).fadeOut();
+				$("#ss-container .ss-large").not("." + href).fadeOut();
+
+				$("#ss-container ." + href).fadeIn();
+				$("#ss-container ." + href).fadeIn();
+				$("#ss-container ." + href).fadeIn();
+			}
+		});
+	});
+	/* ]]> */
+</script>
 
 
 </head>
@@ -93,11 +101,12 @@
 <body>
 	<div class="container">
 
-		<h1>Benvenuto nel Botteghino Online! Scegli un evento e acquistalo subito: basta qualche click!!</h1>
+		<h1>Benvenuto nel Botteghino Online! Scegli un evento e
+			acquistalo subito: basta qualche click!!</h1>
 		<h2 class="ss-subtitle">Botteghino timeline</h2>
 		<div id="ss-links" class="ss-links">
 
-		<!--
+			<!--
 			<a href="#gennaio">Gen</a>
 			<a href="#febbraio">Feb</a>
 			<a href="#marzo">Mar</a> 
@@ -111,25 +120,28 @@
 			<a href="#august">Nov</a>
 			<a href="#july">Dic</a>
 		-->
-					
+
 			<div id="ss-categories" class="ss-categories">
 				<a href="#all">Tutti</a>
-				<s:iterator value="categories">				
-					<a href="#<s:property value="name" />"><s:property value="description" /></a>
+				<s:iterator value="categories">
+					<a href="#<s:property value="name" />"><s:property
+							value="description" /></a>
 				</s:iterator>
 			</div>
-				
-		</div>		
-		
+
+		</div>
+
 		<div id="ss-cart" class="ss-cart">
-			<s:property value="cart.numberItems" /> eventi selezionati<br />
-			Totale: <s:property value="cart.total" /> &euro;<br />
-			<s:url action="checkout" var="checkoutUrl" />			
+			<s:property value="cart.numberItems" />
+			eventi selezionati<br /> Totale:
+			<s:property value="cart.total" />
+			&euro;<br />
+			<s:url action="checkout" var="checkoutUrl" />
 			<s:a href="%{checkoutUrl}">
 				<img src="/images/checkout.png" />
 			</s:a>
 		</div>
-		
+
 		<div id="ss-container" class="ss-container">
 			<div class="ss-row">
 				<div class="ss-right">
@@ -139,55 +151,76 @@
 
 			<s:iterator status="status" value="events">
 				<s:if test="%{(#status.index)%3==0}">
+				<!-- MEDIUM ROW -->
 					<s:url action="detail.action" var="URLevent1">
-						<s:param name="idEvent"><s:property value="author" /> - <s:property value="id" /></s:param>
-					</s:url> 
+						<s:param name="idEvent">
+							<s:property value="author" /> - <s:property value="id" />
+						</s:param>
+					</s:url>
 					<div class="ss-row ss-medium <s:property value="category.name" />">
-					<div class="ss-left">
-						<s:a cssClass="fancybox fancybox.ajax ss-circle ss-circle-1 <s:property value="category.name" />" href="%{URLevent1}">
-							<s:property value="title" />
-						</s:a>
-					</div>
-					<div class="ss-right">
-						<h3>
-							<span><s:property value="location" /></span> 
-							<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent1}">
+						<div class="ss-left">
+							<s:a
+								cssClass="fancybox fancybox.ajax ss-circle ss-circle-1 <s:property value="category.name" />"
+								href="%{URLevent1}">
 								<s:property value="title" />
 							</s:a>
-							<span>Ancora <s:property value="availability"/> ticket disponibili al prezzo di <s:property value="price" />&euro;</span>
-						</h3>
+						</div>
+						<div class="ss-right">
+							<h3>
+								<span><s:property value="location" /></span>
+								<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent1}">
+									<s:property value="title" />
+								</s:a>
+								<span>Ancora <s:property value="availability" /> ticket
+									disponibili al prezzo di <s:property value="price" />&euro;
+								</span>
+							</h3>
+						</div>
 					</div>
-				</div>
+				<!-- END MEDIUM ROW -->
 				</s:if>
 				<s:elseif test="%{(#status.index)%3==1}">
+					<!-- LARGE ROW -->
 					<s:url action="detail.action" var="URLevent2">
-						<s:param name="idEvent"><s:property value="id" /></s:param>
-					</s:url> 
-    				<div class="ss-row ss-large <s:property value="category.name" />">
-				<div class="ss-left">
-					<h3>
-						<span><s:property value="location" /></span> 
+						<s:param name="idEvent">
+							<s:property value="id" />
+						</s:param>
+					</s:url>
+					<div class="ss-row ss-large <s:property value="category.name" />">
+						<div class="ss-left">
+							<h3>
+								<span><s:property value="location" /></span>
 
-						<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent2}">
-							<s:property value="author" /> - <s:property value="title" />
-						</s:a>			
-						<span>Ancora <s:property value="availability"/> ticket disponibili al prezzo di <s:property value="price" />&euro;</span>			
-					</h3>
-				</div>
-				<div class="ss-right">
-					<s:a cssClass="fancybox fancybox.ajax ss-circle ss-circle-2 <s:property value="category.name" />" href="%{URLevent1}">
-						<s:property value="title" />
-					</s:a>						
-				</div>
-			</div>
+								<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent2}">
+									<s:property value="author" /> - <s:property value="title" />
+								</s:a>
+								<span>Ancora <s:property value="availability" /> ticket
+									disponibili al prezzo di <s:property value="price" />&euro;
+								</span>
+							</h3>
+						</div>
+						<div class="ss-right">
+							<s:a
+								cssClass="fancybox fancybox.ajax ss-circle ss-circle-2 <s:property value="category.name" />"
+								href="%{URLevent1}">
+								<s:property value="title" />
+							</s:a>
+						</div>
+					</div>
+					<!-- END LARGE ROW -->
 				</s:elseif>
 				<s:else>
-					<s:url action="detail.action" var="URLevent3">				
-						<s:param name="idEvent"><s:property value="id" /></s:param>
-					</s:url> 
-    				<div class="ss-row ss-small <s:property value="category.name" />">
+					<!-- SMALL ROW -->
+					<s:url action="detail.action" var="URLevent3">
+						<s:param name="idEvent">
+							<s:property value="id" />
+						</s:param>
+					</s:url>
+					<div class="ss-row ss-small <s:property value="category.name" />">
 						<div class="ss-left">
-							<s:a cssClass="fancybox fancybox.ajax ss-circle ss-circle-3 <s:property value="category.name" />" href="%{URLevent1}">
+							<s:a
+								cssClass="fancybox fancybox.ajax ss-circle ss-circle-3 <s:property value="category.name" />"
+								href="%{URLevent1}">
 								<s:property value="title" />
 							</s:a>
 						</div>
@@ -197,10 +230,13 @@
 								<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent3}">
 									<s:property value="author" /> - <s:property value="title" />
 								</s:a>
-								<span>Ancora <s:property value="availability"/> ticket disponibili al prezzo di <s:property value="price" />&euro;</span>
+								<span>Ancora <s:property value="availability" /> ticket
+									disponibili al prezzo di <s:property value="price" />&euro;
+								</span>
 							</h3>
 						</div>
 					</div>
+					<!-- END SMALL ROW -->
 				</s:else>
 			</s:iterator>
 		</div>
@@ -210,266 +246,293 @@
 
 	<!-- JAVASCRIPTs -->
 
-<%-- 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> --%>
+	<%-- 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> --%>
 	<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript">
-	/* <![CDATA[ */
+		/* <![CDATA[ */
 		$(function() {
 
-			var $sidescroll	= (function() {
-					
-					// the row elements
-				var $rows			= $('#ss-container > div.ss-row'),
-					// we will cache the inviewport rows and the outside viewport rows
-					$rowsViewport, $rowsOutViewport,
-					// navigation menu links
-					$links			= $('#ss-links > a'),
-					// the window element
-					$win			= $(window),
-					// we will store the window sizes here
-					winSize			= {},
-					// used in the scroll setTimeout function
-					anim			= false,
-					// page scroll speed
-					scollPageSpeed	= 2000 ,
-					// page scroll easing
-					scollPageEasing = 'easeInOutExpo',
-					// perspective?
-					hasPerspective	= false,
-					
-					perspective		= hasPerspective && Modernizr.csstransforms3d,
-					// initialize function
-					init			= function() {
-						
-						// get window sizes
-						getWinSize();
-						// initialize events
-						initEvents();
-						// define the inviewport selector
-						defineViewport();
-						// gets the elements that match the previous selector
-						setViewportRows();
-						// if perspective add css
-						if( perspective ) {
-							$rows.css({
-								'-webkit-perspective'			: 600,
-								'-webkit-perspective-origin'	: '50% 0%'
-							});
-						}
-						// show the pointers for the inviewport rows
-						$rowsViewport.find('a.ss-circle').addClass('ss-circle-deco');
-						// set positions for each row
-						placeRows();
-						
-					},
-					// defines a selector that gathers the row elems that are initially visible.
-					// the element is visible if its top is less than the window's height.
-					// these elements will not be affected when scrolling the page.
-					defineViewport	= function() {
-					
-						$.extend( $.expr[':'], {
-						
-							inviewport	: function ( el ) {
-								if ( $(el).offset().top < winSize.height ) {
-									return true;
-								}
-								return false;
-							}
-						
-						});
-					
-					},
-					// checks which rows are initially visible 
-					setViewportRows	= function() {
-						
-						$rowsViewport 		= $rows.filter(':inviewport');
-						$rowsOutViewport	= $rows.not( $rowsViewport )
-						
-					},
+			var $sidescroll = (function() {
+
+				// the row elements
+				var $rows = $('#ss-container > div.ss-row'),
+				// we will cache the inviewport rows and the outside viewport rows
+				$rowsViewport, $rowsOutViewport,
+				// navigation menu links
+				$links = $('#ss-links > a'),
+				// the window element
+				$win = $(window),
+				// we will store the window sizes here
+				winSize = {},
+				// used in the scroll setTimeout function
+				anim = false,
+				// page scroll speed
+				scollPageSpeed = 2000,
+				// page scroll easing
+				scollPageEasing = 'easeInOutExpo',
+				// perspective?
+				hasPerspective = false,
+
+				perspective = hasPerspective && Modernizr.csstransforms3d,
+				// initialize function
+				init = function() {
+
 					// get window sizes
-					getWinSize		= function() {
-					
-						winSize.width	= $win.width();
-						winSize.height	= $win.height();
-					
-					},
-					// initialize some events
-					initEvents		= function() {
-						
-						// navigation menu links.
-						// scroll to the respective section.
-						$links.on( 'click.Scrolling', function( event ) {
-							
-							// scroll to the element that has id = menu's href
-							$('html, body').stop().animate({
-								scrollTop: $( $(this).attr('href') ).offset().top
-							}, scollPageSpeed, scollPageEasing );
-							
+					getWinSize();
+					// initialize events
+					initEvents();
+					// define the inviewport selector
+					defineViewport();
+					// gets the elements that match the previous selector
+					setViewportRows();
+					// if perspective add css
+					if (perspective) {
+						$rows.css({
+							'-webkit-perspective' : 600,
+							'-webkit-perspective-origin' : '50% 0%'
+						});
+					}
+					// show the pointers for the inviewport rows
+					$rowsViewport.find('a.ss-circle')
+							.addClass('ss-circle-deco');
+					// set positions for each row
+					placeRows();
+
+				},
+				// defines a selector that gathers the row elems that are initially visible.
+				// the element is visible if its top is less than the window's height.
+				// these elements will not be affected when scrolling the page.
+				defineViewport = function() {
+
+					$.extend($.expr[':'], {
+
+						inviewport : function(el) {
+							if ($(el).offset().top < winSize.height) {
+								return true;
+							}
 							return false;
-						
-						});
-						
-						$(window).on({
-							// on window resize we need to redefine which rows are initially visible (this ones we will not animate).
-							'resize.Scrolling' : function( event ) {
-								
-								// get the window sizes again
-								getWinSize();
-								// redefine which rows are initially visible (:inviewport)
-								setViewportRows();
-								// remove pointers for every row
-								$rows.find('a.ss-circle').removeClass('ss-circle-deco');
-								// show inviewport rows and respective pointers
-								$rowsViewport.each( function() {
-								
-									$(this).find('div.ss-left')
-										   .css({ left   : '0%' })
-										   .end()
-										   .find('div.ss-right')
-										   .css({ right  : '0%' })
-										   .end()
-										   .find('a.ss-circle')
-										   .addClass('ss-circle-deco');
-								
-								});
-							
-							},
-							// when scrolling the page change the position of each row	
-							'scroll.Scrolling' : function( event ) {
-								
-								// set a timeout to avoid that the 
-								// placeRows function gets called on every scroll trigger
-								if( anim ) return false;
-								anim = true;
-								setTimeout( function() {
-									
-									placeRows();
-									anim = false;
-									
-								}, 10 );
-							
-							}
-						});
-					
-					},
-					// sets the position of the rows (left and right row elements).
-					// Both of these elements will start with -50% for the left/right (not visible)
-					// and this value should be 0% (final position) when the element is on the
-					// center of the window.
-					placeRows		= function() {
-						
-							// how much we scrolled so far
-						var winscroll	= $win.scrollTop(),
-							// the y value for the center of the screen
-							winCenter	= winSize.height / 2 + winscroll;
-						
-						// for every row that is not inviewport
-						$rowsOutViewport.each( function(i) {
-							
-							var $row	= $(this),
+						}
+
+					});
+
+				},
+				// checks which rows are initially visible 
+				setViewportRows = function() {
+
+					$rowsViewport = $rows.filter(':inviewport');
+					$rowsOutViewport = $rows.not($rowsViewport)
+
+				},
+				// get window sizes
+				getWinSize = function() {
+
+					winSize.width = $win.width();
+					winSize.height = $win.height();
+
+				},
+				// initialize some events
+				initEvents = function() {
+
+					// navigation menu links.
+					// scroll to the respective section.
+					$links.on('click.Scrolling', function(event) {
+
+						// scroll to the element that has id = menu's href
+						$('html, body').stop().animate({
+							scrollTop : $($(this).attr('href')).offset().top
+						}, scollPageSpeed, scollPageEasing);
+
+						return false;
+
+					});
+
+					$(window).on(
+							{
+								// on window resize we need to redefine which rows are initially visible (this ones we will not animate).
+								'resize.Scrolling' : function(event) {
+
+									// get the window sizes again
+									getWinSize();
+									// redefine which rows are initially visible (:inviewport)
+									setViewportRows();
+									// remove pointers for every row
+									$rows.find('a.ss-circle').removeClass(
+											'ss-circle-deco');
+									// show inviewport rows and respective pointers
+									$rowsViewport.each(function() {
+
+										$(this).find('div.ss-left').css({
+											left : '0%'
+										}).end().find('div.ss-right').css({
+											right : '0%'
+										}).end().find('a.ss-circle').addClass(
+												'ss-circle-deco');
+
+									});
+
+								},
+								// when scrolling the page change the position of each row	
+								'scroll.Scrolling' : function(event) {
+
+									// set a timeout to avoid that the 
+									// placeRows function gets called on every scroll trigger
+									if (anim)
+										return false;
+									anim = true;
+									setTimeout(function() {
+
+										placeRows();
+										anim = false;
+
+									}, 10);
+
+								}
+							});
+
+				},
+				// sets the position of the rows (left and right row elements).
+				// Both of these elements will start with -50% for the left/right (not visible)
+				// and this value should be 0% (final position) when the element is on the
+				// center of the window.
+				placeRows = function() {
+
+					// how much we scrolled so far
+					var winscroll = $win.scrollTop(),
+					// the y value for the center of the screen
+					winCenter = winSize.height / 2 + winscroll;
+
+					// for every row that is not inviewport
+					$rowsOutViewport
+							.each(function(i) {
+
+								var $row = $(this),
 								// the left side element
-								$rowL	= $row.find('div.ss-left'),
+								$rowL = $row.find('div.ss-left'),
 								// the right side element
-								$rowR	= $row.find('div.ss-right'),
+								$rowR = $row.find('div.ss-right'),
 								// top value
-								rowT	= $row.offset().top;
-							
-							// hide the row if it is under the viewport
-							if( rowT > winSize.height + winscroll ) {
-								
-								if( perspective ) {
-								
-									$rowL.css({
-										'-webkit-transform'	: 'translate3d(-75%, 0, 0) rotateY(-90deg) translate3d(-75%, 0, 0)',
-										'opacity'			: 0
-									});
-									$rowR.css({
-										'-webkit-transform'	: 'translate3d(75%, 0, 0) rotateY(90deg) translate3d(75%, 0, 0)',
-										'opacity'			: 0
-									});
-								
+								rowT = $row.offset().top;
+
+								// hide the row if it is under the viewport
+								if (rowT > winSize.height + winscroll) {
+
+									if (perspective) {
+
+										$rowL
+												.css({
+													'-webkit-transform' : 'translate3d(-75%, 0, 0) rotateY(-90deg) translate3d(-75%, 0, 0)',
+													'opacity' : 0
+												});
+										$rowR
+												.css({
+													'-webkit-transform' : 'translate3d(75%, 0, 0) rotateY(90deg) translate3d(75%, 0, 0)',
+													'opacity' : 0
+												});
+
+									} else {
+
+										$rowL.css({
+											left : '-50%'
+										});
+										$rowR.css({
+											right : '-50%'
+										});
+
+									}
+
 								}
+								// if not, the row should become visible (0% of left/right) as it gets closer to the center of the screen.
 								else {
-								
-									$rowL.css({ left 		: '-50%' });
-									$rowR.css({ right 		: '-50%' });
-								
-								}
-								
-							}
-							// if not, the row should become visible (0% of left/right) as it gets closer to the center of the screen.
-							else {
-									
+
 									// row's height
-								var rowH	= $row.height(),
+									var rowH = $row.height(),
 									// the value on each scrolling step will be proporcional to the distance from the center of the screen to its height
-									factor 	= ( ( ( rowT + rowH / 2 ) - winCenter ) / ( winSize.height / 2 + rowH / 2 ) ),
+									factor = (((rowT + rowH / 2) - winCenter) / (winSize.height / 2 + rowH / 2)),
 									// value for the left / right of each side of the row.
 									// 0% is the limit
-									val		= Math.max( factor * 50, 0 );
-									
-								if( val <= 0 ) {
-								
-									// when 0% is reached show the pointer for that row
-									if( !$row.data('pointer') ) {
-									
-										$row.data( 'pointer', true );
-										$row.find('.ss-circle').addClass('ss-circle-deco');
-									
+									val = Math.max(factor * 50, 0);
+
+									if (val <= 0) {
+
+										// when 0% is reached show the pointer for that row
+										if (!$row.data('pointer')) {
+
+											$row.data('pointer', true);
+											$row.find('.ss-circle').addClass(
+													'ss-circle-deco');
+
+										}
+
+									} else {
+
+										// the pointer should not be shown
+										if ($row.data('pointer')) {
+
+											$row.data('pointer', false);
+											$row.find('.ss-circle')
+													.removeClass(
+															'ss-circle-deco');
+
+										}
+
 									}
-								
-								}
-								else {
-									
-									// the pointer should not be shown
-									if( $row.data('pointer') ) {
-										
-										$row.data( 'pointer', false );
-										$row.find('.ss-circle').removeClass('ss-circle-deco');
-									
+
+									// set calculated values
+									if (perspective) {
+
+										var t = Math.max(factor * 75, 0), r = Math
+												.max(factor * 90, 0), o = Math
+												.min(Math.abs(factor - 1), 1);
+
+										$rowL
+												.css({
+													'-webkit-transform' : 'translate3d(-'
+															+ t
+															+ '%, 0, 0) rotateY(-'
+															+ r
+															+ 'deg) translate3d(-'
+															+ t + '%, 0, 0)',
+													'opacity' : o
+												});
+										$rowR
+												.css({
+													'-webkit-transform' : 'translate3d('
+															+ t
+															+ '%, 0, 0) rotateY('
+															+ r
+															+ 'deg) translate3d('
+															+ t + '%, 0, 0)',
+													'opacity' : o
+												});
+
+									} else {
+
+										$rowL.css({
+											left : -val + '%'
+										});
+										$rowR.css({
+											right : -val + '%'
+										});
+
 									}
-									
+
 								}
-								
-								// set calculated values
-								if( perspective ) {
-									
-									var	t		= Math.max( factor * 75, 0 ),
-										r		= Math.max( factor * 90, 0 ),
-										o		= Math.min( Math.abs( factor - 1 ), 1 );
-									
-									$rowL.css({
-										'-webkit-transform'	: 'translate3d(-' + t + '%, 0, 0) rotateY(-' + r + 'deg) translate3d(-' + t + '%, 0, 0)',
-										'opacity'			: o
-									});
-									$rowR.css({
-										'-webkit-transform'	: 'translate3d(' + t + '%, 0, 0) rotateY(' + r + 'deg) translate3d(' + t + '%, 0, 0)',
-										'opacity'			: o
-									});
-								
-								}
-								else {
-									
-									$rowL.css({ left 	: - val + '%' });
-									$rowR.css({ right 	: - val + '%' });
-									
-								}
-								
-							}	
-						
-						});
-					
-					};
-				
-				return { init : init };
-			
+
+							});
+
+				};
+
+				return {
+					init : init
+				};
+
 			})();
-			
+
 			$sidescroll.init();
-			
+
 		});
 		/* ]]> */
-		</script>
+	</script>
 
 </body>
 </html>
