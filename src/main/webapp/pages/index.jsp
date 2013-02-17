@@ -55,10 +55,10 @@
 	/* <![CDATA[ */
 	$(document).ready(function() {
 		$('.fancybox').fancybox({
-			maxWidth : 800,
+			maxWidth : 300,
 			maxHeight : 600,
 			fitToView : false,
-			width : '400px',
+			width : '300px',
 			height : '200px',
 			autoSize : false,
 			closeClick : false,

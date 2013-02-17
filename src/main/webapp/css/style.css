@@ -283,6 +283,30 @@ h2.ss-subtitle:after{
 	color: rgba(255,255,255,1);
 }
 
+.info_event {
+	width: 280px;
+}
+
+.info_event span {
+	font-size: 20px;
+	display: block;
+}
+
+.info_event h3 {
+	font-size: 20px;
+}
+
+.info_event div.addiv {
+	width: 150px;
+	margin: 0 auto;
+}
+
+.info_event div.addiv .smallSubmit{
+	width: 70px;
+	margin: 0 auto;
+}
+width: 100px
+
 a.music{
 	/* Concert image */
     background-image:url(../images/concert.jpg);

@@ -7,36 +7,37 @@
 
 	<script type="text/javascript">
 	$().ready(function() {
-		$("#addForm").validate({
-	        rules:
-	        {
-	        	'item.quantity': {
-	        		required: true,
-	        	    range: [1, 4]
-	        	}       
-	        },
-	        messages: {
-	        	'item.quantity': {
-                        required: "Obbligatorio",
-                        range: "Valore compreso tra 1 e 4"
-                }
-	        }
-	        ,
-	        errorPlacement: function(error, element) {
-	            error.appendTo( element.parent("td").next("td") );
-	        },
-		});	
+		
+		$.validator.addMethod("cValueNotEquals", function(value, element, arg){
+			  return arg != value;
+			 }, "Scegliere una quantità");
+		
+		$("#addForm").validate();	
+		
+		$("#quantity_txt").rules("add",{
+			cValueNotEquals: "-1"
+			});
 	});
 	</script>
 
+<div class="info_event">
+	<span><s:property value="event.location" />, #data</span>
+	<h3><s:property value="event.author" /> - <s:property value="event.title" /></h3>
+	<span><s:property value="event.description" /></span>
+	<span><s:property value="event.price" /></span>
+	
+	<div class="addiv">
+		<span>Aggiungi al carrello:</span>
+		<s:form id="addForm" action="add">
+  			<s:hidden name="idEvent" value="%{event.id}" />
+  			<span>Quantità: <s:select id="quantity_txt" label="Circuito"
+    			name="item.quantity"
+				headerKey="-1" headerValue="#"
+				list="#{'1':'1', '2':'2', '3':'3', '4':'4'}"
+				required="true"/></span>
+			<span><s:submit cssClass="smallSubmit" value="Aggiungi" /></span>
 
-<h2><s:property value="event.author" /></h2>
-<h3><s:property value="event.title" /></h3>
-<p><s:property value="event.description" /></p>
-<h3><s:property value="event.location" /></h3>
-
-<s:form id="addForm" action="add">
-  <s:hidden name="idEvent" value="%{event.id}" />
-  <s:textfield id="quantity_txt" name="item.quantity" size="2" value="0" label="Quantità" /><br />
-  <s:submit value="Aggiungi" />
-</s:form>
+  		
+		</s:form>
+	</div>
+</div>
