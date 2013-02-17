@@ -258,12 +258,21 @@ h2.ss-subtitle:after{
 	border-bottom: 5px solid rgba(164,166,181,0.8);
 }
 
+.ss-container div.ticket{
+	margin-top: 20px;
+	padding: 10px 15px;
+}
+
 .ss-container div.detail a{
 	margin-top: 5px;
 	padding: 10px 15px;
 	font-size: 20px;
 	text-align: left;
 	color: rgba(0, 0, 0,0.9);
+}
+
+.ss-container div.detail span{
+    display: block;
 }
 
 .ss-container div.detail form{

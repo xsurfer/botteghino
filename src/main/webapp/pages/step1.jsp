@@ -123,31 +123,44 @@
 
 									<s:hidden name="tickets[%{#ticketNumber}].event"
 										value="%{#eventoId}" />
-									<s:textfield cssClass="name_field"
-										name="tickets[%{#ticketNumber}].guest.name" size="20"
-										value="%{#name}" label="Nome" />
-									<br />
-									<s:textfield cssClass="surname_field"
-										name="tickets[%{#ticketNumber}].guest.surname" size="20"
-										value="%{#surname}" label="Cognome" />
-									<br />
-									<s:textfield cssClass="identity_field"
-										name="tickets[%{#ticketNumber}].guest.identity" size="6"
-										value="%{#identity}" label="C. Identità" />
-									<br />
+									<div class="ticket" >
+									<p>Ticket #<s:property value="#stat.count" /></p>
+									<span> <label>Nome</label> <s:textfield
+											cssClass="name_field"
+											name="tickets[%{#ticketNumber}].guest.name" size="20"
+											value="%{#name}" label="Nome" />
+									</span>
+
+									<span> <label>Cognome</label> <s:textfield
+											cssClass="surname_field"
+											name="tickets[%{#ticketNumber}].guest.surname" size="20"
+											value="%{#surname}" label="Cognome" />
+									</span>
+
+									<span> <label>C. Identità</label> <s:textfield
+											cssClass="identity_field"
+											name="tickets[%{#ticketNumber}].guest.identity" size="6"
+											value="%{#identity}" label="C. Identità" />
+									</span>
+									</div>
 									<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
 								</s:iterator>
 							</div>
 						</div>
 					</div>
-					</s:iterator>
-					<div class="ss-row">
-						<div class="ss-left"></div>
-						<div class="ss-right">
+				</s:iterator>
+				<div class="ss-row">
+					<div class="ss-left">&nbsp;</div>
+					<div class="ss-right">
+						<h3>
+							Attenzione: i biglietti sono strettamente personali, quindi non cedibili. Verrà richiesto un documento di identità il giorno dell'evento
+						</h3>
+						<div>
 							<s:hidden name="token" value="%{token}" />
 							<s:submit value="Avanti" />
 						</div>
 					</div>
+				</div>
 			</s:form>
 		</div>
 	</div>
