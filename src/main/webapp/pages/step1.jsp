@@ -19,7 +19,8 @@
 	<![endif]-->
 <script type="text/javascript" src="/js/modernizr.custom.11333.js"></script>
 
-<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+<script type="text/javascript"
+	src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
 
 <!-- FANCYBOX CODE -->
 <!-- Add mousewheel plugin (this is optional) -->
@@ -49,94 +50,103 @@
 
 <!-- END FANCYBOX CODE -->
 
-	<script type="text/javascript">
-	$().ready(function() {	
-		
-		$.validator.addMethod("cRequired", $.validator.methods.required, "Obbligatorio");
-		$.validator.addMethod("cMinlength", $.validator.methods.minlength, "Non valido");
-		$.validator.addMethod("cMaxlength", $.validator.methods.maxlength, "Non valido");
-		
-		$.validator.addClassRules({
-			name_field:{
-				cRequired: true,
-				cMinlength: 2
-			}
-		});
-				
-		$.validator.addClassRules({
-			surname_field:{
-				cRequired: true,
-				cMinlength: 2
-			}
-		});
-		
-		$.validator.addClassRules({
-			identity_field:{
-				cRequired: true,
-				cMinlength: 6,
-				cMaxlength: 6
-			}
-		});
-		
-		$("#step1form").validate();
-		
-	});
-	</script>
+<script type="text/javascript">
+	$().ready(
+			function() {
+
+				$.validator.addMethod("cRequired",
+						$.validator.methods.required, "Obbligatorio");
+				$.validator.addMethod("cMinlength",
+						$.validator.methods.minlength, "Non valido");
+				$.validator.addMethod("cMaxlength",
+						$.validator.methods.maxlength, "Non valido");
+
+				$.validator.addClassRules({
+					name_field : {
+						cRequired : true,
+						cMinlength : 2
+					}
+				});
+
+				$.validator.addClassRules({
+					surname_field : {
+						cRequired : true,
+						cMinlength : 2
+					}
+				});
+
+				$.validator.addClassRules({
+					identity_field : {
+						cRequired : true,
+						cMinlength : 6,
+						cMaxlength : 6
+					}
+				});
+
+				$("#step1form").validate();
+
+			});
+</script>
 </head>
 
 <body>
 	<div class="container">
+		<div class="ss-row">
+			<div class="ss-left">
+				<h1>Benvenuto nel Botteghino Online! Scegli un evento e
+					acquistalo subito: basta qualche click!!</h1>
+				<h2 class="ss-subtitle">Step 1 - Assegna i tuoi biglietti</h2>
 
-		<h1>Benvenuto nel Botteghino Online! Scegli un evento e
-			acquistalo subito: basta qualche click!!</h1>
-		<h2 class="ss-subtitle">Step 1 - Assegna i tuoi biglietti</h2>
+				<div id="ss-container" class="ss-container">
 
-		<div id="ss-container" class="ss-container">
 
-			<s:form id="step1form" action="step2">
-				<s:set name="ticketNumber" value="%{0}"/>
-				<s:iterator status="status" value="items">
-					<!-- PER OGNI EVENTO -->
-					<div class="ss-row">
-						<s:property value="event.author" /> - <s:property value="event.description" />
-						<br />
-						<s:property value="event.location" />
-						<br />					
-						<s:set name="it" value="quantity"/>
-						<s:set name="eventoId" value="event.id"/>
-						<s:iterator status="stat" value="(#it).{ #this }">
+
+					<s:form id="step1form" action="step2">
+						<s:set name="ticketNumber" value="%{0}" />
+						<s:iterator status="status" value="items">
 							<!-- PER OGNI EVENTO -->
-							<s:set name="name" value="%{tickets[#ticketNumber].guest.name}" />
-							<s:set name="surname" value="%{tickets[#ticketNumber].guest.surname}" />
-							<s:set name="identity" value="%{tickets[#ticketNumber].guest.identity}" />
-							
-							<s:hidden name="tickets[%{#ticketNumber}].event" value="%{#eventoId}" />
-							<s:textfield cssClass="name_field" name="tickets[%{#ticketNumber}].guest.name"     size="20" value="%{#name}" label="Nome" />
-							<br />
-							<s:textfield cssClass="surname_field" name="tickets[%{#ticketNumber}].guest.surname"  size="20" value="%{#surname}" label="Cognome" />
-							<br />
-							<s:textfield cssClass="identity_field" name="tickets[%{#ticketNumber}].guest.identity" size="6" value="%{#identity}" label="C. Identità" />
-							<br />
-							<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
+							<div class="ss-row">
+								<s:property value="event.author" />
+								-
+								<s:property value="event.description" />
+								<br />
+								<s:property value="event.location" />
+								<br />
+								<s:set name="it" value="quantity" />
+								<s:set name="eventoId" value="event.id" />
+								<s:iterator status="stat" value="(#it).{ #this }">
+									<!-- PER OGNI EVENTO -->
+									<s:set name="name" value="%{tickets[#ticketNumber].guest.name}" />
+									<s:set name="surname"
+										value="%{tickets[#ticketNumber].guest.surname}" />
+									<s:set name="identity"
+										value="%{tickets[#ticketNumber].guest.identity}" />
+
+									<s:hidden name="tickets[%{#ticketNumber}].event"
+										value="%{#eventoId}" />
+									<s:textfield cssClass="name_field"
+										name="tickets[%{#ticketNumber}].guest.name" size="20"
+										value="%{#name}" label="Nome" />
+									<br />
+									<s:textfield cssClass="surname_field"
+										name="tickets[%{#ticketNumber}].guest.surname" size="20"
+										value="%{#surname}" label="Cognome" />
+									<br />
+									<s:textfield cssClass="identity_field"
+										name="tickets[%{#ticketNumber}].guest.identity" size="6"
+										value="%{#identity}" label="C. Identità" />
+									<br />
+									<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
+								</s:iterator>
+
+							</div>
 						</s:iterator>
+						<s:hidden name="token" value="%{token}" />
+						<s:submit value="Aggiorna" />
+					</s:form>
 
-					</div>
-				</s:iterator>
-				<s:hidden name="token" value="%{token}" />
-				<s:submit value="Aggiorna" />
-			</s:form>
-
-
-			<!-- 
-		<s:form action="update">
-			<s:hidden name="idItem" value="%{(#status.index)}" />
-			<s:textfield name="guest.name" size="20" value="" label="Nome" /><br />
-			<s:textfield name="guest.surname" size="20" value="" label="Cognome" /><br />
-			<s:textfield name="guest.identity" size="20" value="" label="Indirizzo" /><br />
-			<hr />
-			<s:submit value="Avanti" />
-		</s:form>	
-		 -->
+				</div>
+			</div>
 		</div>
 	</div>
 </body>

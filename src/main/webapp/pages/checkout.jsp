@@ -89,20 +89,13 @@
 				<div class="ss-left">
 					<s:iterator status="status" value="items">
 						<h3>
-							<s:property value="event.author" />
-							-
-							<s:property value="event.description" />
+							<span><s:property value="event.author" /> - <s:property
+									value="event.description" /></span> <span>Location: <s:property
+									value="event.location" /></span> <span>Prezzo: <s:property
+									value="event.price" /></span>
 						</h3>
 
-						<div>
-							Location:
-							<s:property value="event.location" />
-						</div>
-						<div>
-							Prezzo:
-							<s:property value="event.price" />
-						</div>
-						<div>
+						<div class="detail">
 							<fieldset>
 								<legend>Modifica:</legend>
 								<s:form cssClass="toValidate" action="update">
@@ -113,31 +106,29 @@
 									<s:submit value="Aggiorna" />
 								</s:form>
 							</fieldset>
+							<s:url action="remove" var="removeUrl">
+								<s:param name="idItem">
+									<s:property value="%{(#status.index)}" />
+								</s:param>
+							</s:url>
+							<s:a href="%{removeUrl}">Rimuovi</s:a>
 						</div>
-
-						<s:url action="remove" var="removeUrl">
-							<s:param name="idItem">
-								<s:property value="%{(#status.index)}" />
-							</s:param>
-						</s:url>
-						<s:a href="%{removeUrl}">
-						Rimuovi
-						</s:a>
-
 					</s:iterator>
 				</div>
 			</div>
 
-			<div class="ss-right">
-				<h3>
-					Totale:
-					<s:property value="cart.total" />
-				</h3>
-				<div>
-					<s:form action="step1">
-						<s:hidden name="token" value="%{token}" />
-						<s:submit value="Avanti" />
-					</s:form>
+			<div class="ss-row">
+				<div class="ss-right">
+					<h3>
+						Totale:
+						<s:property value="cart.total" />
+					</h3>
+					<div>
+						<s:form action="step1">
+							<s:hidden name="token" value="%{token}" />
+							<s:submit value="Avanti" />
+						</s:form>
+					</div>
 				</div>
 			</div>
 		</div>

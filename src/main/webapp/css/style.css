@@ -220,7 +220,16 @@ h2.ss-subtitle:after{
 	padding: 10px 15px;
 	background: rgba(26, 27, 33, 0.6);
 	text-shadow: 1px 1px 1px rgba(26, 27, 33, 0.8)
+	font-size: 20px;
+	color: rgba(255,255,255,0.9);
 }
+
+.ss-container div.detail{
+	margin-top: 5px;
+	padding: 10px 15px;
+	font-size: 20px;
+}
+
 .ss-container .ss-medium h3{
 	margin-top: 82px;
 }
