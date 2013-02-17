@@ -118,6 +118,7 @@
 				<div class="ss-left">&nbsp;</div>
 				<div class="ss-right">
 					<h3>
+						<span>Attenzione: verranno riservati temporaneamente il numero di biglietti richiesti. Tali biglietti saranno rimessi disponibili se entro 8 minuti non verrà concluso il processo d'acquisto</span>
 						Totale:
 						<s:property value="cart.total" />
 					</h3>

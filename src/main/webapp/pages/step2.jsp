@@ -47,23 +47,61 @@
 		<h1>Benvenuto nel Botteghino Online! Scegli un evento e acquistalo subito: basta qualche click!!</h1>
 		<h2 class="ss-subtitle">Step 2 - Conferma i dati inseriti</h2>
 		
-		<div id="ss-container" class="ss-container">	
-			<s:iterator status="status" value="tickets">
-				<s:property value="event" />
-				<s:property value="guest.name" />
-				<s:property value="guest.surname" />
-				<s:property value="guest.identity" />
-			</s:iterator>
-			
-			<s:form action="step1">
-				<s:hidden name="token" value="%{token}" />
-				<s:submit value="Indietro" />
-			</s:form>
-			<s:form action="step3">
-				<s:hidden name="token" value="%{token}" />
-				<s:submit value="Avanti" />
-			</s:form>
-			
+		<div id="ss-container" class="ss-container">
+		
+				<s:iterator status="status" value="items">
+					<!-- PER OGNI EVENTO -->
+					<div class="ss-row">
+						<div class="ss-left">
+							<h3>
+								<s:property value="event.author" />
+								-
+								<s:property value="event.description" />
+								<span>Location: <s:property value="event.location" /></span>
+							</h3>
+							<div class="detail">
+								<s:set name="it" value="quantity" />
+								<s:iterator status="stat" value="(#it).{ #this }">
+
+									<s:set name="name" value="%{tickets[#ticketNumber].guest.name}" />
+									<s:set name="surname"
+										value="%{tickets[#ticketNumber].guest.surname}" />
+									<s:set name="identity"
+										value="%{tickets[#ticketNumber].guest.identity}" />
+										
+									<div class="ticket" >
+									<p>Ticket #<s:property value="#stat.count" /></p>
+									<span> Nome: <s:property value="%{#name}" /> </span>
+
+									<span> Cognome: <s:property value="%{#surname}" /> </span>
+
+									<span> C. Identità <s:property value="%{#identity}" /> </span>
+									</div>
+									<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
+								</s:iterator>
+							</div>
+						</div>
+					</div>
+				</s:iterator>
+				<div class="ss-row">
+					<div class="ss-left">&nbsp;</div>
+					<div class="ss-right">
+						<h3>
+							Attenzione: i biglietti sono strettamente personali, quindi non cedibili. Verrà richiesto un documento di identità il giorno dell'evento
+						</h3>
+						<div>
+							<s:form action="step1">
+								<s:hidden name="token" value="%{token}" />
+								<s:submit value="Indietro" />
+							</s:form>
+							<s:form action="step3">
+								<s:hidden name="token" value="%{token}" />
+								<s:submit value="Avanti" />
+							</s:form>
+						</div>
+					</div>
+				</div>
+		
 		</div>
 	</div>
 </body>
