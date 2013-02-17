@@ -12,36 +12,45 @@
 
 <link rel="stylesheet" type="text/css" href="/css/demo.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
-<link href='http://fonts.googleapis.com/css?family=Kelly+Slab' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Kelly+Slab'
+	rel='stylesheet' type='text/css' />
 <!--[if lt IE 9]>
 		<link rel="stylesheet" type="text/css" href="css/styleIE.css" />
 	<![endif]-->
 <script type="text/javascript" src="/js/modernizr.custom.11333.js"></script>
 
-<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+<script type="text/javascript"
+	src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
 
 <!-- FANCYBOX CODE -->
-	<!-- Add mousewheel plugin (this is optional) -->
-	<script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js"></script>
 
-	<!-- Add fancyBox main JS and CSS files -->
-	<script type="text/javascript" src="/fancybox/jquery.fancybox.js?v=2.1.3"></script>
-	<link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox.css?v=2.1.2" media="screen" />
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript"
+	src="/fancybox/jquery.fancybox.js?v=2.1.3"></script>
+<link rel="stylesheet" type="text/css"
+	href="/fancybox/jquery.fancybox.css?v=2.1.2" media="screen" />
 
-	<!-- Add Button helper (this is optional) -->
-	<link rel="stylesheet" type="text/css" href="/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
-	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css"
+	href="/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript"
+	src="/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
 
-	<!-- Add Thumbnail helper (this is optional) -->
-	<link rel="stylesheet" type="text/css" href="/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
-	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css"
+	href="/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript"
+	src="/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 
-	<!-- Add Media helper (this is optional) -->
-	<script type="text/javascript" src="/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
-	
-	<!-- END FANCYBOX CODE -->
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript"
+	src="/fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
 
-	<script type="text/javascript">
+<!-- END FANCYBOX CODE -->
+
+<script type="text/javascript">
 	/*
 	$().ready(function() {
 		
@@ -90,45 +99,92 @@
 			cRequired: true,
 			cDigits: true,
 			cMinlength: 3,
-    		cMaxlength: 3
-    		}
+			cMaxlength: 3
+			}
 		);
 				
 		
 	});
-	*/
-	</script>
+	 */
+</script>
 </head>
 
 <body>
 	<div class="container">
 
-		<h1>Benvenuto nel Botteghino Online! Scegli un evento e acquistalo subito: basta qualche click!!</h1>
+		<h1>Benvenuto nel Botteghino Online! Scegli un evento e
+			acquistalo subito: basta qualche click!!</h1>
 		<h2 class="ss-subtitle">Step 3 - Dati di pagamento</h2>
-		
-		<div id="ss-container" class="ss-container">	
-			
+
+		<div id="ss-container" class="ss-container">
+
 			<s:form id="paymentForm" action="payment">
-				<s:hidden name="token" value="%{token}" />
-				<s:textfield id="name_field" name="customer.name"  size="20" value="" label="Nome" />
-				<br />
-				<s:textfield id="surname_field" name="customer.surname"  size="20" value="" label="Cognome" />
-				<br />
-				<s:textfield id="email_field" name="customer.email"  size="20" value="" label="E-Mail" />
-				<br />
-				<s:select id="circuit_field" label="Circuito"
-    				name="customer.circuit"
-					headerKey="-1" headerValue="Seleziona una voce"
-					list="#{'mastercard':'MasterCard', 'visaelectron':'VisaElectron', 'visa':'Visa', 'americanexpress':'American Express'}"
-					value="selectedCircuit"
-					required="true"/>
-	
-				<s:textfield id="creditcard_field" name="customer.creditcard" size="16" value="" label="Carta di Credito" />
-				<s:textfield id="cvv_field" name="customer.cvv" size="3" value="" label="CVV" />
-				<br />
-				<s:submit value="Effettua Pagamento" />
+				<div class="ss-row">
+					<div class="ss-left">
+						<h3>Carta di Credito</h3>
+						<div class="detail">
+
+							<s:hidden name="token" value="%{token}" />
+							<div class="ticket">
+								<div>
+									<span class="label">Nome:</span> <span class="input"> <s:textfield
+											id="name_field" name="customer.name" size="20" value=""
+											label="Nome" />
+									</span>
+								</div>
+
+								<div>
+									<span class="label">Cognome:</span> <span class="input">
+										<s:textfield id="surname_field" name="customer.surname"
+											size="20" value="" label="Cognome" />
+									</span>
+								</div>
+
+								<div>
+									<span class="label">E-mail:</span> <span class="input">
+										<s:textfield id="email_field" name="customer.email" size="20"
+											value="" label="E-Mail" />
+									</span>
+								</div>
+
+								<div>
+									<span class="label">Circuito:</span> <span class="input">
+										<s:select id="circuit_field" label="Circuito"
+											name="customer.circuit" headerKey="-1"
+											headerValue="Seleziona una voce"
+											list="#{'mastercard':'MasterCard', 'visaelectron':'VisaElectron', 'visa':'Visa', 'americanexpress':'American Express'}"
+											value="selectedCircuit" required="true" />
+									</span>
+								</div>
+
+								<div>
+									<span class="label">E-mail:</span> <span class="input">
+										<s:textfield id="creditcard_field" name="customer.creditcard"
+											size="16" value="" label="Carta di Credito" />
+									</span>
+								</div>
+
+								<div>
+									<span class="label">E-mail:</span> <span class="input">
+										<s:textfield id="cvv_field" name="customer.cvv" size="3"
+											value="" label="CVV" />
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="ss-row">
+					<div class="ss-left">&nbsp;</div>
+					<div class="ss-right">
+						<h3>
+							<span>L'operazione di pagamento potrebbe richiedere alcuni istanti nel frattempo ti invitiamo ad attendere senza ricaricare la pagina. Grazie della fiducia</span>
+						</h3>
+						<div><s:submit value="Effettua Pagamento" /></div>
+					</div>
+				</div>
 			</s:form>
-			
 		</div>
 	</div>
 </body>

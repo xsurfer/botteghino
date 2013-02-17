@@ -72,11 +72,11 @@
 										
 									<div class="ticket" >
 									<p>Ticket #<s:property value="#stat.count" /></p>
-									<span> Nome: <s:property value="%{#name}" /> </span>
+									<span>Nome: <s:property value="%{#name}" /> </span>
 
-									<span> Cognome: <s:property value="%{#surname}" /> </span>
+									<span>Cognome: <s:property value="%{#surname}" /> </span>
 
-									<span> C. Identità <s:property value="%{#identity}" /> </span>
+									<span>C. Identità: <s:property value="%{#identity}" /> </span>
 									</div>
 									<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
 								</s:iterator>

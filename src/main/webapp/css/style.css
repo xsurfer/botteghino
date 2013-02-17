@@ -277,7 +277,8 @@ h2.ss-subtitle:after{
 
 .ss-container div.ticket span.label{
     display: inline;
-    width: 150px; 
+    width: 120px;
+    float: left; 
 }
 
 .ss-container div.ticket span.input{
