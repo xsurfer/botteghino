@@ -154,7 +154,7 @@
 				<!-- MEDIUM ROW -->
 					<s:url action="detail.action" var="URLevent1">
 						<s:param name="idEvent">
-							<s:property value="author" /> - <s:property value="id" />
+							<s:property value="id" />
 						</s:param>
 					</s:url>
 					<div class="ss-row ss-medium <s:property value="category.name" />">
@@ -202,7 +202,7 @@
 						<div class="ss-right">
 							<s:a
 								cssClass="fancybox fancybox.ajax ss-circle ss-circle-2 %{category.name}"
-								href="%{URLevent1}">
+								href="%{URLevent2}">
 								<s:property value="title" />
 							</s:a>
 						</div>
@@ -220,7 +220,7 @@
 						<div class="ss-left">
 							<s:a
 								cssClass="fancybox fancybox.ajax ss-circle ss-circle-3 %{category.name}"
-								href="%{URLevent1}">
+								href="%{URLevent3}">
 								<s:property value="title" />
 							</s:a>
 						</div>

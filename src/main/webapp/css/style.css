@@ -248,11 +248,11 @@ h2.ss-subtitle:after{
 	color: rgba(255,255,255,1);
 }
 
-.music{
+a.music{
 	/* Concert image */
     background-image:url(../images/concert.jpg);
 }
-.sport{
+a.sport{
 	/* Sport image */
     background-image: url(../images/sport.png);
 }
