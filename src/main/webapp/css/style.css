@@ -128,6 +128,11 @@ h2.ss-subtitle:after{
     width: 48%;
     position: relative;
 }
+
+.ss-right .fixed{
+	position: fixed;
+}
+
 .ss-right{
     padding-left: 2%;
 }
@@ -228,6 +233,14 @@ h2.ss-subtitle:after{
 	margin-top: 5px;
 	padding: 10px 15px;
 	font-size: 20px;
+	text-align: left;
+}
+.ss-container div.detail a{
+	margin-top: 5px;
+	padding: 10px 15px;
+	font-size: 20px;
+	text-align: left;
+	color: rgba(255,255,255,0.9);
 }
 
 .ss-container .ss-medium h3{

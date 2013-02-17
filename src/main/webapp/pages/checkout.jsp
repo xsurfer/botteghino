@@ -111,14 +111,11 @@
 									<s:property value="%{(#status.index)}" />
 								</s:param>
 							</s:url>
-							<s:a href="%{removeUrl}">Rimuovi</s:a>
+							<s:a href="%{removeUrl}">Rimuovi dal carrello</s:a>
 						</div>
 					</s:iterator>
 				</div>
-			</div>
-
-			<div class="ss-row">
-				<div class="ss-right">
+				<div class="ss-right fixed">
 					<h3>
 						Totale:
 						<s:property value="cart.total" />
@@ -131,6 +128,7 @@
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </body>
