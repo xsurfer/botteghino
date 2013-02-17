@@ -27,7 +27,6 @@
 	<span><s:property value="event.price" /> &euro;</span>
 	
 	<div class="addiv">
-		<span>Aggiungi al carrello:</span>
 		<s:form id="addForm" action="add">
   			<s:hidden name="idEvent" value="%{event.id}" />
   			<span>Quantità: <s:select id="quantity_txt" label="Circuito"

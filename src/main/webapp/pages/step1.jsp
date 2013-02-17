@@ -127,26 +127,32 @@
 									<div class="ticket" >
 									<span>Ticket #<s:property value="#stat.count" /></span>
 									
+									<div>
 									<span class="label">Nome:</span>
 									<span class="input"><s:textfield
 											cssClass="name_field"
 											name="tickets[%{#ticketNumber}].guest.name" size="20"
-											value="%{#name}" label="Nome" />
+											value="%{#name}" />
 									</span>
+									</div>
 
+									<div>
 									<span class="label">Cognome:</span>
 									<span class="input"> <s:textfield
 											cssClass="surname_field"
 											name="tickets[%{#ticketNumber}].guest.surname" size="20"
-											value="%{#surname}" label="Cognome" />
+											value="%{#surname}" />
 									</span>
-
+									</div>
+									
+									<div>
 									<span class="label">C. Identità:</span>
 									<span class="input"> <s:textfield
 											cssClass="identity_field"
 											name="tickets[%{#ticketNumber}].guest.identity" size="6"
-											value="%{#identity}" label="C. Identità" />
+											value="%{#identity}" />
 									</span>
+									</div>
 									</div>
 									<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
 								</s:iterator>

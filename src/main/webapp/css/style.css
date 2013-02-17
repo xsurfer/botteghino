@@ -275,12 +275,12 @@ h2.ss-subtitle:after{
     display: block;
 }
 
-.ss-container div.detail span.label{
+.ss-container div.ticket span.label{
     display: inline;
-    min-width: 100px; 
+    width: 150px; 
 }
 
-.ss-container div.detail span.input{
+.ss-container div.ticket span.input{
     display: inline;
 }
 
