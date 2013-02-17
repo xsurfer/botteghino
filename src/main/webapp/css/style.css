@@ -129,10 +129,6 @@ h2.ss-subtitle:after{
     position: relative;
 }
 
-.ss-right .fixed{
-	position: fixed;
-}
-
 .ss-right{
     padding-left: 2%;
 }
@@ -229,20 +225,6 @@ h2.ss-subtitle:after{
 	color: rgba(255,255,255,0.9);
 }
 
-.ss-container div.detail{
-	margin-top: 5px;
-	padding: 10px 15px;
-	font-size: 20px;
-	text-align: left;
-}
-.ss-container div.detail a{
-	margin-top: 5px;
-	padding: 10px 15px;
-	font-size: 20px;
-	text-align: left;
-	color: rgba(255,255,255,0.9);
-}
-
 .ss-container .ss-medium h3{
 	margin-top: 82px;
 }
@@ -266,6 +248,28 @@ h2.ss-subtitle:after{
     color: rgba(255,255,255,0.9);
     display: block;
 }
+
+.ss-container div.detail{
+	margin-top: 0px;
+	padding: 10px 15px;
+	font-size: 20px;
+	text-align: left;
+	border-right: 5px solid rgba(164,166,181,0.8);
+	border-bottom: 5px solid rgba(164,166,181,0.8);
+}
+
+.ss-container div.detail a{
+	margin-top: 5px;
+	padding: 10px 15px;
+	font-size: 20px;
+	text-align: left;
+	color: rgba(0, 0, 0,0.9);
+}
+
+.ss-container div.detail form{
+	padding: 10px 15px;
+}
+
 .ss-container h3 a:hover{
 	color: rgba(255,255,255,1);
 }

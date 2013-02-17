@@ -96,16 +96,14 @@
 						</h3>
 
 						<div class="detail">
-							<fieldset>
-								<legend>Modifica:</legend>
-								<s:form cssClass="toValidate" action="update">
-									<s:hidden name="idItem" value="%{(#status.index)}" />
-									<s:textfield cssClass="quantity_field" name="item.quantity"
-										size="2" value="%{quantity}" label="Quantità" />
-									<br />
-									<s:submit value="Aggiorna" />
-								</s:form>
-							</fieldset>
+							<s:form cssClass="toValidate" action="update">
+								<s:hidden name="idItem" value="%{(#status.index)}" />
+								<s:textfield cssClass="quantity_field" name="item.quantity"
+									size="2" value="%{quantity}" label="Quantità" />
+								<br />
+								<s:submit value="Aggiorna" />
+							</s:form>
+
 							<s:url action="remove" var="removeUrl">
 								<s:param name="idItem">
 									<s:property value="%{(#status.index)}" />
@@ -115,7 +113,11 @@
 						</div>
 					</s:iterator>
 				</div>
-				<div class="ss-right fixed">
+			</div>
+
+			<div class="ss-row">
+				<div class="ss-left"></div>
+				<div class="ss-right">
 					<h3>
 						Totale:
 						<s:property value="cart.total" />
