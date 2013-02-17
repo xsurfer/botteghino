@@ -89,10 +89,9 @@
 				<div class="ss-left">
 					<s:iterator status="status" value="items">
 						<h3>
-							<span><s:property value="event.author" /> - <s:property
-									value="event.description" /></span> <span>Location: <s:property
-									value="event.location" /></span> <span>Prezzo: <s:property
-									value="event.price" /></span>
+							<s:property value="event.author" /> - <s:property value="event.description" />
+							<span>Location: <s:property value="event.location" /></span> 
+							<span>Prezzo: <s:property value="event.price" /></span>
 						</h3>
 
 						<div class="detail">
@@ -116,7 +115,7 @@
 			</div>
 
 			<div class="ss-row">
-				<div class="ss-left"></div>
+				<div class="ss-left">&nbsp;</div>
 				<div class="ss-right">
 					<h3>
 						Totale:

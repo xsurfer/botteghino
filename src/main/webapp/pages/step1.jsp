@@ -91,31 +91,30 @@
 
 <body>
 	<div class="container">
-		<div class="ss-row">
-			<div class="ss-left">
-				<h1>Benvenuto nel Botteghino Online! Scegli un evento e
-					acquistalo subito: basta qualche click!!</h1>
-				<h2 class="ss-subtitle">Step 1 - Assegna i tuoi biglietti</h2>
 
-				<div id="ss-container" class="ss-container">
+		<h1>Benvenuto nel Botteghino Online! Scegli un evento e
+			acquistalo subito: basta qualche click!!</h1>
+		<h2 class="ss-subtitle">Step 1 - Assegna i tuoi biglietti</h2>
 
+		<div id="ss-container" class="ss-container">
 
-
-					<s:form id="step1form" action="step2">
-						<s:set name="ticketNumber" value="%{0}" />
-						<s:iterator status="status" value="items">
-							<!-- PER OGNI EVENTO -->
-							<div class="ss-row">
+			<s:form id="step1form" action="step2">
+				<s:set name="ticketNumber" value="%{0}" />
+				<s:iterator status="status" value="items">
+					<!-- PER OGNI EVENTO -->
+					<div class="ss-row">
+						<div class="ss-left">
+							<h3>
 								<s:property value="event.author" />
 								-
 								<s:property value="event.description" />
-								<br />
-								<s:property value="event.location" />
-								<br />
+								<span>Location: <s:property value="event.location" /></span>
+							</h3>
+							<div class="detail">
 								<s:set name="it" value="quantity" />
 								<s:set name="eventoId" value="event.id" />
 								<s:iterator status="stat" value="(#it).{ #this }">
-									<!-- PER OGNI EVENTO -->
+
 									<s:set name="name" value="%{tickets[#ticketNumber].guest.name}" />
 									<s:set name="surname"
 										value="%{tickets[#ticketNumber].guest.surname}" />
@@ -138,15 +137,18 @@
 									<br />
 									<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
 								</s:iterator>
-
 							</div>
-						</s:iterator>
-						<s:hidden name="token" value="%{token}" />
-						<s:submit value="Aggiorna" />
-					</s:form>
-
-				</div>
-			</div>
+						</div>
+					</div>
+					</s:iterator>
+					<div class="ss-row">
+						<div class="ss-left"></div>
+						<div class="ss-right">
+							<s:hidden name="token" value="%{token}" />
+							<s:submit value="Avanti" />
+						</div>
+					</div>
+			</s:form>
 		</div>
 	</div>
 </body>
