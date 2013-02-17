@@ -124,7 +124,26 @@
 									<s:hidden name="tickets[%{#ticketNumber}].event"
 										value="%{#eventoId}" />
 										
-									
+									<div class="ticket" >
+									<p>Ticket #<s:property value="#stat.count" /></p>
+									<span> <label>Nome</label> <s:textfield
+											cssClass="name_field"
+											name="tickets[%{#ticketNumber}].guest.name" size="20"
+											value="%{#name}" label="Nome" />
+									</span>
+
+									<span> <label>Cognome</label> <s:textfield
+											cssClass="surname_field"
+											name="tickets[%{#ticketNumber}].guest.surname" size="20"
+											value="%{#surname}" label="Cognome" />
+									</span>
+
+									<span> <label>C. Identità</label> <s:textfield
+											cssClass="identity_field"
+											name="tickets[%{#ticketNumber}].guest.identity" size="6"
+											value="%{#identity}" label="C. Identità" />
+									</span>
+									</div>
 									<s:set var="ticketNumber" value="%{#ticketNumber + 1}" />
 								</s:iterator>
 							</div>

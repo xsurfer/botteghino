@@ -170,12 +170,16 @@ public class CartAction extends ExampleSupport implements SessionAware {
 			session.put("order", order);
 		}
 		
-		/* Preparing parameter for PRE-BOOK fase*/
+		/* Preparing parameter for PRE-BOOK fase (and initializing the tickes)*/
 		List<Event> eventArr = new ArrayList<Event>() ;
 		List<Integer> quantityArr = new ArrayList<Integer>();
 		for(OrderItem item : cart.getItems()){
 			eventArr.add(item.getEvent());
 			quantityArr.add(item.getQuantity());
+			
+			for(int i=0; i<item.getQuantity(); i++){
+				tickets.add(new Ticket());
+			}
 		}  	
     	
 		/* Executing pre-book */
@@ -185,6 +189,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
     	else return ERROR;
     			
 		/* initially all tickets empty */
+    	
 		tickets = order.getTickets();
 		items = cart.getItems();
 		
