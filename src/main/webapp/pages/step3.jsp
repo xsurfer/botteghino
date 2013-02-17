@@ -42,6 +42,7 @@
 	<!-- END FANCYBOX CODE -->
 
 	<script type="text/javascript">
+	/*
 	$().ready(function() {
 		
 		$.validator.addMethod("cRequired", $.validator.methods.required, "Obbligatorio");
@@ -95,6 +96,7 @@
 				
 		
 	});
+	*/
 	</script>
 </head>
 

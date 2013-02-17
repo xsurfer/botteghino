@@ -17,14 +17,14 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "FornitoreService", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", wsdlLocation = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService?wsdl")
+@WebServiceClient(name = "FornitoreService", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", wsdlLocation = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService?wsdl")
 public class FornitoreService_Service
     extends Service
 {
 
     private final static URL FORNITORESERVICE_WSDL_LOCATION;
     private final static WebServiceException FORNITORESERVICE_EXCEPTION;
-    private final static QName FORNITORESERVICE_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "FornitoreService");
+    private final static QName FORNITORESERVICE_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "FornitoreService");
 
     static {
         URL url = null;
@@ -69,7 +69,7 @@ public class FornitoreService_Service
      */
     @WebEndpoint(name = "Fornitore")
     public FornitoreService getFornitore() {
-        return super.getPort(new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "Fornitore"), FornitoreService.class);
+        return super.getPort(new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "Fornitore"), FornitoreService.class);
     }
 
     /**
@@ -81,7 +81,7 @@ public class FornitoreService_Service
      */
     @WebEndpoint(name = "Fornitore")
     public FornitoreService getFornitore(WebServiceFeature... features) {
-        return super.getPort(new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "Fornitore"), FornitoreService.class, features);
+        return super.getPort(new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "Fornitore"), FornitoreService.class, features);
     }
 
     private static URL __getWsdlLocation() {

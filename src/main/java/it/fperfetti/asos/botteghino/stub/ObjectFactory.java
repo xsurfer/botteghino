@@ -24,16 +24,18 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetEvents_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "getEvents");
-    private final static QName _GetEventsByCategoryResponse_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "getEventsByCategoryResponse");
-    private final static QName _GetCategories_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "getCategories");
-    private final static QName _GetEventResponse_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "getEventResponse");
-    private final static QName _BuyResponse_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "buyResponse");
-    private final static QName _GetEventsByCategory_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "getEventsByCategory");
-    private final static QName _Buy_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "buy");
-    private final static QName _GetCategoriesResponse_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "getCategoriesResponse");
-    private final static QName _GetEventsResponse_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "getEventsResponse");
-    private final static QName _GetEvent_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", "getEvent");
+    private final static QName _BookResponse_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "bookResponse");
+    private final static QName _PrebookResponse_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "prebookResponse");
+    private final static QName _GetCategoriesResponse_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "getCategoriesResponse");
+    private final static QName _Prebook_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "prebook");
+    private final static QName _GetCategories_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "getCategories");
+    private final static QName _GetEventResponse_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "getEventResponse");
+    private final static QName _GetEventsByCategory_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "getEventsByCategory");
+    private final static QName _GetEvents_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "getEvents");
+    private final static QName _GetEventsByCategoryResponse_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "getEventsByCategoryResponse");
+    private final static QName _GetEvent_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "getEvent");
+    private final static QName _GetEventsResponse_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "getEventsResponse");
+    private final static QName _Book_QNAME = new QName("http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", "book");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: it.fperfetti.asos.botteghino.stub
@@ -67,14 +69,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BuyResponse }
-     * 
-     */
-    public BuyResponse createBuyResponse() {
-        return new BuyResponse();
-    }
-
-    /**
      * Create an instance of {@link GetEventResponse }
      * 
      */
@@ -91,6 +85,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Prebook }
+     * 
+     */
+    public Prebook createPrebook() {
+        return new Prebook();
+    }
+
+    /**
      * Create an instance of {@link GetCategoriesResponse }
      * 
      */
@@ -99,11 +101,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Buy }
+     * Create an instance of {@link PrebookResponse }
      * 
      */
-    public Buy createBuy() {
-        return new Buy();
+    public PrebookResponse createPrebookResponse() {
+        return new PrebookResponse();
+    }
+
+    /**
+     * Create an instance of {@link BookResponse }
+     * 
+     */
+    public BookResponse createBookResponse() {
+        return new BookResponse();
+    }
+
+    /**
+     * Create an instance of {@link Book }
+     * 
+     */
+    public Book createBook() {
+        return new Book();
     }
 
     /**
@@ -139,28 +157,46 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetEvents }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BookResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "getEvents")
-    public JAXBElement<GetEvents> createGetEvents(GetEvents value) {
-        return new JAXBElement<GetEvents>(_GetEvents_QNAME, GetEvents.class, null, value);
+    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", name = "bookResponse")
+    public JAXBElement<BookResponse> createBookResponse(BookResponse value) {
+        return new JAXBElement<BookResponse>(_BookResponse_QNAME, BookResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetEventsByCategoryResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link PrebookResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "getEventsByCategoryResponse")
-    public JAXBElement<GetEventsByCategoryResponse> createGetEventsByCategoryResponse(GetEventsByCategoryResponse value) {
-        return new JAXBElement<GetEventsByCategoryResponse>(_GetEventsByCategoryResponse_QNAME, GetEventsByCategoryResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", name = "prebookResponse")
+    public JAXBElement<PrebookResponse> createPrebookResponse(PrebookResponse value) {
+        return new JAXBElement<PrebookResponse>(_PrebookResponse_QNAME, PrebookResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCategoriesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", name = "getCategoriesResponse")
+    public JAXBElement<GetCategoriesResponse> createGetCategoriesResponse(GetCategoriesResponse value) {
+        return new JAXBElement<GetCategoriesResponse>(_GetCategoriesResponse_QNAME, GetCategoriesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Prebook }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", name = "prebook")
+    public JAXBElement<Prebook> createPrebook(Prebook value) {
+        return new JAXBElement<Prebook>(_Prebook_QNAME, Prebook.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetCategories }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "getCategories")
+    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", name = "getCategories")
     public JAXBElement<GetCategories> createGetCategories(GetCategories value) {
         return new JAXBElement<GetCategories>(_GetCategories_QNAME, GetCategories.class, null, value);
     }
@@ -169,63 +205,63 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetEventResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "getEventResponse")
+    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", name = "getEventResponse")
     public JAXBElement<GetEventResponse> createGetEventResponse(GetEventResponse value) {
         return new JAXBElement<GetEventResponse>(_GetEventResponse_QNAME, GetEventResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuyResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "buyResponse")
-    public JAXBElement<BuyResponse> createBuyResponse(BuyResponse value) {
-        return new JAXBElement<BuyResponse>(_BuyResponse_QNAME, BuyResponse.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetEventsByCategory }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "getEventsByCategory")
+    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", name = "getEventsByCategory")
     public JAXBElement<GetEventsByCategory> createGetEventsByCategory(GetEventsByCategory value) {
         return new JAXBElement<GetEventsByCategory>(_GetEventsByCategory_QNAME, GetEventsByCategory.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Buy }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetEvents }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "buy")
-    public JAXBElement<Buy> createBuy(Buy value) {
-        return new JAXBElement<Buy>(_Buy_QNAME, Buy.class, null, value);
+    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", name = "getEvents")
+    public JAXBElement<GetEvents> createGetEvents(GetEvents value) {
+        return new JAXBElement<GetEvents>(_GetEvents_QNAME, GetEvents.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCategoriesResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetEventsByCategoryResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "getCategoriesResponse")
-    public JAXBElement<GetCategoriesResponse> createGetCategoriesResponse(GetCategoriesResponse value) {
-        return new JAXBElement<GetCategoriesResponse>(_GetCategoriesResponse_QNAME, GetCategoriesResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetEventsResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "getEventsResponse")
-    public JAXBElement<GetEventsResponse> createGetEventsResponse(GetEventsResponse value) {
-        return new JAXBElement<GetEventsResponse>(_GetEventsResponse_QNAME, GetEventsResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", name = "getEventsByCategoryResponse")
+    public JAXBElement<GetEventsByCategoryResponse> createGetEventsByCategoryResponse(GetEventsByCategoryResponse value) {
+        return new JAXBElement<GetEventsByCategoryResponse>(_GetEventsByCategoryResponse_QNAME, GetEventsByCategoryResponse.class, null, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetEvent }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", name = "getEvent")
+    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", name = "getEvent")
     public JAXBElement<GetEvent> createGetEvent(GetEvent value) {
         return new JAXBElement<GetEvent>(_GetEvent_QNAME, GetEvent.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetEventsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", name = "getEventsResponse")
+    public JAXBElement<GetEventsResponse> createGetEventsResponse(GetEventsResponse value) {
+        return new JAXBElement<GetEventsResponse>(_GetEventsResponse_QNAME, GetEventsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Book }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", name = "book")
+    public JAXBElement<Book> createBook(Book value) {
+        return new JAXBElement<Book>(_Book_QNAME, Book.class, null, value);
     }
 
 }

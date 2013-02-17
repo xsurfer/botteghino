@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for getEventResponse complex type.
+ * <p>Java class for prebookResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="getEventResponse">
+ * &lt;complexType name="prebookResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://fornitore-fabioperfetti.rhcloud.com/FornitoreService}event" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,23 +27,23 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getEventResponse", propOrder = {
+@XmlType(name = "prebookResponse", propOrder = {
     "_return"
 })
-public class GetEventResponse {
+public class PrebookResponse {
 
     @XmlElement(name = "return")
-    protected Event _return;
+    protected Long _return;
 
     /**
      * Gets the value of the return property.
      * 
      * @return
      *     possible object is
-     *     {@link Event }
+     *     {@link Long }
      *     
      */
-    public Event getReturn() {
+    public Long getReturn() {
         return _return;
     }
 
@@ -52,10 +52,10 @@ public class GetEventResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Event }
+     *     {@link Long }
      *     
      */
-    public void setReturn(Event value) {
+    public void setReturn(Long value) {
         this._return = value;
     }
 

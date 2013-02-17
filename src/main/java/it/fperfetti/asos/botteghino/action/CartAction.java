@@ -30,6 +30,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import it.fperfetti.asos.botteghino.model.Cart;
 import it.fperfetti.asos.botteghino.model.OrderItem;
 import it.fperfetti.asos.botteghino.model.Ticket;
+import it.fperfetti.asos.botteghino.stub.Category;
 import it.fperfetti.asos.botteghino.stub.Event;
 import it.fperfetti.asos.botteghino.stub.FornitoreService;
 import it.fperfetti.asos.botteghino.stub.FornitoreService_Service;
@@ -169,9 +170,22 @@ public class CartAction extends ExampleSupport implements SessionAware {
 			session.put("order", order);
 		}
 		
+		/* Preparing parameter for PRE-BOOK fase*/
+		List<Event> eventArr = new ArrayList<Event>() ;
+		List<Integer> quantityArr = new ArrayList<Integer>();
+		for(OrderItem item : cart.getItems()){
+			eventArr.add(item.getEvent());
+			quantityArr.add(item.getQuantity());
+		}  	
+    	
+		/* Executing pre-book */
+    	FornitoreService eP = new FornitoreService_Service().getFornitore();
+    	Long orderId = eP.prebook(eventArr, quantityArr, "botteghino.it");
+    	if(orderId>0) order.setRemoteid(orderId);
+    	else return ERROR;
+    			
 		/* initially all tickets empty */
 		tickets = order.getTickets();
-
 		items = cart.getItems();
 		
 		/* generating token */
@@ -244,7 +258,12 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		if(tok_session == null || token.compareTo( tok_session )!=0){
 			return ERROR;
 		}
+		
 		Order order = (Order) session.get("order");
+		
+		/* Executing book */
+    	FornitoreService eP = new FornitoreService_Service().getFornitore();
+    	eP.book(order.getRemoteid());  	
 		
 		this.token = UUID.randomUUID().toString();
 		session.put("token", token);
