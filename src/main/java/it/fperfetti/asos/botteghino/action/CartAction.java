@@ -217,13 +217,16 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		/* Populatin order's tickets */
 		Order order = (Order) session.get("order");	
 		System.out.println("Ho " + tickets.size() + "tickets" );
+		/*		NON serve perchè già punta lì
 		order.getTickets().clear();
 		for(Ticket ticket : this.tickets){
 			ticket.setOrder(order);
 			order.addTicket(ticket);
 		}
+	
+		*/
+		this.tickets = order.getTickets(); // anche questo dovrebbe non servire
 		
-		this.tickets = order.getTickets();
 		this.items = cart.getItems();
 		
 		/* generating token */
