@@ -160,7 +160,7 @@
 					<div class="ss-row ss-medium <s:property value="category.name" />">
 						<div class="ss-left">
 							<s:a
-								cssClass="fancybox fancybox.ajax ss-circle ss-circle-1 <s:property value="category.name" />"
+								cssClass="fancybox fancybox.ajax ss-circle ss-circle-1 %{category.name}"
 								href="%{URLevent1}">
 								<s:property value="title" />
 							</s:a>
@@ -201,7 +201,7 @@
 						</div>
 						<div class="ss-right">
 							<s:a
-								cssClass="fancybox fancybox.ajax ss-circle ss-circle-2 <s:property value="category.name" />"
+								cssClass="fancybox fancybox.ajax ss-circle ss-circle-2 %{category.name}"
 								href="%{URLevent1}">
 								<s:property value="title" />
 							</s:a>
@@ -219,7 +219,7 @@
 					<div class="ss-row ss-small <s:property value="category.name" />">
 						<div class="ss-left">
 							<s:a
-								cssClass="fancybox fancybox.ajax ss-circle ss-circle-3 <s:property value="category.name" />"
+								cssClass="fancybox fancybox.ajax ss-circle ss-circle-3 %{category.name}"
 								href="%{URLevent1}">
 								<s:property value="title" />
 							</s:a>
