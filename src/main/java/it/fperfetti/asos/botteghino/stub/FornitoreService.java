@@ -17,7 +17,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "FornitoreService", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService")
+@WebService(name = "FornitoreService", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -27,56 +27,25 @@ public interface FornitoreService {
     /**
      * 
      * @return
-     *     returns java.util.List<it.fperfetti.asos.botteghino.stub.Event>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getEvents", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEvents")
-    @ResponseWrapper(localName = "getEventsResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventsResponse")
-    public List<Event> getEvents();
-
-    /**
-     * 
-     * @param arg2
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns java.lang.Long
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "prebook", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.Prebook")
-    @ResponseWrapper(localName = "prebookResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.PrebookResponse")
-    public Long prebook(
-        @WebParam(name = "arg0", targetNamespace = "")
-        List<Event> arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        List<Integer> arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        String arg2);
-
-    /**
-     * 
-     * @return
      *     returns java.util.List<it.fperfetti.asos.botteghino.stub.Category>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCategories", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetCategories")
-    @ResponseWrapper(localName = "getCategoriesResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetCategoriesResponse")
+    @RequestWrapper(localName = "getCategories", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetCategories")
+    @ResponseWrapper(localName = "getCategoriesResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetCategoriesResponse")
     public List<Category> getCategories();
 
     /**
      * 
      * @param arg0
      * @return
-     *     returns java.util.List<it.fperfetti.asos.botteghino.stub.Event>
+     *     returns it.fperfetti.asos.botteghino.stub.Event
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getEventsByCategory", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventsByCategory")
-    @ResponseWrapper(localName = "getEventsByCategoryResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventsByCategoryResponse")
-    public List<Event> getEventsByCategory(
+    @RequestWrapper(localName = "getEvent", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEvent")
+    @ResponseWrapper(localName = "getEventResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventResponse")
+    public Event getEvent(
         @WebParam(name = "arg0", targetNamespace = "")
         Long arg0);
 
@@ -88,8 +57,8 @@ public interface FornitoreService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "book", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.Book")
-    @ResponseWrapper(localName = "bookResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.BookResponse")
+    @RequestWrapper(localName = "book", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.Book")
+    @ResponseWrapper(localName = "bookResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.BookResponse")
     public Boolean book(
         @WebParam(name = "arg0", targetNamespace = "")
         Long arg0);
@@ -98,14 +67,45 @@ public interface FornitoreService {
      * 
      * @param arg0
      * @return
-     *     returns it.fperfetti.asos.botteghino.stub.Event
+     *     returns java.util.List<it.fperfetti.asos.botteghino.stub.Event>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getEvent", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEvent")
-    @ResponseWrapper(localName = "getEventResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventResponse")
-    public Event getEvent(
+    @RequestWrapper(localName = "getEventsByCategory", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventsByCategory")
+    @ResponseWrapper(localName = "getEventsByCategoryResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventsByCategoryResponse")
+    public List<Event> getEventsByCategory(
         @WebParam(name = "arg0", targetNamespace = "")
         Long arg0);
+
+    /**
+     * 
+     * @param arg2
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.lang.Long
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "prebook", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.Prebook")
+    @ResponseWrapper(localName = "prebookResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.PrebookResponse")
+    public Long prebook(
+        @WebParam(name = "arg0", targetNamespace = "")
+        List<Event> arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        List<Integer> arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<it.fperfetti.asos.botteghino.stub.Event>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getEvents", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEvents")
+    @ResponseWrapper(localName = "getEventsResponse", targetNamespace = "http://fornitore-fabioperfetti.rhcloud.com/jboss-as-helloworld-ws/FornitoreService", className = "it.fperfetti.asos.botteghino.stub.GetEventsResponse")
+    public List<Event> getEvents();
 
 }
