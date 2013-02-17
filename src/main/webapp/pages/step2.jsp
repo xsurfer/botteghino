@@ -48,7 +48,7 @@
 		<h2 class="ss-subtitle">Step 2 - Conferma i dati inseriti</h2>
 		
 		<div id="ss-container" class="ss-container">
-		
+
 				<s:set name="ticketNumber" value="%{0}" />
 				<s:iterator status="status" value="items">
 					<!-- PER OGNI EVENTO -->
@@ -88,7 +88,7 @@
 					<div class="ss-left">&nbsp;</div>
 					<div class="ss-right">
 						<h3>
-							Attenzione: i biglietti sono strettamente personali, quindi non cedibili. Verrà richiesto un documento di identità il giorno dell'evento
+							<span>Attenzione: i biglietti sono strettamente personali, quindi non cedibili. Verrà richiesto un documento di identità il giorno dell'evento</span>
 						</h3>
 						<div>
 							<s:form action="step1">

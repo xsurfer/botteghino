@@ -24,7 +24,7 @@
 	<span><s:property value="event.location" />, #data</span>
 	<h3><s:property value="event.author" /> - <s:property value="event.title" /></h3>
 	<span><s:property value="event.description" /></span>
-	<span><s:property value="event.price" /></span>
+	<span><s:property value="event.price" /> &euro;</span>
 	
 	<div class="addiv">
 		<span>Aggiungi al carrello:</span>
