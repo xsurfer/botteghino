@@ -178,7 +178,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
 			quantityArr.add(item.getQuantity());
 			
 			for(int i=0; i<item.getQuantity(); i++){
-				tickets.add(new Ticket());
+				order.getTickets().add(new Ticket());
 			}
 		}  	
     	

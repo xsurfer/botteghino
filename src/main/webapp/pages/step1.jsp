@@ -114,15 +114,12 @@
 								<s:set name="it" value="quantity" />
 								<s:set name="eventoId" value="event.id" />
 								<s:iterator status="stat" value="(#it).{ #this }">
-								
-									<s:set name="_name" value="%{'tickets['+ #ticketNumber +'].guest.name'}" />
+
 									<s:set name="name" value="%{tickets[#ticketNumber].guest.name}" />
-									
-									<s:set name="_surname" value="%{'tickets['+ #ticketNumber +'].guest.surname'}" />
-									<s:set name="surname" value="%{tickets[#ticketNumber].guest.surname}" />
-									
-									<s:set name="_identity" value="%{'tickets['+ #ticketNumber +'].guest.identity'}" />
-									<s:set name="identity" value="%{tickets[#ticketNumber].guest.identity}" />
+									<s:set name="surname"
+										value="%{tickets[#ticketNumber].guest.surname}" />
+									<s:set name="identity"
+										value="%{tickets[#ticketNumber].guest.identity}" />
 
 									<s:hidden name="tickets[%{#ticketNumber}].event"
 										value="%{#eventoId}" />
@@ -131,19 +128,19 @@
 									<p>Ticket #<s:property value="#stat.count" /></p>
 									<span> <label>Nome</label> <s:textfield
 											cssClass="name_field"
-											name="_name" size="20"
+											name="tickets[%{#ticketNumber}].guest.name" size="20"
 											value="%{#name}" label="Nome" />
 									</span>
 
 									<span> <label>Cognome</label> <s:textfield
 											cssClass="surname_field"
-											name="_surname" size="20"
+											name="tickets[%{#ticketNumber}].guest.surname" size="20"
 											value="%{#surname}" label="Cognome" />
 									</span>
 
 									<span> <label>C. Identità</label> <s:textfield
 											cssClass="identity_field"
-											name="_identity" size="6"
+											name="tickets[%{#ticketNumber}].guest.identity" size="6"
 											value="%{#identity}" label="C. Identità" />
 									</span>
 									</div>
