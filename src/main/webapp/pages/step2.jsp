@@ -49,6 +49,7 @@
 		
 		<div id="ss-container" class="ss-container">
 		
+				<s:set name="ticketNumber" value="%{0}" />
 				<s:iterator status="status" value="items">
 					<!-- PER OGNI EVENTO -->
 					<div class="ss-row">
