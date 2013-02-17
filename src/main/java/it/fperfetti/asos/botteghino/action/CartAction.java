@@ -161,12 +161,14 @@ public class CartAction extends ExampleSupport implements SessionAware {
 			return ERROR;
 		}
 
+		Boolean toInizialize = false;
 		/* Creating order */
 		Order order = (Order) session.get("order");
 		if( order == null ){ 
 			order = new Order();
 			order.setDate(new Date());
 			order.setTotal(cart.getTotal());
+			toInizialize = true;
 			session.put("order", order);
 		}
 		
@@ -177,8 +179,10 @@ public class CartAction extends ExampleSupport implements SessionAware {
 			eventArr.add(item.getEvent());
 			quantityArr.add(item.getQuantity());
 			
-			for(int i=0; i<item.getQuantity(); i++){
-				order.getTickets().add(new Ticket());
+			if(toInizialize){
+				for(int i=0; i<item.getQuantity(); i++){
+					order.getTickets().add(new Ticket());
+				}
 			}
 		}  	
     	
@@ -217,6 +221,8 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		/* Populatin order's tickets */
 		Order order = (Order) session.get("order");	
 		System.out.println("Ho " + tickets.size() + "tickets" );
+		System.out.println("Ho " + order.getTickets().size() + "order tickets" );
+		
 		/*		NON serve perchè già punta lì
 		order.getTickets().clear();
 		for(Ticket ticket : this.tickets){
@@ -225,6 +231,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		}
 	
 		*/
+		order.setTickets(this.tickets);
 		this.tickets = order.getTickets(); // anche questo dovrebbe non servire
 		
 		this.items = cart.getItems();
