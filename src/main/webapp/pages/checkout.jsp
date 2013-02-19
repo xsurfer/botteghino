@@ -88,6 +88,7 @@
 
 				<div class="ss-left">
 					<s:iterator status="status" value="items" var="item">
+					<s:set var="_iditem" value="hashCode()"/>
 						<h3>
 							<s:property value="event.author" /> - <s:property value="event.description" />
 							<span>Location: <s:property value="event.location" /></span> 
@@ -99,7 +100,7 @@
 							<s:property value="message" />
 						
 							<s:form cssClass="toValidate" action="update">
-								<s:hidden name="idItem" value="%{#item.hashCode}" />
+								<s:hidden name="idItem" value="%{#_iditem}" />
 								<s:textfield cssClass="quantity_field" name="item.quantity"
 									size="2" value="%{quantity}" label="Quantità" />
 								<br />
