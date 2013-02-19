@@ -348,8 +348,10 @@ public class CartAction extends ExampleSupport implements SessionAware {
 				List<Customer> curr_customers = _session.createQuery("from Customer as cust where cust.email = :email")
     					.setString("email", customer.getEmail())
     					.list();
-    			if(curr_customers.size()==0)
+    			if(curr_customers.size()==0){
     				order.setCustomer(customer);
+    				_session.persist(customer);
+    			}
     			else
     				order.setCustomer(curr_customers.get(0));
     			
