@@ -31,6 +31,7 @@ import org.jboss.resteasy.client.ClientRequest;
 import org.jboss.resteasy.client.ClientResponse;
 
 import it.fperfetti.asos.botteghino.model.Cart;
+import it.fperfetti.asos.botteghino.model.Customer;
 import it.fperfetti.asos.botteghino.model.OrderItem;
 import it.fperfetti.asos.botteghino.model.Ticket;
 import it.fperfetti.asos.botteghino.stub.Category;
@@ -80,6 +81,10 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	private List<Ticket> tickets = new ArrayList<Ticket>();
 	public List<Ticket> getTickets() { return tickets; }
 	public void setTickets(List<Ticket> tickets) { this.tickets = tickets; }
+	
+	private Customer customer = new Customer();
+	public Customer getCustomer(){ return customer; }
+	public void setCustomer(Customer customer){ this.customer = customer; }
 
 	/*************/
 	/*  Actions  */
@@ -282,17 +287,13 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		}
 		
 		Order order = (Order) session.get("order");
-		
-		/* Executing book */
-    	FornitoreService eP = new FornitoreService_Service().getFornitore();
-    	eP.book(order.getRemoteid());
-    	
+		    	
     	ClientRequest req = new ClientRequest(BANK_CHECK_ENDPOINT);
         req
-            .pathParameter("cnumber", "12345")
-            .pathParameter("cvv", "123")
-            .queryParameter("name", "fabio")
-            .pathParameter("surname", "perfetti");
+            .pathParameter("cnumber", customer.getCreditcard())
+            .pathParameter("cvv", customer.getCvv())
+            .pathParameter("name", customer.getName())
+            .pathParameter("surname", customer.getSurname());
  
         ClientResponse<Long> accountId = req.get(Long.class);
         System.out.println(accountId.getEntity());
@@ -301,18 +302,21 @@ public class CartAction extends ExampleSupport implements SessionAware {
             req
                 .pathParameter("vendor", "botteghino.it")
                 .pathParameter("id", accountId.getEntity().toString())
-                .queryParameter("amount", "50");
+                .pathParameter("amount", order.getTotal());
      
             ClientResponse<Boolean> result = req.get(Boolean.class);
             System.out.println(result.getEntity());
             
             if(!result.getEntity()){return ERROR;}
+            /* Executing book */
+        	FornitoreService eP = new FornitoreService_Service().getFornitore();
+        	eP.book(order.getRemoteid());
+        	
+        	this.token = UUID.randomUUID().toString();
+    		session.put("token", token);
         }
-
-    	session.clear();
+        session.clear();
 		
-		this.token = UUID.randomUUID().toString();
-		session.put("token", token);
 		return SUCCESS;
 	}
 

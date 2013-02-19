@@ -15,17 +15,21 @@ public class Customer {
 	private String surname;
 	public String getSurname() { return surname; }
 	public void setSurname(String surname) { this.surname = surname; }
-
-	private String address;
-	public String getAddress() { return address; }
-	public void setAddress(String address) { this.address = address; }
 	
-	private String city;
-	public String getCity() { return city; }
-	public void setCity(String city) { this.city = city; }
+	private String email;
+	public String getEmail() { return email; }
+	public void setEmail(String email) { this.email = email; }
 
-	private CreditCard cc;
-	public CreditCard getCc() { return cc; }
-	public void setCc(CreditCard cc) { this.cc = cc; }
+	private String creditcard;
+	public String getCreditcard() { return creditcard; }
+	public void setCreditcard(String creditcard) { this.creditcard = creditcard; }
+	
+	private String cvv;
+	public String getCvv() { return cvv; }
+	public void setCity(String cvv) { this.cvv = cvv; }
+
+	private String circuit;
+	public String getCircuit() { return circuit; }
+	public void setCircuit(String circuit) { this.circuit = circuit; }
 	
 }
