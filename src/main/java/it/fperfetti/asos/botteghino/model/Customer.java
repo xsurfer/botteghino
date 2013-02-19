@@ -32,7 +32,7 @@ public class Customer {
 	public String getSurname() { return surname; }
 	public void setSurname(String surname) { this.surname = surname; }
 	
-	@Column(name = "EMAIL")
+	@Column(name = "EMAIL", unique=true)
 	private String email;
 	public String getEmail() { return email; }
 	public void setEmail(String email) { this.email = email; }

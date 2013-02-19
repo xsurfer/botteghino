@@ -306,15 +306,6 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		}
 		
 		Order order = (Order) session.get("order");
-		   
-		System.out.println("CC: " + customer.getCreditcard());
-		System.out.println("CVV: " + customer.getCvv());
-		System.out.println("NAME: " + customer.getName());
-		System.out.println("SURNAME: " + customer.getSurname());
-		if(customer.getCreditcard()==null) customer.setCreditcard("12345");
-		if(customer.getCvv()==null) customer.setCvv("123");
-		if(customer.getName()==null) customer.setName("Fabio");
-		if(customer.getSurname()==null) customer.setSurname("Perfetti");
 		
     	ClientRequest req = new ClientRequest(BANK_CHECK_ENDPOINT);
         req
@@ -345,27 +336,24 @@ public class CartAction extends ExampleSupport implements SessionAware {
         	
         	
         	/* Persisting data */
-        	Session session = HibernateUtil.getSessionFactory().openSession();
+        	Session _session = HibernateUtil.getSessionFactory().openSession();
     		Transaction tx = null;
     		try {
-    			tx = session.beginTransaction();
-    			session.persist(order);
+    			tx = _session.beginTransaction();
+    			
     			for(Ticket tick : order.getTickets()){
-    				Guest curr_guest = (Guest) session.createQuery("from Guest as guest where guest.identity = :identity")
-        					.setString("identity", tick.getGuest().getIdentity())
-        					.list().get(0);
-    				if(curr_guest==null){
-    					session.persist(tick.getGuest());
-    				}
-    				session.persist(tick);
-    			}
-    			Customer curr_customer = (Customer) session.createQuery("from Customer as cust where cust.email = :email")
-    					.setString("email", customer.getEmail())
-    					.list().get(0);
-    			if(curr_customer==null){
-    				session.persist(customer);
+    				_session.persist(tick);
     			}
     			
+    			Customer curr_customer = (Customer) _session.createQuery("from Customer as cust where cust.email = :email")
+    					.setString("email", customer.getEmail())
+    					.list().get(0);
+    			if(curr_customer==null)
+    				order.setCustomer(customer);
+    			else
+    				order.setCustomer(curr_customer);
+    			
+    			_session.persist(order);
     			tx.commit();
     		}
     		catch (Exception e) {
@@ -373,9 +361,8 @@ public class CartAction extends ExampleSupport implements SessionAware {
     			e.printStackTrace();
     		}
     		finally {
-    			session.close();
+    			_session.close();
     		}
-    		
     		session.clear();
         }
 		

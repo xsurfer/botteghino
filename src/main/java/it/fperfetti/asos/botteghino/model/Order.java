@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +16,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.annotations.Cascade;
 
 @Entity
 @Table(name = "ORDERS")
@@ -28,6 +31,7 @@ public class Order {
 	public void setId(Long id) { this.id = id; }
 	
 	@Column(name = "REMOTE_EVENT_ID")
+	@NotNull
 	private Long remoteid;
 	public Long getRemoteid() { return remoteid; }
 	public void setRemoteid(Long remoteid) { this.remoteid = remoteid; }
@@ -44,12 +48,15 @@ public class Order {
 	private Date date;
 	
 	@Column(name = "TOTAL")
+	@NotNull
 	private Double total;
 	public Double getTotal() { return total; }
 	public void setTotal(Double total) { this.total = total; }
 	
 	@ManyToOne
+	@Cascade( org.hibernate.annotations.CascadeType.SAVE_UPDATE )
 	@JoinColumn(name="customer_id")
+	@NotNull
 	private Customer customer;
 	public Customer getCustomer(){ return customer; }
 	public void setCustomer(Customer customer){ this.customer = customer; }
