@@ -85,6 +85,7 @@
         </result>
     </action> 
     
+    
     <action name="payment" class="it.fperfetti.asos.botteghino.action.CartAction" method="payment">
     	<result>/pages/orderconfirmed.jsp</result>
     	<result name="error" type="redirectAction">
