@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -31,10 +32,11 @@ public class Order {
 	public Long getRemoteid() { return remoteid; }
 	public void setRemoteid(Long remoteid) { this.remoteid = remoteid; }
 
+	@Transient
+	private List<Ticket> tickets = new ArrayList<Ticket>();
 	public List<Ticket> getTickets() { return tickets; }
 	public void setTickets(List<Ticket> tickets) { this.tickets = tickets; }
 	public void addTicket(Ticket detail) { tickets.add(detail); }
-	private List<Ticket> tickets = new ArrayList<Ticket>();
 	
 	@Temporal(TemporalType.DATE) @NotNull @Column(updatable=false)
 	public Date getDate() { return date; }

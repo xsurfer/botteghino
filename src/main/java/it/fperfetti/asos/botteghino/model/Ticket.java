@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "TICKETS")
@@ -25,6 +26,7 @@ public class Ticket {
 	public String getEvent() { return event; }
 	public void setEvent(String event) { this.event = event; }
 	
+	@Transient
 	private Order order = new Order();
 	public Order getOrder() { return order; }
 	public void setOrder(Order order) { this.order = order; }
