@@ -344,7 +344,6 @@ public class CartAction extends ExampleSupport implements SessionAware {
     			for(Ticket tick : order.getTickets()){
     				_session.persist(tick);
     			}
-    			
     			Customer curr_customer = (Customer) _session.createQuery("from Customer as cust where cust.email = :email")
     					.setString("email", customer.getEmail())
     					.list().get(0);
