@@ -82,8 +82,8 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	public List<Ticket> getTickets() { return tickets; }
 	public void setTickets(List<Ticket> tickets) { this.tickets = tickets; }
 	
-	private Customer customer = new Customer();
-	public Customer getCustomer(){ return customer; }
+	private Customer customer;
+	public Customer getCustomer(){ if(customer==null) customer=new Customer(); return customer; }
 	public void setCustomer(Customer customer){ this.customer = customer; }
 
 	/*************/
