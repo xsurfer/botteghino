@@ -8,6 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -43,4 +45,10 @@ public class Order {
 	private Double total;
 	public Double getTotal() { return total; }
 	public void setTotal(Double total) { this.total = total; }
+	
+	@ManyToOne
+	@JoinColumn(name="customer_id")
+	private Customer customer;
+	public Customer getCustomer(){ return customer; }
+	public void setCustomer(Customer customer){ this.customer = customer; }
 }
