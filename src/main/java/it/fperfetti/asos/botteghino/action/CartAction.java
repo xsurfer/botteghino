@@ -27,9 +27,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import org.apache.struts2.interceptor.SessionAware;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.jboss.resteasy.client.ClientRequest;
 import org.jboss.resteasy.client.ClientResponse;
 
+import it.fperfetti.asos.botteghino.util.HibernateUtil;
 import it.fperfetti.asos.botteghino.model.Cart;
 import it.fperfetti.asos.botteghino.model.Customer;
 import it.fperfetti.asos.botteghino.model.OrderItem;
@@ -339,6 +342,27 @@ public class CartAction extends ExampleSupport implements SessionAware {
         	FornitoreService eP = new FornitoreService_Service().getFornitore();
         	eP.book(order.getRemoteid());
         	
+        	
+        	/* Persisting data */
+        	Session session = HibernateUtil.getSessionFactory().openSession();
+    		Transaction tx = null;
+    		try {
+    			tx = session.beginTransaction();
+    			session.persist(order);
+    			for(Ticket tick : order.getTickets()){
+    				session.persist(tick.getGuest());
+    				session.persist(tick);
+    			}
+    			session.persist(customer);
+    		}
+    		catch (Exception e) {
+    			if (tx != null) tx.rollback();
+    			e.printStackTrace();
+    		}
+    		finally {
+    			session.close();
+    		}
+    		
     		session.clear();
         }
 		
