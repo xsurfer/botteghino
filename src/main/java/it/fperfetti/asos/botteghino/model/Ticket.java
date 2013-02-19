@@ -37,7 +37,6 @@ public class Ticket {
 	
 	@ManyToOne
 	@Cascade( org.hibernate.annotations.CascadeType.SAVE_UPDATE )
-	@NotNull
 	@JoinColumn(name="guest_id")
 	private Guest guest = new Guest();
 	public Guest getGuest() { return guest; }
