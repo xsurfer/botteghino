@@ -127,28 +127,28 @@
 
 							<s:hidden name="token" value="%{token}" />
 							<div class="ticket">
-								<div>
+								<div style="clear: both;">
 									<span class="label">Nome:</span> <span class="input"> <s:textfield
 											id="name_field" name="customer.name" size="20" value=""
 											label="Nome" />
 									</span>
 								</div>
 
-								<div>
+								<div style="clear: both;">
 									<span class="label">Cognome:</span> <span class="input">
 										<s:textfield id="surname_field" name="customer.surname"
 											size="20" value="" label="Cognome" />
 									</span>
 								</div>
 
-								<div>
+								<div style="clear: both;">
 									<span class="label">E-mail:</span> <span class="input">
 										<s:textfield id="email_field" name="customer.email" size="20"
 											value="" label="E-Mail" />
 									</span>
 								</div>
 
-								<div>
+								<div style="clear: both;">
 									<span class="label">Circuito:</span> <span class="input">
 										<s:select id="circuit_field" label="Circuito"
 											name="customer.circuit" headerKey="-1"
@@ -158,14 +158,14 @@
 									</span>
 								</div>
 
-								<div>
+								<div style="clear: both;">
 									<span class="label">Numero Carta:</span> <span class="input">
 										<s:textfield id="creditcard_field" name="customer.creditcard"
 											size="16" value="" label="Carta di Credito" />
 									</span>
 								</div>
 
-								<div>
+								<div style="clear: both;">
 									<span class="label">CVV:</span> <span class="input">
 										<s:textfield id="cvv_field" name="customer.cvv" size="3"
 											value="" label="CVV" />

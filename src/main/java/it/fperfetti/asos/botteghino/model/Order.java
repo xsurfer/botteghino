@@ -30,7 +30,7 @@ public class Order {
 	public Long getId() { return id; }
 	public void setId(Long id) { this.id = id; }
 	
-	@Column(name = "REMOTE_EVENT_ID")
+	@Column(name = "REMOTE_ORDER_ID")
 	@NotNull
 	private Long remoteid;
 	public Long getRemoteid() { return remoteid; }

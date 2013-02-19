@@ -30,7 +30,7 @@ public class Guest {
 	public String getSurname() { return surname; }
 	public void setSurname(String surname) { this.surname = surname; }
 
-	@Column(name = "IDENTITY", unique=true)
+	@Column(name = "IDENTITY")
 	@NotNull
 	private String identity;
 	public String getIdentity() { return identity; }

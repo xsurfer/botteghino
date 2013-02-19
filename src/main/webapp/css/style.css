@@ -277,7 +277,7 @@ h2.ss-subtitle:after{
 
 .ss-container div.ticket span.label{
     display: inline;
-    width: 120px;
+    width: 180px;
     float: left; 
 }
 
@@ -294,7 +294,7 @@ h2.ss-subtitle:after{
 }
 
 .info_event {
-	width: 400px;
+	width: 300px;
 }
 
 .info_event span {
@@ -307,7 +307,7 @@ h2.ss-subtitle:after{
 }
 
 .info_event div.addiv {
-	width: 230px;
+	width: 100px;
 	margin: 0 auto;
 }
 
