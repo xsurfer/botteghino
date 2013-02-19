@@ -35,6 +35,7 @@ import org.jboss.resteasy.client.ClientResponse;
 import it.fperfetti.asos.botteghino.util.HibernateUtil;
 import it.fperfetti.asos.botteghino.model.Cart;
 import it.fperfetti.asos.botteghino.model.Customer;
+import it.fperfetti.asos.botteghino.model.Guest;
 import it.fperfetti.asos.botteghino.model.OrderItem;
 import it.fperfetti.asos.botteghino.model.Ticket;
 import it.fperfetti.asos.botteghino.stub.Category;
@@ -350,10 +351,22 @@ public class CartAction extends ExampleSupport implements SessionAware {
     			tx = session.beginTransaction();
     			session.persist(order);
     			for(Ticket tick : order.getTickets()){
-    				session.persist(tick.getGuest());
+    				Guest curr_guest = (Guest) session.createQuery("from Guest as guest where guest.identity = :identity")
+        					.setString("identity", tick.getGuest().getIdentity())
+        					.list().get(0);
+    				if(curr_guest==null){
+    					session.persist(tick.getGuest());
+    				}
     				session.persist(tick);
     			}
-    			session.persist(customer);
+    			Customer curr_customer = (Customer) session.createQuery("from Customer as cust where cust.email = :email")
+    					.setString("email", customer.getEmail())
+    					.list().get(0);
+    			if(curr_customer==null){
+    				session.persist(customer);
+    			}
+    			
+    			tx.commit();
     		}
     		catch (Exception e) {
     			if (tx != null) tx.rollback();
