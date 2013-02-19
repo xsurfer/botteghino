@@ -95,6 +95,9 @@
 						</h3>
 
 						<div class="detail">
+						
+							<s:property value="message" />
+						
 							<s:form cssClass="toValidate" action="update">
 								<s:hidden name="idItem" value="%{(#status.index)}" />
 								<s:textfield cssClass="quantity_field" name="item.quantity"
