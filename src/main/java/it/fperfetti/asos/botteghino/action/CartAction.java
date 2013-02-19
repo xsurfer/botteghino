@@ -82,6 +82,10 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	public List<Ticket> getTickets() { return tickets; }
 	public void setTickets(List<Ticket> tickets) { this.tickets = tickets; }
 	
+	private String message = new String();
+	public String getMessage(){ return message; }
+	public void setMessage(String msg){ this.message = msg; }
+	
 	private Customer customer;
 	public Customer getCustomer(){ if(customer==null) customer=new Customer(); return customer; }
 	public void setCustomer(Customer customer){ this.customer = customer; }
@@ -167,8 +171,12 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		} else {
 			cart = (Cart) session.get("carrello");
 		}
-		String tok_session = (String) session.get("token");	
-		if(tok_session == null || token.compareTo( tok_session )!=0){
+		/* Copying, creating and checking tokens */
+		String tok_session = (String) session.get("token");
+		String tok_current = this.token;
+		this.token = UUID.randomUUID().toString();
+		session.put("token", token);
+		if(tok_session == null || tok_current.compareTo( tok_session )!=0){
 			return ERROR;
 		}
 
@@ -201,7 +209,8 @@ public class CartAction extends ExampleSupport implements SessionAware {
     	FornitoreService eP = new FornitoreService_Service().getFornitore();
     	Long orderId = eP.prebook(eventArr, quantityArr, "botteghino.it");
     	if(orderId>0) order.setRemoteid(orderId);
-    	else return ERROR;
+    	else 
+    		return "back";
     			
 		/* initially all tickets empty */
     	
@@ -221,11 +230,12 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		} else {
 			cart = (Cart) session.get("carrello");
 		}
-		System.out.println("Current token:" + token);
-		System.out.println("Session token:" + session.get("token"));
+		/* Copying, creating and checking tokens */
 		String tok_session = (String) session.get("token");
-		
-		if(tok_session == null || token.compareTo( tok_session )!=0){
+		String tok_current = this.token;
+		this.token = UUID.randomUUID().toString();
+		session.put("token", token);
+		if(tok_session == null || tok_current.compareTo( tok_session )!=0){
 			return ERROR;
 		}
 
@@ -260,17 +270,18 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		} else {
 			cart = (Cart) session.get("carrello");
 		}
-		System.out.println("Current token:" + token);
-		System.out.println("Session token:" + session.get("token"));
+		/* Copying, creating and checking tokens */
 		String tok_session = (String) session.get("token");
-		
-		if(tok_session == null || token.compareTo( tok_session )!=0){
-			return ERROR;
-		}
-		Order order = (Order) session.get("order");
-		
+		String tok_current = this.token;
 		this.token = UUID.randomUUID().toString();
 		session.put("token", token);
+		if(tok_session == null || tok_current.compareTo( tok_session )!=0){
+			return ERROR;
+		}
+		
+		Order order = (Order) session.get("order");
+		
+		
 		return SUCCESS;
 	}
 	
@@ -281,8 +292,12 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		} else {
 			cart = (Cart) session.get("carrello");
 		}
-		String tok_session = (String) session.get("token");		
-		if(tok_session == null || token.compareTo( tok_session )!=0){
+		/* Copying, creating and checking tokens */
+		String tok_session = (String) session.get("token");
+		String tok_current = this.token;
+		this.token = UUID.randomUUID().toString();
+		session.put("token", token);
+		if(tok_session == null || tok_current.compareTo( tok_session )!=0){
 			return ERROR;
 		}
 		
@@ -316,15 +331,16 @@ public class CartAction extends ExampleSupport implements SessionAware {
             ClientResponse<Boolean> result = req.get(Boolean.class);
             System.out.println(result.getEntity());
             
-            if(!result.getEntity()){return ERROR;}
+            if(!result.getEntity()){
+            	message="Si sono verificati problemi durante il pagamento. Riprovare";
+    			return "back";
+            }
             /* Executing book */
         	FornitoreService eP = new FornitoreService_Service().getFornitore();
         	eP.book(order.getRemoteid());
         	
-        	this.token = UUID.randomUUID().toString();
-    		session.put("token", token);
+    		session.clear();
         }
-        session.clear();
 		
 		return SUCCESS;
 	}

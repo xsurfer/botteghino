@@ -55,12 +55,20 @@
           <param name="actionName">home</param>
           <param name="namespace">/</param>
         </result>
+        <result name="back" type="redirectAction">
+          <param name="actionName">checkout</param>
+          <param name="namespace">/</param>
+        </result>
     </action> 
     
     <action name="step2" class="it.fperfetti.asos.botteghino.action.CartAction" method="step2">
     	<result>/pages/step2.jsp</result>
     	<result name="error" type="redirectAction">
           <param name="actionName">home</param>
+          <param name="namespace">/</param>
+        </result>
+        <result name="back" type="redirectAction">
+          <param name="actionName">step1?token=${token}</param>
           <param name="namespace">/</param>
         </result>
     </action> 
@@ -71,12 +79,20 @@
           <param name="actionName">home</param>
           <param name="namespace">/</param>
         </result>
+        <result name="back" type="redirectAction">
+          <param name="actionName">step2?token=${token}</param>
+          <param name="namespace">/</param>
+        </result>
     </action> 
     
     <action name="payment" class="it.fperfetti.asos.botteghino.action.CartAction" method="payment">
-    	<result>/pages/orderInformation.jsp</result>
+    	<result>/pages/orderconfirmed.jsp</result>
     	<result name="error" type="redirectAction">
-          <param name="actionName">step3</param>
+          <param name="actionName">home</param>
+          <param name="namespace">/</param>
+        </result>
+        <result name="back" type="redirectAction">
+          <param name="actionName">step3?token=${token}&message=$(message)</param>
           <param name="namespace">/</param>
         </result>
     </action> 

@@ -117,61 +117,19 @@
 
 		<div id="ss-container" class="ss-container">
 
-			<s:form id="paymentForm" action="payment">
+			
 				<div class="ss-row">
 					<div class="ss-left">
-						<h3>Carta di Credito</h3>
+						<h3>Acquisto concluso con successo</h3>
 						<div class="detail">
-							
-							<s:property value="message" />
+							<p>Il pagamento è andato a buon fine! Riceverai al più presto una mail
+							contenente i biglietti relativi agli eventi da te selezionati.</br>
+							Per qualsiasi problema o informazione non esiti a mettersi in contatto
+							il nostro Help Desk.
+							</br></br>
+							Lo staff
+							</p>
 
-							<s:hidden name="token" value="%{token}" />
-							<div class="ticket">
-								<div>
-									<span class="label">Nome:</span> <span class="input"> <s:textfield
-											id="name_field" name="customer.name" size="20" value=""
-											label="Nome" />
-									</span>
-								</div>
-
-								<div>
-									<span class="label">Cognome:</span> <span class="input">
-										<s:textfield id="surname_field" name="customer.surname"
-											size="20" value="" label="Cognome" />
-									</span>
-								</div>
-
-								<div>
-									<span class="label">E-mail:</span> <span class="input">
-										<s:textfield id="email_field" name="customer.email" size="20"
-											value="" label="E-Mail" />
-									</span>
-								</div>
-
-								<div>
-									<span class="label">Circuito:</span> <span class="input">
-										<s:select id="circuit_field" label="Circuito"
-											name="customer.circuit" headerKey="-1"
-											headerValue="Seleziona una voce"
-											list="#{'mastercard':'MasterCard', 'visaelectron':'VisaElectron', 'visa':'Visa', 'americanexpress':'American Express'}"
-											value="selectedCircuit" required="true" />
-									</span>
-								</div>
-
-								<div>
-									<span class="label">Numero Carta:</span> <span class="input">
-										<s:textfield id="creditcard_field" name="customer.creditcard"
-											size="16" value="" label="Carta di Credito" />
-									</span>
-								</div>
-
-								<div>
-									<span class="label">CVV:</span> <span class="input">
-										<s:textfield id="cvv_field" name="customer.cvv" size="3"
-											value="" label="CVV" />
-									</span>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -180,12 +138,13 @@
 					<div class="ss-left">&nbsp;</div>
 					<div class="ss-right">
 						<h3>
-							<span>L'operazione di pagamento potrebbe richiedere alcuni istanti nel frattempo ti invitiamo ad attendere senza ricaricare la pagina. Grazie della fiducia</span>
+							Grazie per la fiducia, "Volte Sempre"!
 						</h3>
-						<div><s:submit value="Effettua Pagamento" /></div>
+						<s:form id="close" action="home">
+						<div><s:submit value="Chiudi" /></div>
+						</s:form>
 					</div>
 				</div>
-			</s:form>
 		</div>
 	</div>
 </body>
