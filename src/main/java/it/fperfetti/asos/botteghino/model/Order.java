@@ -56,7 +56,6 @@ public class Order {
 	@ManyToOne
 	@Cascade( org.hibernate.annotations.CascadeType.SAVE_UPDATE )
 	@JoinColumn(name="customer_id")
-	@NotNull
 	private Customer customer;
 	public Customer getCustomer(){ return customer; }
 	public void setCustomer(Customer customer){ this.customer = customer; }
