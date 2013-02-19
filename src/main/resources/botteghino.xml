@@ -93,8 +93,10 @@
           <param name="namespace">/</param>
         </result>
         <result name="back" type="redirectAction">
-          <param name="actionName">step3?token=${token}&message=${message}</param>
+          <param name="actionName">step3</param>
           <param name="namespace">/</param>
+          <param name="token">${token}</param>
+          <param name="message">${message}</param>
         </result>
     </action> 
     
