@@ -26,7 +26,7 @@ public class Customer {
 	
 	private String cvv;
 	public String getCvv() { return cvv; }
-	public void setCity(String cvv) { this.cvv = cvv; }
+	public void setCvv(String cvv) { this.cvv = cvv; }
 
 	private String circuit;
 	public String getCircuit() { return circuit; }

@@ -287,7 +287,16 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		}
 		
 		Order order = (Order) session.get("order");
-		    	
+		   
+		System.out.println("CC: " + customer.getCreditcard());
+		System.out.println("CVV: " + customer.getCvv());
+		System.out.println("NAME: " + customer.getName());
+		System.out.println("SURNAME: " + customer.getSurname());
+		if(customer.getCreditcard()==null) customer.setCreditcard("12345");
+		if(customer.getCvv()==null) customer.setCvv("123");
+		if(customer.getName()==null) customer.setName("Fabio");
+		if(customer.getSurname()==null) customer.setSurname("Perfetti");
+		
     	ClientRequest req = new ClientRequest(BANK_CHECK_ENDPOINT);
         req
             .pathParameter("cnumber", customer.getCreditcard())
