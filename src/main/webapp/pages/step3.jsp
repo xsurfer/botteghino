@@ -51,7 +51,6 @@
 <!-- END FANCYBOX CODE -->
 
 <script type="text/javascript">
-	/*
 	$().ready(function() {
 		
 		$.validator.addMethod("cRequired", $.validator.methods.required, "Obbligatorio");
@@ -88,13 +87,13 @@
 			cValueNotEquals: "-1"
 			}
 		);
-		
+		/*
 		$("#creditcard_field").rules("add",{
 			cRequired: true,
 			cCreditcard: true
 			}
 		);
-			
+			*/
 		$("#cvv_field").rules("add",{
 			cRequired: true,
 			cDigits: true,
@@ -105,7 +104,7 @@
 				
 		
 	});
-	 */
+	 
 </script>
 </head>
 
@@ -158,14 +157,14 @@
 								</div>
 
 								<div>
-									<span class="label">E-mail:</span> <span class="input">
+									<span class="label">Numero Carta:</span> <span class="input">
 										<s:textfield id="creditcard_field" name="customer.creditcard"
 											size="16" value="" label="Carta di Credito" />
 									</span>
 								</div>
 
 								<div>
-									<span class="label">E-mail:</span> <span class="input">
+									<span class="label">CVV:</span> <span class="input">
 										<s:textfield id="cvv_field" name="customer.cvv" size="3"
 											value="" label="CVV" />
 									</span>

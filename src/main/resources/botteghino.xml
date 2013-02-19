@@ -76,7 +76,7 @@
     <action name="payment" class="it.fperfetti.asos.botteghino.action.CartAction" method="payment">
     	<result>/pages/orderInformation.jsp</result>
     	<result name="error" type="redirectAction">
-          <param name="actionName">home</param>
+          <param name="actionName">step3</param>
           <param name="namespace">/</param>
         </result>
     </action> 

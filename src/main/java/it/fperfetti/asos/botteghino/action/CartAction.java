@@ -27,6 +27,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import org.apache.struts2.interceptor.SessionAware;
+import org.jboss.resteasy.client.ClientRequest;
+import org.jboss.resteasy.client.ClientResponse;
+
 import it.fperfetti.asos.botteghino.model.Cart;
 import it.fperfetti.asos.botteghino.model.OrderItem;
 import it.fperfetti.asos.botteghino.model.Ticket;
@@ -41,6 +44,9 @@ import it.fperfetti.asos.botteghino.model.Order;
  */
 public class CartAction extends ExampleSupport implements SessionAware {
 
+	private static final String BANK_CHECK_ENDPOINT = "http://banca-paasfab.rhcloud.com/bank/check/{cnumber}/{cvv}/{name}/{surname}";
+	private static final String BANK_WITHDRAWAL_ENDPOINT = "http://banca-paasfab.rhcloud.com/bank/withdrawal/{vendor}/{id}/{amount}";
+	
 	Map<String, Object> session;
 	public void setSession(Map<String, Object> session) { this.session = session; }
 
@@ -279,7 +285,29 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		
 		/* Executing book */
     	FornitoreService eP = new FornitoreService_Service().getFornitore();
-    	eP.book(order.getRemoteid());  	
+    	eP.book(order.getRemoteid());
+    	
+    	ClientRequest req = new ClientRequest(BANK_CHECK_ENDPOINT);
+        req
+            .pathParameter("cnumber", "12345")
+            .pathParameter("cvv", "123")
+            .queryParameter("name", "fabio")
+            .pathParameter("surname", "perfetti");
+ 
+        ClientResponse<Long> accountId = req.get(Long.class);
+        System.out.println(accountId.getEntity());
+        if(accountId.getEntity()>0){
+           	req = new ClientRequest(BANK_WITHDRAWAL_ENDPOINT);
+            req
+                .pathParameter("vendor", "botteghino.it")
+                .pathParameter("id", accountId.getEntity().toString())
+                .queryParameter("amount", "50");
+     
+            ClientResponse<Boolean> result = req.get(Boolean.class);
+            System.out.println(result.getEntity());
+            
+            if(!result.getEntity()){return ERROR;}
+        }
 
     	session.clear();
 		
