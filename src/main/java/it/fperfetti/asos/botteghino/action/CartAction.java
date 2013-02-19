@@ -344,13 +344,14 @@ public class CartAction extends ExampleSupport implements SessionAware {
     			for(Ticket tick : order.getTickets()){
     				_session.persist(tick);
     			}
-    			Customer curr_customer = (Customer) _session.createQuery("from Customer as cust where cust.email = :email")
+    			@SuppressWarnings("unchecked")
+				List<Customer> curr_customers = _session.createQuery("from Customer as cust where cust.email = :email")
     					.setString("email", customer.getEmail())
-    					.list().get(0);
-    			if(curr_customer==null)
+    					.list();
+    			if(curr_customers.size()==0)
     				order.setCustomer(customer);
     			else
-    				order.setCustomer(curr_customer);
+    				order.setCustomer(curr_customers.get(0));
     			
     			_session.persist(order);
     			tx.commit();
