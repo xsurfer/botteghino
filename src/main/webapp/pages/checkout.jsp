@@ -99,7 +99,7 @@
 							<s:property value="message" />
 						
 							<s:form cssClass="toValidate" action="update">
-								<s:hidden name="idItem" value="%{(#status.index)}" />
+								<s:hidden name="idItem" value="%{hashCode}" />
 								<s:textfield cssClass="quantity_field" name="item.quantity"
 									size="2" value="%{quantity}" label="Quantità" />
 								<br />

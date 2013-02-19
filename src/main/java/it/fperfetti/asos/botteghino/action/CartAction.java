@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 import org.apache.struts2.interceptor.SessionAware;
 import org.hibernate.Session;
@@ -74,9 +75,9 @@ public class CartAction extends ExampleSupport implements SessionAware {
 	public OrderItem getItem() { return item; }
 	public void setItem(OrderItem item) { this.item = item; }
 
-	private List<OrderItem> items;
-	public List<OrderItem> getItems() { return items; }
-	public void setItems(List<OrderItem> items) { this.items = items; }
+	private Set<OrderItem> items;
+	public Set<OrderItem> getItems() { return items; }
+	public void setItems(Set<OrderItem> items) { this.items = items; }
 
 	private String token = new String();
 	public String getToken(){ return token; }
@@ -105,8 +106,9 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		} else {
 			cart = (Cart) session.get("carrello");
 		}
-		item = cart.getItems().get(idItem);
-		cart.removeItem(item);
+		
+		cart.removeItem(idItem);
+		
 		return SUCCESS;
 	}
 
@@ -118,14 +120,8 @@ public class CartAction extends ExampleSupport implements SessionAware {
 			cart = (Cart) session.get("carrello");
 		}
 
-		OrderItem tmpItem = cart.getItems().get(idItem);
-		tmpItem.setQuantity(item.getQuantity());
-
-		if(item.getQuantity()<=0){
-			cart.removeItem(tmpItem);
-		} else {
-			cart.updateItem(idItem, tmpItem);
-		}  	
+		cart.updateItem(idItem, item.getQuantity());
+		
 		return SUCCESS;
 	}
 
@@ -214,7 +210,7 @@ public class CartAction extends ExampleSupport implements SessionAware {
     	Long orderId = eP.prebook(eventArr, quantityArr, "botteghino.it");
     	if(orderId>0) order.setRemoteid(orderId);
     	else {
-    		this.message="Alcuni eventi non potrebbero essere più disponibili. Provi a modificare la sua scelta o ripeta l'operazione in un prossimo momento";
+    		this.message="Alcuni eventi potrebbero non essere piu' disponibili. Provi a modificare la sua scelta o ripeta l'operazione in un prossimo momento";
     		return "back";
     	}
     			

@@ -1,40 +1,65 @@
 package it.fperfetti.asos.botteghino.model;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Cart {
+
+	public Cart() {}
 	
-	private ArrayList<OrderItem> items = new ArrayList<OrderItem>();
-	private Date date = new Date();
+	private Set<OrderItem> items = new HashSet<OrderItem>();
+	public Set<OrderItem> getItems(){
+		return this.items;
+	}
+
+	public boolean addItem(OrderItem oitem){
+		if(items.contains(oitem))
+			return false;
+		items.add(oitem);
+		return true;
+	}
+	
+	public void updateItem(int hashCode, int quantity){
+		OrderItem oi = getByHashCode(hashCode);
+		if(oi!=null){
+			if(quantity<=0){
+				removeItem(hashCode);
+			}else{
+				oi.setQuantity(quantity);
+			}
+		}
+	}
+	
+	public void removeItem(int hashCode){
+		OrderItem oi = getByHashCode(hashCode);
+		if(oi!=null){
+			this.items.remove(oi);
+		}
+	}
+	
+	private OrderItem getByHashCode(int hashCode){
+		OrderItem ret = null;
+		for(OrderItem oi : items){
+			if(oi.hashCode() == hashCode){
+				ret=oi;
+				break;
+			}
+		}
+		return ret;
 		
-	public Cart() {
-		super();
-	}
-
-	public ArrayList<OrderItem> getItems() {
-		return items;
-	}
-
-	public void setItems(ArrayList<OrderItem> items) {
-		this.items = items;
-	}
-
-	public Date getDate() {
-		return date;
 	}
 	
-	public void addItem(OrderItem item){
-		this.items.add(item);
+	
+	public boolean OrderItem(OrderItem oitem){
+		if(items.contains(oitem))
+			return false;
+		items.add(oitem);
+		return true;
 	}
 	
-	public void removeItem(OrderItem item){
-		this.items.remove(item);
-	}
-	
-	public void updateItem(Integer index, OrderItem item){
-		this.items.set(index, item);
-	}
+	private Date date = new Date();
+	public Date getDate() { return date; }
 	
 	public Double getTotal(){
 		Double tot = new Double(0);
