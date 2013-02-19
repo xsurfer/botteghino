@@ -169,7 +169,7 @@
 							<h3>
 								<span><s:property value="location" /></span>
 								<s:a cssClass="fancybox fancybox.ajax" href="%{URLevent1}">
-									<s:property value="title" />
+									<s:property value="author" /> - <s:property value="title" />
 								</s:a>
 								<span>Ancora <s:property value="availability" /> ticket
 									disponibili al prezzo di <s:property value="price" />&euro;

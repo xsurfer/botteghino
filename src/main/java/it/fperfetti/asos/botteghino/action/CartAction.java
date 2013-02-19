@@ -213,8 +213,10 @@ public class CartAction extends ExampleSupport implements SessionAware {
     	FornitoreService eP = new FornitoreService_Service().getFornitore();
     	Long orderId = eP.prebook(eventArr, quantityArr, "botteghino.it");
     	if(orderId>0) order.setRemoteid(orderId);
-    	else 
+    	else {
+    		this.message="Alcuni eventi non potrebbero essere più disponibili. Provi a modificare la sua scelta o ripeta l'operazione in un prossimo momento";
     		return "back";
+    	}
     			
 		/* initially all tickets empty */
     	

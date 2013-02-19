@@ -58,6 +58,7 @@
         <result name="back" type="redirectAction">
           <param name="actionName">checkout</param>
           <param name="namespace">/</param>
+          <param name="message">${message}</param>
         </result>
     </action> 
     
