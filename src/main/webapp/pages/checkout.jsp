@@ -108,9 +108,7 @@
 							</s:form>
 
 							<s:url action="remove" var="removeUrl">
-								<s:param name="idItem">
-									<s:property value="%{(#status.index)}" />
-								</s:param>
+								<s:param name="idItem" value="%{#_iditem}" />
 							</s:url>
 							<s:a href="%{removeUrl}">Rimuovi dal carrello</s:a>
 						</div>
