@@ -206,13 +206,15 @@ public class CartAction extends ExampleSupport implements SessionAware {
 		}  	
     	
 		/* Executing pre-book */
-    	FornitoreService eP = new FornitoreService_Service().getFornitore();
-    	Long orderId = eP.prebook(eventArr, quantityArr, "botteghino.it");
-    	if(orderId>0) order.setRemoteid(orderId);
-    	else {
-    		this.message="Alcuni eventi potrebbero non essere piu' disponibili. Provi a modificare la sua scelta o ripeta l'operazione in un prossimo momento";
-    		return "back";
-    	}
+		if(order.getRemoteid() == null || order.getRemoteid()<0 ){
+			FornitoreService eP = new FornitoreService_Service().getFornitore();
+			Long orderId = eP.prebook(eventArr, quantityArr, "botteghino.it");
+			if(orderId>0) order.setRemoteid(orderId);	
+			else {
+				this.message="Alcuni eventi potrebbero non essere piu' disponibili. Provi a modificare la sua scelta o ripeta l'operazione in un prossimo momento";
+				return "back";
+			}
+		}
     			
 		/* initially all tickets empty */
     	
